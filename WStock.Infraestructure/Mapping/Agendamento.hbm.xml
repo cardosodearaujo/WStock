@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WStock.Domain.Agendamento,WStock.Domain" table="TB_AGENDAMENTO" lazy="true">
+    <id name="Codigo" column="CODIGO" unsaved-value="0">
+      <generator class="identity"/>
+    </id>
+    <many-to-one name="Transportador" class="WStock.Domain.Transportador" column="CODIGO_TRANSPORTADOR" />
+    <many-to-one name="Empresa" class="WStock.Domain.Empresa" column="CODIGO_EMPRESA" />
+    <many-to-one name="TipoAgendamento" class="WStock.Domain.TipoAgendamento" column="CODIGO_TIPO_AGENDAMENTO" />    
+    <many-to-one name="TipoPallet" class="WStock.Domain.TipoPallet" column="CODIGO_TIPO_PALLET" />
+    <many-to-one name="TipoCarga" class="WStock.Domain.TipoCarga" column="CODIGO_TIPO_CARGA" />
+    <many-to-one name="TipoVeiculo" class="WStock.Domain.TipoVeiculo" column="CODIGO_TIPO_VEICULO" />    
+    <property name="NFE" column="NFE" />
+    <property name="NomeMotorista" column="NOME_MOTORISTA" />
+    <property name="Observacao" column="OBSERVACAO" />
+    <property name="Origem" column="ORIGEM" />
+    <property name="Destino" column="DESTINO" />
+    <property name="QuantidadePallet" column="QUANTIDADE_PALLET" />
+    <property name="DataAgendamento" column="DATA_AGENDAMENTO" />
+    <property name="DataCancelamento" column="DATA_CANCELAMENTO" />
+  </class>
+</hibernate-mapping>

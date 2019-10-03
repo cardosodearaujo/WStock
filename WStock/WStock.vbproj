@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D0812F0-44ED-4F5A-8AE8-855ADFE9D0B8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WStock.My.MyApplication</StartupObject>
+    <RootNamespace>WStock</RootNamespace>
+    <AssemblyName>WStock</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WStock.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WStock.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resorces\oie_transparent_9Qp_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.17\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\Unity.5.11.1\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\Unity.5.11.1\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="WStock-N\FrmAgendamento.Designer.vb">
+      <DependentUpon>FrmAgendamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WStock-N\FrmAgendamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\ModuloPrincipal.vb" />
+    <Compile Include="WStock\FrmCadastro.Designer.vb">
+      <DependentUpon>FrmCadastro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WStock\FrmCadastro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WStock-N\FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WStock-N\FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WStock-N\FrmPesquisa.Designer.vb">
+      <DependentUpon>FrmPesquisa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WStock-N\FrmPesquisa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WStock\FrmSolicitacaoCompra.Designer.vb">
+      <DependentUpon>FrmSolicitacaoCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WStock\FrmSolicitacaoCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WStock-N\FrmMenu.Designer.vb">
+      <DependentUpon>FrmMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WStock-N\FrmMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WStock\FrmTerceiros.Designer.vb">
+      <DependentUpon>FrmTerceiros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WStock\FrmTerceiros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WStock-N\FrmListaAgendamentos.Designer.vb">
+      <DependentUpon>FrmListaAgendamentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WStock-N\FrmListaAgendamentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WStock-N\FrmAgendamento.resx">
+      <DependentUpon>FrmAgendamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WStock\FrmCadastro.resx">
+      <DependentUpon>FrmCadastro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WStock-N\FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WStock-N\FrmMenu.resx">
+      <DependentUpon>FrmMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WStock-N\FrmPesquisa.resx">
+      <DependentUpon>FrmPesquisa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WStock\FrmSolicitacaoCompra.resx">
+      <DependentUpon>FrmSolicitacaoCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WStock\FrmTerceiros.resx">
+      <DependentUpon>FrmTerceiros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WStock-N\FrmListaAgendamentos.resx">
+      <DependentUpon>FrmListaAgendamentos.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resorces\oie_transparent_9Qp_icon.ico" />
+    <Content Include="Resorces\analytics_xD1_icon.ico" />
+    <Content Include="Resorces\modelo_wmv_icon.ico" />
+    <Content Include="Resorces\oie_transparent-_1_.ico" />
+    <Content Include="Resorces\oie_transparent__2__Lu6_icon.ico" />
+    <None Include="Resources\new.png" />
+    <None Include="Resources\search1.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\multiply.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\error%281%29.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\close-button.png" />
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WStock.Domain\WStock.Domain.vbproj">
+      <Project>{a677ac11-7548-4c03-97ca-3afb8bcfa1b8}</Project>
+      <Name>WStock.Domain</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WStock.Framework\WStock.Framework.csproj">
+      <Project>{4f56bff1-4b3e-4a10-ba42-c89de7c3d1bc}</Project>
+      <Name>WStock.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WStock.Infraestructure\WStock.Infraestructure.vbproj">
+      <Project>{29e59c15-427f-46b4-98fe-2b67bce6bb2e}</Project>
+      <Name>WStock.Infraestructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
