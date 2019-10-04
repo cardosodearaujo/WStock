@@ -23,7 +23,10 @@ Partial Class FrmListaAgendamentos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnlFiltro = New System.Windows.Forms.Panel()
+        Me.nswTransportador = New WStock.NewSearchWindow()
+        Me.nswEmpresa = New WStock.NewSearchWindow()
+        Me.btnNovo = New System.Windows.Forms.Button()
         Me.chkOcultarCancelados = New System.Windows.Forms.CheckBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -41,30 +44,7 @@ Partial Class FrmListaAgendamentos
         Me.txtNomeMotorista = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNumNFe = New System.Windows.Forms.TextBox()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.lblTpVeic = New System.Windows.Forms.Label()
-        Me.txtCodTpVeic = New System.Windows.Forms.TextBox()
-        Me.txtDscTpVeic = New System.Windows.Forms.TextBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.lblTpAgd = New System.Windows.Forms.Label()
-        Me.txtCodTpAgd = New System.Windows.Forms.TextBox()
-        Me.txtDscTpAgd = New System.Windows.Forms.TextBox()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.lblTpCarg = New System.Windows.Forms.Label()
-        Me.txtCodTpCarg = New System.Windows.Forms.TextBox()
-        Me.txtDscTpCarg = New System.Windows.Forms.TextBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.lblEmp = New System.Windows.Forms.Label()
-        Me.txtCodEmp = New System.Windows.Forms.TextBox()
-        Me.txtDscEmp = New System.Windows.Forms.TextBox()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.lblTpPall = New System.Windows.Forms.Label()
-        Me.txtCodTpPall = New System.Windows.Forms.TextBox()
-        Me.txtDscTpPall = New System.Windows.Forms.TextBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.lblTrans = New System.Windows.Forms.Label()
-        Me.txtCodTrans = New System.Windows.Forms.TextBox()
-        Me.txtDscTrans = New System.Windows.Forms.TextBox()
+        Me.btnPesquisar = New System.Windows.Forms.Button()
         Me.dgvAgendamentos = New System.Windows.Forms.DataGridView()
         Me.CODIGO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CODIGO_TRANSPORTADORA = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -87,31 +67,15 @@ Partial Class FrmListaAgendamentos
         Me.QUANTIDADE_PALLET = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DATA_AGENDAMENTO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DATA_CANCELAMENTO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnNovo = New System.Windows.Forms.Button()
-        Me.btnLimpTpVeic = New System.Windows.Forms.Button()
-        Me.btnPesqTpVeic = New System.Windows.Forms.Button()
-        Me.btnLimpTpAgd = New System.Windows.Forms.Button()
-        Me.btnPesqTpAgd = New System.Windows.Forms.Button()
-        Me.btnLimpTpCarg = New System.Windows.Forms.Button()
-        Me.btnPesqTpCarg = New System.Windows.Forms.Button()
-        Me.btnLimpEmp = New System.Windows.Forms.Button()
-        Me.btnPesqEmp = New System.Windows.Forms.Button()
-        Me.btnLimpTpPall = New System.Windows.Forms.Button()
-        Me.btnPesqTpPall = New System.Windows.Forms.Button()
-        Me.btnLimpTrans = New System.Windows.Forms.Button()
-        Me.btnPesqTrans = New System.Windows.Forms.Button()
-        Me.btnPesquisar = New System.Windows.Forms.Button()
+        Me.nswTipoAgendamento = New WStock.NewSearchWindow()
+        Me.nswTipoPallet = New WStock.NewSearchWindow()
+        Me.nswTipoCarga = New WStock.NewSearchWindow()
+        Me.nswTipoVeiculo = New WStock.NewSearchWindow()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.Panel5.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel7.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.pnlFiltro.SuspendLayout()
         CType(Me.dgvAgendamentos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -124,7 +88,7 @@ Partial Class FrmListaAgendamentos
         '
         'SplitContainer1.Panel1
         '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Panel1)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.pnlFiltro)
         Me.SplitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer1.Panel1MinSize = 10
         '
@@ -133,50 +97,91 @@ Partial Class FrmListaAgendamentos
         Me.SplitContainer1.Panel2.Controls.Add(Me.dgvAgendamentos)
         Me.SplitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.SplitContainer1.Size = New System.Drawing.Size(1217, 525)
-        Me.SplitContainer1.SplitterDistance = 137
+        Me.SplitContainer1.Size = New System.Drawing.Size(1112, 525)
+        Me.SplitContainer1.SplitterDistance = 127
         Me.SplitContainer1.TabIndex = 0
         '
-        'Panel1
+        'pnlFiltro
         '
-        Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Panel1.Controls.Add(Me.btnNovo)
-        Me.Panel1.Controls.Add(Me.chkOcultarCancelados)
-        Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.dtpAgendaAte)
-        Me.Panel1.Controls.Add(Me.dtpAgendaDe)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.txtDestino)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.txtOrigem)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.txtQtdPallet)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.txtObservacao)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.txtNomeMotorista)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.txtNumNFe)
-        Me.Panel1.Controls.Add(Me.Panel5)
-        Me.Panel1.Controls.Add(Me.Panel4)
-        Me.Panel1.Controls.Add(Me.Panel6)
-        Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.Panel7)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.btnPesquisar)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1217, 137)
-        Me.Panel1.TabIndex = 0
+        Me.pnlFiltro.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.pnlFiltro.Controls.Add(Me.nswTipoVeiculo)
+        Me.pnlFiltro.Controls.Add(Me.nswTipoCarga)
+        Me.pnlFiltro.Controls.Add(Me.nswTipoPallet)
+        Me.pnlFiltro.Controls.Add(Me.nswTipoAgendamento)
+        Me.pnlFiltro.Controls.Add(Me.nswTransportador)
+        Me.pnlFiltro.Controls.Add(Me.nswEmpresa)
+        Me.pnlFiltro.Controls.Add(Me.btnNovo)
+        Me.pnlFiltro.Controls.Add(Me.chkOcultarCancelados)
+        Me.pnlFiltro.Controls.Add(Me.Label8)
+        Me.pnlFiltro.Controls.Add(Me.Label7)
+        Me.pnlFiltro.Controls.Add(Me.dtpAgendaAte)
+        Me.pnlFiltro.Controls.Add(Me.dtpAgendaDe)
+        Me.pnlFiltro.Controls.Add(Me.Label6)
+        Me.pnlFiltro.Controls.Add(Me.txtDestino)
+        Me.pnlFiltro.Controls.Add(Me.Label5)
+        Me.pnlFiltro.Controls.Add(Me.txtOrigem)
+        Me.pnlFiltro.Controls.Add(Me.Label4)
+        Me.pnlFiltro.Controls.Add(Me.txtQtdPallet)
+        Me.pnlFiltro.Controls.Add(Me.Label3)
+        Me.pnlFiltro.Controls.Add(Me.txtObservacao)
+        Me.pnlFiltro.Controls.Add(Me.Label2)
+        Me.pnlFiltro.Controls.Add(Me.txtNomeMotorista)
+        Me.pnlFiltro.Controls.Add(Me.Label1)
+        Me.pnlFiltro.Controls.Add(Me.txtNumNFe)
+        Me.pnlFiltro.Controls.Add(Me.btnPesquisar)
+        Me.pnlFiltro.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlFiltro.Location = New System.Drawing.Point(0, 0)
+        Me.pnlFiltro.Name = "pnlFiltro"
+        Me.pnlFiltro.Size = New System.Drawing.Size(1112, 127)
+        Me.pnlFiltro.TabIndex = 0
+        '
+        'nswTransportador
+        '
+        Me.nswTransportador.CampoCodigoTabelaRetono = Nothing
+        Me.nswTransportador.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTransportador.ListaColunas = Nothing
+        Me.nswTransportador.Location = New System.Drawing.Point(3, 4)
+        Me.nswTransportador.Name = "nswTransportador"
+        Me.nswTransportador.OrderBy = Nothing
+        Me.nswTransportador.Size = New System.Drawing.Size(332, 41)
+        Me.nswTransportador.Tabela = Nothing
+        Me.nswTransportador.TabIndex = 30
+        Me.nswTransportador.Titulo = "Transportador"
+        Me.nswTransportador.Where = Nothing
+        '
+        'nswEmpresa
+        '
+        Me.nswEmpresa.CampoCodigoTabelaRetono = ""
+        Me.nswEmpresa.CampoDescricaoTabelaRetono = ""
+        Me.nswEmpresa.ListaColunas = Nothing
+        Me.nswEmpresa.Location = New System.Drawing.Point(3, 44)
+        Me.nswEmpresa.Name = "nswEmpresa"
+        Me.nswEmpresa.OrderBy = Nothing
+        Me.nswEmpresa.Size = New System.Drawing.Size(332, 41)
+        Me.nswEmpresa.Tabela = ""
+        Me.nswEmpresa.TabIndex = 29
+        Me.nswEmpresa.Titulo = "Empresa"
+        Me.nswEmpresa.Where = Nothing
+        '
+        'btnNovo
+        '
+        Me.btnNovo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnNovo.BackColor = System.Drawing.SystemColors.Control
+        Me.btnNovo.Image = Global.WStock.My.Resources.Resources._new
+        Me.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNovo.Location = New System.Drawing.Point(919, 103)
+        Me.btnNovo.Name = "btnNovo"
+        Me.btnNovo.Size = New System.Drawing.Size(90, 23)
+        Me.btnNovo.TabIndex = 28
+        Me.btnNovo.Text = "Novo"
+        Me.btnNovo.UseVisualStyleBackColor = False
         '
         'chkOcultarCancelados
         '
         Me.chkOcultarCancelados.AutoSize = True
         Me.chkOcultarCancelados.Checked = True
         Me.chkOcultarCancelados.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkOcultarCancelados.Location = New System.Drawing.Point(955, 111)
+        Me.chkOcultarCancelados.Location = New System.Drawing.Point(804, 85)
         Me.chkOcultarCancelados.Name = "chkOcultarCancelados"
         Me.chkOcultarCancelados.Size = New System.Drawing.Size(118, 17)
         Me.chkOcultarCancelados.TabIndex = 27
@@ -186,7 +191,7 @@ Partial Class FrmListaAgendamentos
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(796, 112)
+        Me.Label8.Location = New System.Drawing.Point(779, 107)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(23, 13)
         Me.Label8.TabIndex = 26
@@ -195,7 +200,7 @@ Partial Class FrmListaAgendamentos
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(674, 94)
+        Me.Label7.Location = New System.Drawing.Point(674, 89)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(76, 13)
         Me.Label7.TabIndex = 25
@@ -203,18 +208,20 @@ Partial Class FrmListaAgendamentos
         '
         'dtpAgendaAte
         '
+        Me.dtpAgendaAte.CustomFormat = "dd/MM/yyyy"
         Me.dtpAgendaAte.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpAgendaAte.Location = New System.Drawing.Point(824, 108)
+        Me.dtpAgendaAte.Location = New System.Drawing.Point(804, 103)
         Me.dtpAgendaAte.Name = "dtpAgendaAte"
-        Me.dtpAgendaAte.Size = New System.Drawing.Size(120, 20)
+        Me.dtpAgendaAte.Size = New System.Drawing.Size(106, 20)
         Me.dtpAgendaAte.TabIndex = 24
         '
         'dtpAgendaDe
         '
+        Me.dtpAgendaDe.CustomFormat = "dd/MM/yyyy"
         Me.dtpAgendaDe.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpAgendaDe.Location = New System.Drawing.Point(671, 108)
+        Me.dtpAgendaDe.Location = New System.Drawing.Point(671, 103)
         Me.dtpAgendaDe.Name = "dtpAgendaDe"
-        Me.dtpAgendaDe.Size = New System.Drawing.Size(120, 20)
+        Me.dtpAgendaDe.Size = New System.Drawing.Size(106, 20)
         Me.dtpAgendaDe.TabIndex = 23
         '
         'Label6
@@ -268,7 +275,7 @@ Partial Class FrmListaAgendamentos
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(892, 50)
+        Me.Label3.Location = New System.Drawing.Point(892, 47)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(68, 13)
         Me.Label3.TabIndex = 16
@@ -276,7 +283,7 @@ Partial Class FrmListaAgendamentos
         '
         'txtObservacao
         '
-        Me.txtObservacao.Location = New System.Drawing.Point(889, 64)
+        Me.txtObservacao.Location = New System.Drawing.Point(889, 61)
         Me.txtObservacao.Name = "txtObservacao"
         Me.txtObservacao.Size = New System.Drawing.Size(215, 20)
         Me.txtObservacao.TabIndex = 15
@@ -284,7 +291,7 @@ Partial Class FrmListaAgendamentos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(674, 50)
+        Me.Label2.Location = New System.Drawing.Point(674, 47)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(98, 13)
         Me.Label2.TabIndex = 14
@@ -292,7 +299,7 @@ Partial Class FrmListaAgendamentos
         '
         'txtNomeMotorista
         '
-        Me.txtNomeMotorista.Location = New System.Drawing.Point(671, 64)
+        Me.txtNomeMotorista.Location = New System.Drawing.Point(671, 61)
         Me.txtNomeMotorista.Name = "txtNomeMotorista"
         Me.txtNomeMotorista.Size = New System.Drawing.Size(215, 20)
         Me.txtNomeMotorista.TabIndex = 13
@@ -313,227 +320,18 @@ Partial Class FrmListaAgendamentos
         Me.txtNumNFe.Size = New System.Drawing.Size(106, 20)
         Me.txtNumNFe.TabIndex = 12
         '
-        'Panel5
+        'btnPesquisar
         '
-        Me.Panel5.Controls.Add(Me.btnLimpTpVeic)
-        Me.Panel5.Controls.Add(Me.lblTpVeic)
-        Me.Panel5.Controls.Add(Me.btnPesqTpVeic)
-        Me.Panel5.Controls.Add(Me.txtCodTpVeic)
-        Me.Panel5.Controls.Add(Me.txtDscTpVeic)
-        Me.Panel5.Location = New System.Drawing.Point(335, 90)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(330, 44)
-        Me.Panel5.TabIndex = 11
-        '
-        'lblTpVeic
-        '
-        Me.lblTpVeic.AutoSize = True
-        Me.lblTpVeic.Location = New System.Drawing.Point(6, 3)
-        Me.lblTpVeic.Name = "lblTpVeic"
-        Me.lblTpVeic.Size = New System.Drawing.Size(65, 13)
-        Me.lblTpVeic.TabIndex = 5
-        Me.lblTpVeic.Text = "Tipo veiculo"
-        '
-        'txtCodTpVeic
-        '
-        Me.txtCodTpVeic.Location = New System.Drawing.Point(3, 18)
-        Me.txtCodTpVeic.Name = "txtCodTpVeic"
-        Me.txtCodTpVeic.ReadOnly = True
-        Me.txtCodTpVeic.Size = New System.Drawing.Size(64, 20)
-        Me.txtCodTpVeic.TabIndex = 2
-        '
-        'txtDscTpVeic
-        '
-        Me.txtDscTpVeic.Location = New System.Drawing.Point(68, 18)
-        Me.txtDscTpVeic.Name = "txtDscTpVeic"
-        Me.txtDscTpVeic.ReadOnly = True
-        Me.txtDscTpVeic.Size = New System.Drawing.Size(210, 20)
-        Me.txtDscTpVeic.TabIndex = 3
-        '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.btnLimpTpAgd)
-        Me.Panel4.Controls.Add(Me.lblTpAgd)
-        Me.Panel4.Controls.Add(Me.btnPesqTpAgd)
-        Me.Panel4.Controls.Add(Me.txtCodTpAgd)
-        Me.Panel4.Controls.Add(Me.txtDscTpAgd)
-        Me.Panel4.Location = New System.Drawing.Point(5, 90)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(330, 44)
-        Me.Panel4.TabIndex = 8
-        '
-        'lblTpAgd
-        '
-        Me.lblTpAgd.AutoSize = True
-        Me.lblTpAgd.Location = New System.Drawing.Point(6, 3)
-        Me.lblTpAgd.Name = "lblTpAgd"
-        Me.lblTpAgd.Size = New System.Drawing.Size(111, 13)
-        Me.lblTpAgd.TabIndex = 5
-        Me.lblTpAgd.Text = "Tipo de agendamento"
-        '
-        'txtCodTpAgd
-        '
-        Me.txtCodTpAgd.Location = New System.Drawing.Point(3, 18)
-        Me.txtCodTpAgd.Name = "txtCodTpAgd"
-        Me.txtCodTpAgd.ReadOnly = True
-        Me.txtCodTpAgd.Size = New System.Drawing.Size(64, 20)
-        Me.txtCodTpAgd.TabIndex = 2
-        '
-        'txtDscTpAgd
-        '
-        Me.txtDscTpAgd.Location = New System.Drawing.Point(68, 18)
-        Me.txtDscTpAgd.Name = "txtDscTpAgd"
-        Me.txtDscTpAgd.ReadOnly = True
-        Me.txtDscTpAgd.Size = New System.Drawing.Size(210, 20)
-        Me.txtDscTpAgd.TabIndex = 3
-        '
-        'Panel6
-        '
-        Me.Panel6.Controls.Add(Me.btnLimpTpCarg)
-        Me.Panel6.Controls.Add(Me.lblTpCarg)
-        Me.Panel6.Controls.Add(Me.btnPesqTpCarg)
-        Me.Panel6.Controls.Add(Me.txtCodTpCarg)
-        Me.Panel6.Controls.Add(Me.txtDscTpCarg)
-        Me.Panel6.Location = New System.Drawing.Point(335, 47)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(330, 44)
-        Me.Panel6.TabIndex = 10
-        '
-        'lblTpCarg
-        '
-        Me.lblTpCarg.AutoSize = True
-        Me.lblTpCarg.Location = New System.Drawing.Point(6, 3)
-        Me.lblTpCarg.Name = "lblTpCarg"
-        Me.lblTpCarg.Size = New System.Drawing.Size(58, 13)
-        Me.lblTpCarg.TabIndex = 5
-        Me.lblTpCarg.Text = "Tipo carga"
-        '
-        'txtCodTpCarg
-        '
-        Me.txtCodTpCarg.Location = New System.Drawing.Point(3, 18)
-        Me.txtCodTpCarg.Name = "txtCodTpCarg"
-        Me.txtCodTpCarg.ReadOnly = True
-        Me.txtCodTpCarg.Size = New System.Drawing.Size(64, 20)
-        Me.txtCodTpCarg.TabIndex = 2
-        '
-        'txtDscTpCarg
-        '
-        Me.txtDscTpCarg.Location = New System.Drawing.Point(68, 18)
-        Me.txtDscTpCarg.Name = "txtDscTpCarg"
-        Me.txtDscTpCarg.ReadOnly = True
-        Me.txtDscTpCarg.Size = New System.Drawing.Size(210, 20)
-        Me.txtDscTpCarg.TabIndex = 3
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.btnLimpEmp)
-        Me.Panel3.Controls.Add(Me.lblEmp)
-        Me.Panel3.Controls.Add(Me.btnPesqEmp)
-        Me.Panel3.Controls.Add(Me.txtCodEmp)
-        Me.Panel3.Controls.Add(Me.txtDscEmp)
-        Me.Panel3.Location = New System.Drawing.Point(5, 47)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(330, 44)
-        Me.Panel3.TabIndex = 7
-        '
-        'lblEmp
-        '
-        Me.lblEmp.AutoSize = True
-        Me.lblEmp.Location = New System.Drawing.Point(6, 3)
-        Me.lblEmp.Name = "lblEmp"
-        Me.lblEmp.Size = New System.Drawing.Size(48, 13)
-        Me.lblEmp.TabIndex = 5
-        Me.lblEmp.Text = "Empresa"
-        '
-        'txtCodEmp
-        '
-        Me.txtCodEmp.Location = New System.Drawing.Point(3, 18)
-        Me.txtCodEmp.Name = "txtCodEmp"
-        Me.txtCodEmp.ReadOnly = True
-        Me.txtCodEmp.Size = New System.Drawing.Size(64, 20)
-        Me.txtCodEmp.TabIndex = 2
-        '
-        'txtDscEmp
-        '
-        Me.txtDscEmp.Location = New System.Drawing.Point(68, 18)
-        Me.txtDscEmp.Name = "txtDscEmp"
-        Me.txtDscEmp.ReadOnly = True
-        Me.txtDscEmp.Size = New System.Drawing.Size(210, 20)
-        Me.txtDscEmp.TabIndex = 3
-        '
-        'Panel7
-        '
-        Me.Panel7.Controls.Add(Me.btnLimpTpPall)
-        Me.Panel7.Controls.Add(Me.lblTpPall)
-        Me.Panel7.Controls.Add(Me.btnPesqTpPall)
-        Me.Panel7.Controls.Add(Me.txtCodTpPall)
-        Me.Panel7.Controls.Add(Me.txtDscTpPall)
-        Me.Panel7.Location = New System.Drawing.Point(335, 4)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(330, 44)
-        Me.Panel7.TabIndex = 9
-        '
-        'lblTpPall
-        '
-        Me.lblTpPall.AutoSize = True
-        Me.lblTpPall.Location = New System.Drawing.Point(6, 3)
-        Me.lblTpPall.Name = "lblTpPall"
-        Me.lblTpPall.Size = New System.Drawing.Size(56, 13)
-        Me.lblTpPall.TabIndex = 5
-        Me.lblTpPall.Text = "Tipo pallet"
-        '
-        'txtCodTpPall
-        '
-        Me.txtCodTpPall.Location = New System.Drawing.Point(3, 18)
-        Me.txtCodTpPall.Name = "txtCodTpPall"
-        Me.txtCodTpPall.ReadOnly = True
-        Me.txtCodTpPall.Size = New System.Drawing.Size(64, 20)
-        Me.txtCodTpPall.TabIndex = 2
-        '
-        'txtDscTpPall
-        '
-        Me.txtDscTpPall.Location = New System.Drawing.Point(68, 18)
-        Me.txtDscTpPall.Name = "txtDscTpPall"
-        Me.txtDscTpPall.ReadOnly = True
-        Me.txtDscTpPall.Size = New System.Drawing.Size(210, 20)
-        Me.txtDscTpPall.TabIndex = 3
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.btnLimpTrans)
-        Me.Panel2.Controls.Add(Me.lblTrans)
-        Me.Panel2.Controls.Add(Me.btnPesqTrans)
-        Me.Panel2.Controls.Add(Me.txtCodTrans)
-        Me.Panel2.Controls.Add(Me.txtDscTrans)
-        Me.Panel2.Location = New System.Drawing.Point(5, 4)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(330, 44)
-        Me.Panel2.TabIndex = 4
-        '
-        'lblTrans
-        '
-        Me.lblTrans.AutoSize = True
-        Me.lblTrans.Location = New System.Drawing.Point(6, 3)
-        Me.lblTrans.Name = "lblTrans"
-        Me.lblTrans.Size = New System.Drawing.Size(73, 13)
-        Me.lblTrans.TabIndex = 5
-        Me.lblTrans.Text = "Transportador"
-        '
-        'txtCodTrans
-        '
-        Me.txtCodTrans.Location = New System.Drawing.Point(3, 18)
-        Me.txtCodTrans.Name = "txtCodTrans"
-        Me.txtCodTrans.ReadOnly = True
-        Me.txtCodTrans.Size = New System.Drawing.Size(64, 20)
-        Me.txtCodTrans.TabIndex = 2
-        '
-        'txtDscTrans
-        '
-        Me.txtDscTrans.Location = New System.Drawing.Point(68, 18)
-        Me.txtDscTrans.Name = "txtDscTrans"
-        Me.txtDscTrans.ReadOnly = True
-        Me.txtDscTrans.Size = New System.Drawing.Size(210, 20)
-        Me.txtDscTrans.TabIndex = 3
+        Me.btnPesquisar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnPesquisar.BackColor = System.Drawing.SystemColors.Control
+        Me.btnPesquisar.Image = Global.WStock.My.Resources.Resources.search1
+        Me.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPesquisar.Location = New System.Drawing.Point(1015, 103)
+        Me.btnPesquisar.Name = "btnPesquisar"
+        Me.btnPesquisar.Size = New System.Drawing.Size(90, 23)
+        Me.btnPesquisar.TabIndex = 0
+        Me.btnPesquisar.Text = "Pesquisar"
+        Me.btnPesquisar.UseVisualStyleBackColor = False
         '
         'dgvAgendamentos
         '
@@ -552,7 +350,7 @@ Partial Class FrmListaAgendamentos
         Me.dgvAgendamentos.ReadOnly = True
         Me.dgvAgendamentos.RowHeadersVisible = False
         Me.dgvAgendamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvAgendamentos.Size = New System.Drawing.Size(1217, 384)
+        Me.dgvAgendamentos.Size = New System.Drawing.Size(1112, 394)
         Me.dgvAgendamentos.TabIndex = 25
         '
         'CODIGO
@@ -708,145 +506,67 @@ Partial Class FrmListaAgendamentos
         Me.DATA_CANCELAMENTO.Name = "DATA_CANCELAMENTO"
         Me.DATA_CANCELAMENTO.ReadOnly = True
         '
-        'btnNovo
+        'nswTipoAgendamento
         '
-        Me.btnNovo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnNovo.BackColor = System.Drawing.SystemColors.Control
-        Me.btnNovo.Image = Global.WStock.My.Resources.Resources._new
-        Me.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNovo.Location = New System.Drawing.Point(1117, 45)
-        Me.btnNovo.Name = "btnNovo"
-        Me.btnNovo.Size = New System.Drawing.Size(90, 23)
-        Me.btnNovo.TabIndex = 28
-        Me.btnNovo.Text = "Novo"
-        Me.btnNovo.UseVisualStyleBackColor = False
+        Me.nswTipoAgendamento.CampoCodigoTabelaRetono = Nothing
+        Me.nswTipoAgendamento.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoAgendamento.ListaColunas = Nothing
+        Me.nswTipoAgendamento.Location = New System.Drawing.Point(3, 85)
+        Me.nswTipoAgendamento.Name = "nswTipoAgendamento"
+        Me.nswTipoAgendamento.OrderBy = Nothing
+        Me.nswTipoAgendamento.Size = New System.Drawing.Size(332, 41)
+        Me.nswTipoAgendamento.Tabela = Nothing
+        Me.nswTipoAgendamento.TabIndex = 31
+        Me.nswTipoAgendamento.Titulo = "Tipo de agendamento"
+        Me.nswTipoAgendamento.Where = Nothing
         '
-        'btnLimpTpVeic
+        'nswTipoPallet
         '
-        Me.btnLimpTpVeic.Image = Global.WStock.My.Resources.Resources.delete
-        Me.btnLimpTpVeic.Location = New System.Drawing.Point(278, 17)
-        Me.btnLimpTpVeic.Name = "btnLimpTpVeic"
-        Me.btnLimpTpVeic.Size = New System.Drawing.Size(25, 23)
-        Me.btnLimpTpVeic.TabIndex = 6
-        Me.btnLimpTpVeic.UseVisualStyleBackColor = True
+        Me.nswTipoPallet.CampoCodigoTabelaRetono = Nothing
+        Me.nswTipoPallet.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoPallet.ListaColunas = Nothing
+        Me.nswTipoPallet.Location = New System.Drawing.Point(335, 4)
+        Me.nswTipoPallet.Name = "nswTipoPallet"
+        Me.nswTipoPallet.OrderBy = Nothing
+        Me.nswTipoPallet.Size = New System.Drawing.Size(332, 41)
+        Me.nswTipoPallet.Tabela = Nothing
+        Me.nswTipoPallet.TabIndex = 32
+        Me.nswTipoPallet.Titulo = "Tipo de pallet"
+        Me.nswTipoPallet.Where = Nothing
         '
-        'btnPesqTpVeic
+        'nswTipoCarga
         '
-        Me.btnPesqTpVeic.Image = Global.WStock.My.Resources.Resources.search
-        Me.btnPesqTpVeic.Location = New System.Drawing.Point(302, 17)
-        Me.btnPesqTpVeic.Name = "btnPesqTpVeic"
-        Me.btnPesqTpVeic.Size = New System.Drawing.Size(25, 23)
-        Me.btnPesqTpVeic.TabIndex = 1
-        Me.btnPesqTpVeic.UseVisualStyleBackColor = True
+        Me.nswTipoCarga.CampoCodigoTabelaRetono = Nothing
+        Me.nswTipoCarga.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoCarga.ListaColunas = Nothing
+        Me.nswTipoCarga.Location = New System.Drawing.Point(335, 44)
+        Me.nswTipoCarga.Name = "nswTipoCarga"
+        Me.nswTipoCarga.OrderBy = Nothing
+        Me.nswTipoCarga.Size = New System.Drawing.Size(332, 41)
+        Me.nswTipoCarga.Tabela = Nothing
+        Me.nswTipoCarga.TabIndex = 33
+        Me.nswTipoCarga.Titulo = "Tipo de carga"
+        Me.nswTipoCarga.Where = Nothing
         '
-        'btnLimpTpAgd
+        'nswTipoVeiculo
         '
-        Me.btnLimpTpAgd.Image = Global.WStock.My.Resources.Resources.delete
-        Me.btnLimpTpAgd.Location = New System.Drawing.Point(278, 17)
-        Me.btnLimpTpAgd.Name = "btnLimpTpAgd"
-        Me.btnLimpTpAgd.Size = New System.Drawing.Size(25, 23)
-        Me.btnLimpTpAgd.TabIndex = 6
-        Me.btnLimpTpAgd.UseVisualStyleBackColor = True
-        '
-        'btnPesqTpAgd
-        '
-        Me.btnPesqTpAgd.Image = Global.WStock.My.Resources.Resources.search
-        Me.btnPesqTpAgd.Location = New System.Drawing.Point(302, 17)
-        Me.btnPesqTpAgd.Name = "btnPesqTpAgd"
-        Me.btnPesqTpAgd.Size = New System.Drawing.Size(25, 23)
-        Me.btnPesqTpAgd.TabIndex = 1
-        Me.btnPesqTpAgd.UseVisualStyleBackColor = True
-        '
-        'btnLimpTpCarg
-        '
-        Me.btnLimpTpCarg.Image = Global.WStock.My.Resources.Resources.delete
-        Me.btnLimpTpCarg.Location = New System.Drawing.Point(278, 17)
-        Me.btnLimpTpCarg.Name = "btnLimpTpCarg"
-        Me.btnLimpTpCarg.Size = New System.Drawing.Size(25, 23)
-        Me.btnLimpTpCarg.TabIndex = 6
-        Me.btnLimpTpCarg.UseVisualStyleBackColor = True
-        '
-        'btnPesqTpCarg
-        '
-        Me.btnPesqTpCarg.Image = Global.WStock.My.Resources.Resources.search
-        Me.btnPesqTpCarg.Location = New System.Drawing.Point(302, 17)
-        Me.btnPesqTpCarg.Name = "btnPesqTpCarg"
-        Me.btnPesqTpCarg.Size = New System.Drawing.Size(25, 23)
-        Me.btnPesqTpCarg.TabIndex = 1
-        Me.btnPesqTpCarg.UseVisualStyleBackColor = True
-        '
-        'btnLimpEmp
-        '
-        Me.btnLimpEmp.Image = Global.WStock.My.Resources.Resources.delete
-        Me.btnLimpEmp.Location = New System.Drawing.Point(278, 17)
-        Me.btnLimpEmp.Name = "btnLimpEmp"
-        Me.btnLimpEmp.Size = New System.Drawing.Size(25, 23)
-        Me.btnLimpEmp.TabIndex = 6
-        Me.btnLimpEmp.UseVisualStyleBackColor = True
-        '
-        'btnPesqEmp
-        '
-        Me.btnPesqEmp.Image = Global.WStock.My.Resources.Resources.search
-        Me.btnPesqEmp.Location = New System.Drawing.Point(302, 17)
-        Me.btnPesqEmp.Name = "btnPesqEmp"
-        Me.btnPesqEmp.Size = New System.Drawing.Size(25, 23)
-        Me.btnPesqEmp.TabIndex = 1
-        Me.btnPesqEmp.UseVisualStyleBackColor = True
-        '
-        'btnLimpTpPall
-        '
-        Me.btnLimpTpPall.Image = Global.WStock.My.Resources.Resources.delete
-        Me.btnLimpTpPall.Location = New System.Drawing.Point(278, 17)
-        Me.btnLimpTpPall.Name = "btnLimpTpPall"
-        Me.btnLimpTpPall.Size = New System.Drawing.Size(25, 23)
-        Me.btnLimpTpPall.TabIndex = 6
-        Me.btnLimpTpPall.UseVisualStyleBackColor = True
-        '
-        'btnPesqTpPall
-        '
-        Me.btnPesqTpPall.Image = Global.WStock.My.Resources.Resources.search
-        Me.btnPesqTpPall.Location = New System.Drawing.Point(302, 17)
-        Me.btnPesqTpPall.Name = "btnPesqTpPall"
-        Me.btnPesqTpPall.Size = New System.Drawing.Size(25, 23)
-        Me.btnPesqTpPall.TabIndex = 1
-        Me.btnPesqTpPall.UseVisualStyleBackColor = True
-        '
-        'btnLimpTrans
-        '
-        Me.btnLimpTrans.Image = Global.WStock.My.Resources.Resources.delete
-        Me.btnLimpTrans.Location = New System.Drawing.Point(278, 17)
-        Me.btnLimpTrans.Name = "btnLimpTrans"
-        Me.btnLimpTrans.Size = New System.Drawing.Size(25, 23)
-        Me.btnLimpTrans.TabIndex = 6
-        Me.btnLimpTrans.UseVisualStyleBackColor = True
-        '
-        'btnPesqTrans
-        '
-        Me.btnPesqTrans.Image = Global.WStock.My.Resources.Resources.search
-        Me.btnPesqTrans.Location = New System.Drawing.Point(302, 17)
-        Me.btnPesqTrans.Name = "btnPesqTrans"
-        Me.btnPesqTrans.Size = New System.Drawing.Size(25, 23)
-        Me.btnPesqTrans.TabIndex = 1
-        Me.btnPesqTrans.UseVisualStyleBackColor = True
-        '
-        'btnPesquisar
-        '
-        Me.btnPesquisar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnPesquisar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnPesquisar.Image = Global.WStock.My.Resources.Resources.search1
-        Me.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPesquisar.Location = New System.Drawing.Point(1117, 74)
-        Me.btnPesquisar.Name = "btnPesquisar"
-        Me.btnPesquisar.Size = New System.Drawing.Size(90, 23)
-        Me.btnPesquisar.TabIndex = 0
-        Me.btnPesquisar.Text = "Pesquisar"
-        Me.btnPesquisar.UseVisualStyleBackColor = False
+        Me.nswTipoVeiculo.CampoCodigoTabelaRetono = Nothing
+        Me.nswTipoVeiculo.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoVeiculo.ListaColunas = Nothing
+        Me.nswTipoVeiculo.Location = New System.Drawing.Point(335, 85)
+        Me.nswTipoVeiculo.Name = "nswTipoVeiculo"
+        Me.nswTipoVeiculo.OrderBy = Nothing
+        Me.nswTipoVeiculo.Size = New System.Drawing.Size(332, 41)
+        Me.nswTipoVeiculo.Tabela = Nothing
+        Me.nswTipoVeiculo.TabIndex = 34
+        Me.nswTipoVeiculo.Titulo = "Tipo de veículo"
+        Me.nswTipoVeiculo.Where = Nothing
         '
         'FrmListaAgendamentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1217, 525)
+        Me.ClientSize = New System.Drawing.Size(1112, 525)
         Me.Controls.Add(Me.SplitContainer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
@@ -861,27 +581,15 @@ Partial Class FrmListaAgendamentos
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.pnlFiltro.ResumeLayout(False)
+        Me.pnlFiltro.PerformLayout()
         CType(Me.dgvAgendamentos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pnlFiltro As Panel
     Friend WithEvents btnPesquisar As Button
     Friend WithEvents dgvAgendamentos As DataGridView
     Friend WithEvents CODIGO As DataGridViewTextBoxColumn
@@ -905,42 +613,6 @@ Partial Class FrmListaAgendamentos
     Friend WithEvents QUANTIDADE_PALLET As DataGridViewTextBoxColumn
     Friend WithEvents DATA_AGENDAMENTO As DataGridViewTextBoxColumn
     Friend WithEvents DATA_CANCELAMENTO As DataGridViewTextBoxColumn
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents lblTrans As Label
-    Friend WithEvents txtCodTrans As TextBox
-    Friend WithEvents txtDscTrans As TextBox
-    Friend WithEvents btnPesqTrans As Button
-    Friend WithEvents btnLimpTrans As Button
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents btnLimpEmp As Button
-    Friend WithEvents lblEmp As Label
-    Friend WithEvents btnPesqEmp As Button
-    Friend WithEvents txtCodEmp As TextBox
-    Friend WithEvents txtDscEmp As TextBox
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents btnLimpTpVeic As Button
-    Friend WithEvents lblTpVeic As Label
-    Friend WithEvents btnPesqTpVeic As Button
-    Friend WithEvents txtCodTpVeic As TextBox
-    Friend WithEvents txtDscTpVeic As TextBox
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents btnLimpTpAgd As Button
-    Friend WithEvents lblTpAgd As Label
-    Friend WithEvents btnPesqTpAgd As Button
-    Friend WithEvents txtCodTpAgd As TextBox
-    Friend WithEvents txtDscTpAgd As TextBox
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents btnLimpTpCarg As Button
-    Friend WithEvents lblTpCarg As Label
-    Friend WithEvents btnPesqTpCarg As Button
-    Friend WithEvents txtCodTpCarg As TextBox
-    Friend WithEvents txtDscTpCarg As TextBox
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents btnLimpTpPall As Button
-    Friend WithEvents lblTpPall As Label
-    Friend WithEvents btnPesqTpPall As Button
-    Friend WithEvents txtCodTpPall As TextBox
-    Friend WithEvents txtDscTpPall As TextBox
     Friend WithEvents txtNumNFe As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
@@ -959,4 +631,10 @@ Partial Class FrmListaAgendamentos
     Friend WithEvents txtOrigem As TextBox
     Friend WithEvents chkOcultarCancelados As CheckBox
     Friend WithEvents btnNovo As Button
+    Friend WithEvents nswEmpresa As NewSearchWindow
+    Friend WithEvents nswTransportador As NewSearchWindow
+    Friend WithEvents nswTipoAgendamento As NewSearchWindow
+    Friend WithEvents nswTipoPallet As NewSearchWindow
+    Friend WithEvents nswTipoCarga As NewSearchWindow
+    Friend WithEvents nswTipoVeiculo As NewSearchWindow
 End Class

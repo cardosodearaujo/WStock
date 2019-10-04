@@ -1,6 +1,8 @@
+C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\WStock.Domain.dll.config
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\WStock.Domain.dll
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\WStock.Domain.pdb
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\WStock.Domain.xml
+C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\Renci.SshNet.dll
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\WStock.Framework.dll
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\NHibernate.dll
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\Unity.Abstractions.dll
@@ -11,6 +13,8 @@ C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\Antlr3.Runtime.d
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\Iesi.Collections.dll
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\WStock.Framework.pdb
+C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\WStock.Framework.dll.config
+C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\Renci.SshNet.xml
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\NHibernate.xml
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\Unity.Abstractions.pdb
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\Unity.Container.pdb
@@ -27,7 +31,3 @@ C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.vb
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.dll
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.xml
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.pdb
-C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\WStock.Domain.dll.config
-C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\WStock.Framework.dll.config
-C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\Renci.SshNet.dll
-C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\Renci.SshNet.xml

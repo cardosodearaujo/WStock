@@ -403,7 +403,9 @@ Partial Class FrmAgendamento
         Me.Controls.Add(Me.cboTransportadora)
         Me.Controls.Add(Me.lblTransportador)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmAgendamento"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agendamento"
         Me.ResumeLayout(False)

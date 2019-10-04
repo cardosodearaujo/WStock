@@ -3,6 +3,7 @@ Imports WStock.Framework.DepedencyInjection
 
 Public Class FrmListaAgendamentos
     Private Sub FrmListaAgendamentos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Configurar()
         Filtrar()
     End Sub
 
@@ -13,162 +14,6 @@ Public Class FrmListaAgendamentos
     Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
         Dim FrmAgendamento As New FrmAgendamento
         FrmAgendamento.ShowDialog()
-    End Sub
-
-    Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles btnPesqTrans.Click
-        Dim Lista As New List(Of RotuloPesquisaVO)
-        Lista.Add(New RotuloPesquisaVO("CODIGO", "Código"))
-        Lista.Add(New RotuloPesquisaVO("TRANSPORTADOR", "Transportador"))
-
-        Dim FrmPesquisa As New FrmPesquisa
-        With FrmPesquisa
-            .CampoCodigoTabelaRetono = "CODIGO"
-            .CampoDescricaoTabelaRetono = "TRANSPORTADOR"
-            .ListaColunas = Lista
-            .Tabela = "TB_TRANSPORTADOR"
-        End With
-
-        FrmPesquisa.ShowDialog()
-
-        If Not IsNothing(FrmPesquisa.CodigoRetorno) Then
-            txtCodTrans.Text = FrmPesquisa.CodigoRetorno.ToString()
-            txtDscTrans.Text = FrmPesquisa.DescricaoRetorno.ToString()
-        End If
-    End Sub
-
-    Private Sub BtnLimparTransportador_Click(sender As Object, e As EventArgs) Handles btnLimpTrans.Click
-        txtCodTrans.Text = String.Empty
-        txtDscTrans.Text = String.Empty
-    End Sub
-
-    Private Sub BtnPesqEmp_Click(sender As Object, e As EventArgs) Handles btnPesqEmp.Click
-        Dim Lista As New List(Of RotuloPesquisaVO)
-        Lista.Add(New RotuloPesquisaVO("CODIGO", "Código"))
-        Lista.Add(New RotuloPesquisaVO("EMPRESA", "Empresa"))
-
-        Dim FrmPesquisa As New FrmPesquisa
-        With FrmPesquisa
-            .CampoCodigoTabelaRetono = "CODIGO"
-            .CampoDescricaoTabelaRetono = "EMPRESA"
-            .ListaColunas = Lista
-            .Tabela = "TB_EMPRESA"
-        End With
-
-        FrmPesquisa.ShowDialog()
-
-        If Not IsNothing(FrmPesquisa.CodigoRetorno) Then
-            txtCodEmp.Text = FrmPesquisa.CodigoRetorno.ToString()
-            txtDscEmp.Text = FrmPesquisa.DescricaoRetorno.ToString()
-        End If
-    End Sub
-
-    Private Sub BtnLimpEmp_Click(sender As Object, e As EventArgs) Handles btnLimpEmp.Click
-        txtCodEmp.Text = String.Empty
-        txtDscEmp.Text = String.Empty
-    End Sub
-
-    Private Sub BtnPesqTpAgd_Click(sender As Object, e As EventArgs) Handles btnPesqTpAgd.Click
-        Dim Lista As New List(Of RotuloPesquisaVO)
-        Lista.Add(New RotuloPesquisaVO("CODIGO", "Código"))
-        Lista.Add(New RotuloPesquisaVO("TIPO_AGENDAMENTO", "Tipo de agendamento"))
-
-        Dim FrmPesquisa As New FrmPesquisa
-        With FrmPesquisa
-            .CampoCodigoTabelaRetono = "CODIGO"
-            .CampoDescricaoTabelaRetono = "TIPO_AGENDAMENTO"
-            .ListaColunas = Lista
-            .Tabela = "TB_TIPO_AGENDAMENTO"
-        End With
-
-        FrmPesquisa.ShowDialog()
-
-        If Not IsNothing(FrmPesquisa.CodigoRetorno) Then
-            txtCodTpAgd.Text = FrmPesquisa.CodigoRetorno.ToString()
-            txtDscTpAgd.Text = FrmPesquisa.DescricaoRetorno.ToString()
-        End If
-    End Sub
-
-    Private Sub BtnLimpTpAgd_Click(sender As Object, e As EventArgs) Handles btnLimpTpAgd.Click
-        txtCodTpAgd.Text = String.Empty
-        txtDscTpAgd.Text = String.Empty
-    End Sub
-
-    Private Sub BtnPesqTpPall_Click(sender As Object, e As EventArgs) Handles btnPesqTpPall.Click
-        Dim Lista As New List(Of RotuloPesquisaVO)
-        Lista.Add(New RotuloPesquisaVO("CODIGO", "Código"))
-        Lista.Add(New RotuloPesquisaVO("TIPO_PALLET", "Tipo de pallet"))
-
-        Dim FrmPesquisa As New FrmPesquisa
-        With FrmPesquisa
-            .CampoCodigoTabelaRetono = "CODIGO"
-            .CampoDescricaoTabelaRetono = "TIPO_PALLET"
-            .ListaColunas = Lista
-            .Tabela = "TB_TIPO_PALLET"
-        End With
-
-        FrmPesquisa.ShowDialog()
-
-        If Not IsNothing(FrmPesquisa.CodigoRetorno) Then
-            txtCodTpPall.Text = FrmPesquisa.CodigoRetorno.ToString()
-            txtDscTpPall.Text = FrmPesquisa.DescricaoRetorno.ToString()
-        End If
-    End Sub
-
-    Private Sub BtnLimpTpPall_Click(sender As Object, e As EventArgs) Handles btnLimpTpPall.Click
-        txtCodTpPall.Text = String.Empty
-        txtDscTpPall.Text = String.Empty
-    End Sub
-
-    Private Sub BtnPesqTpCarg_Click(sender As Object, e As EventArgs) Handles btnPesqTpCarg.Click
-        Dim Lista As New List(Of RotuloPesquisaVO)
-        Lista.Add(New RotuloPesquisaVO("CODIGO", "Código"))
-        Lista.Add(New RotuloPesquisaVO("TIPO_CARGA", "Tipo de carga"))
-
-        Dim FrmPesquisa As New FrmPesquisa
-        With FrmPesquisa
-            .CampoCodigoTabelaRetono = "CODIGO"
-            .CampoDescricaoTabelaRetono = "TIPO_CARGA"
-            .ListaColunas = Lista
-            .Tabela = "TB_TIPO_CARGA"
-        End With
-
-        FrmPesquisa.ShowDialog()
-
-        If Not IsNothing(FrmPesquisa.CodigoRetorno) Then
-            txtCodTpCarg.Text = FrmPesquisa.CodigoRetorno.ToString()
-            txtDscTpCarg.Text = FrmPesquisa.DescricaoRetorno.ToString()
-        End If
-    End Sub
-
-    Private Sub BtnLimpTpCarg_Click(sender As Object, e As EventArgs) Handles btnLimpTpCarg.Click
-        txtCodTpCarg.Text = String.Empty
-        txtDscTpCarg.Text = String.Empty
-    End Sub
-
-    Private Sub BtnPesqTpVeic_Click(sender As Object, e As EventArgs) Handles btnPesqTpVeic.Click
-        Dim Lista As New List(Of RotuloPesquisaVO)
-        Lista.Add(New RotuloPesquisaVO("CODIGO", "Código"))
-        Lista.Add(New RotuloPesquisaVO("TIPO_VEICULO", "Tipo de veículo"))
-
-        Dim FrmPesquisa As New FrmPesquisa
-        With FrmPesquisa
-            .CampoCodigoTabelaRetono = "CODIGO"
-            .CampoDescricaoTabelaRetono = "TIPO_VEICULO"
-            .ListaColunas = Lista
-            .Tabela = "TB_TIPO_VEICULO"
-        End With
-
-        FrmPesquisa.ShowDialog()
-
-        If Not IsNothing(FrmPesquisa.CodigoRetorno) Then
-            txtCodTpVeic.Text = FrmPesquisa.CodigoRetorno.ToString()
-            txtDscTpVeic.Text = FrmPesquisa.DescricaoRetorno.ToString()
-        End If
-    End Sub
-
-    Private Sub BtnLimpTpVeic_Click(sender As Object, e As EventArgs) Handles btnLimpTpVeic.Click
-        txtCodTpVeic.Text = String.Empty
-        txtDscTpVeic.Text = String.Empty
     End Sub
 
     Private Sub DgvAgendamentos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAgendamentos.CellDoubleClick
@@ -211,35 +56,35 @@ Public Class FrmListaAgendamentos
     Private Sub Filtrar()
         Dim lista = Listar()
 
-        If Not String.IsNullOrEmpty(txtCodTrans.Text) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.Transportador.Codigo = txtCodTrans.Text).ToList()
+        If Not String.IsNullOrEmpty(nswTransportador.CodigoRetorno) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.Transportador.Codigo = nswTransportador.CodigoRetorno).ToList()
         End If
 
-        If Not String.IsNullOrEmpty(txtCodEmp.Text) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.Empresa.Codigo = txtCodEmp.Text).ToList()
+        If Not String.IsNullOrEmpty(nswEmpresa.CodigoRetorno) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.Empresa.Codigo = nswEmpresa.CodigoRetorno).ToList()
         End If
 
-        If Not String.IsNullOrEmpty(txtCodTpAgd.Text) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.TipoAgendamento.Codigo = txtCodTpAgd.Text).ToList()
+        If Not String.IsNullOrEmpty(nswTipoAgendamento.CodigoRetorno) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.TipoAgendamento.Codigo = nswTipoAgendamento.CodigoRetorno).ToList()
         End If
 
-        If Not String.IsNullOrEmpty(txtCodTpPall.Text) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.TipoPallet.Codigo = txtCodTpPall.Text).ToList()
+        If Not String.IsNullOrEmpty(nswTipoPallet.CodigoRetorno) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.TipoPallet.Codigo = nswTipoPallet.CodigoRetorno).ToList()
         End If
 
-        If Not String.IsNullOrEmpty(txtCodTpCarg.Text) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.TipoCarga.Codigo = txtCodTpCarg.Text).ToList()
+        If Not String.IsNullOrEmpty(nswTipoCarga.CodigoRetorno) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.TipoCarga.Codigo = nswTipoCarga.CodigoRetorno).ToList()
         End If
 
-        If Not String.IsNullOrEmpty(txtCodTpVeic.Text) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.TipoVeiculo.Codigo = txtCodTpVeic.Text).ToList()
+        If Not String.IsNullOrEmpty(nswTipoVeiculo.CodigoRetorno) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.TipoVeiculo.Codigo = nswTipoVeiculo.CodigoRetorno).ToList()
         End If
 
         If Not String.IsNullOrEmpty(txtNumNFe.Text) Then
             lista = lista.AsEnumerable.Where(Function(F) F.NFE = txtNumNFe.Text).ToList()
         End If
 
-        If Not String.IsNullOrEmpty(txtQtdPallet.Text) Then
+        If Not String.IsNullOrEmpty(txtQtdPallet.Text) AndAlso IsNumeric(txtQtdPallet.Text) Then
             lista = lista.AsEnumerable.Where(Function(F) F.QuantidadePallet = txtQtdPallet.Text).ToList()
         End If
 
@@ -273,4 +118,86 @@ Public Class FrmListaAgendamentos
 
         Carregar(lista)
     End Sub
+
+    Private Sub Configurar()
+        ConfigTransportador()
+        ConfigEmpresa()
+        ConfigTipoAgendamento()
+        ConfigTipoPallet()
+        ConfigTipoCarga()
+        ConfigTipoVeiculo()
+    End Sub
+
+    Private Sub ConfigTransportador()
+        With nswTransportador
+            .Titulo = "Transportador"
+            .CampoCodigoTabelaRetono = "CODIGO"
+            .CampoDescricaoTabelaRetono = "TRANSPORTADOR"
+            .ListaColunas = New List(Of RotuloPesquisaVO)
+            .ListaColunas.Add(New RotuloPesquisaVO("CODIGO", "Código"))
+            .ListaColunas.Add(New RotuloPesquisaVO("TRANSPORTADOR", "Transportador"))
+            .Tabela = "TB_TRANSPORTADOR"
+        End With
+    End Sub
+
+    Private Sub ConfigEmpresa()
+        With nswEmpresa
+            .Titulo = "Empresa"
+            .CampoCodigoTabelaRetono = "CODIGO"
+            .CampoDescricaoTabelaRetono = "EMPRESA"
+            .ListaColunas = New List(Of RotuloPesquisaVO)
+            .ListaColunas.Add(New RotuloPesquisaVO("CODIGO", "Código"))
+            .ListaColunas.Add(New RotuloPesquisaVO("EMPRESA", "Empresa"))
+            .Tabela = "TB_EMPRESA"
+        End With
+    End Sub
+
+    Private Sub ConfigTipoAgendamento()
+        With nswTipoAgendamento
+            .Titulo = "Tipo de agendamento"
+            .CampoCodigoTabelaRetono = "CODIGO"
+            .CampoDescricaoTabelaRetono = "TIPO_AGENDAMENTO"
+            .ListaColunas = New List(Of RotuloPesquisaVO)
+            .ListaColunas.Add(New RotuloPesquisaVO("CODIGO", "Código"))
+            .ListaColunas.Add(New RotuloPesquisaVO("TIPO_AGENDAMENTO", "Tipo de agendamento"))
+            .Tabela = "TB_TIPO_AGENDAMENTO"
+        End With
+    End Sub
+
+    Private Sub ConfigTipoPallet()
+        With nswTipoPallet
+            .Titulo = "Tipo de pallet"
+            .CampoCodigoTabelaRetono = "CODIGO"
+            .CampoDescricaoTabelaRetono = "TIPO_PALLET"
+            .ListaColunas = New List(Of RotuloPesquisaVO)
+            .ListaColunas.Add(New RotuloPesquisaVO("CODIGO", "Código"))
+            .ListaColunas.Add(New RotuloPesquisaVO("TIPO_PALLET", "Tipo de pallet"))
+            .Tabela = "TB_TIPO_PALLET"
+        End With
+    End Sub
+
+    Private Sub ConfigTipoCarga()
+        With nswTipoCarga
+            .Titulo = "Tipo de Carga"
+            .CampoCodigoTabelaRetono = "CODIGO"
+            .CampoDescricaoTabelaRetono = "TIPO_CARGA"
+            .ListaColunas = New List(Of RotuloPesquisaVO)
+            .ListaColunas.Add(New RotuloPesquisaVO("CODIGO", "Código"))
+            .ListaColunas.Add(New RotuloPesquisaVO("TIPO_CARGA", "Tipo de carga"))
+            .Tabela = "TB_TIPO_CARGA"
+        End With
+    End Sub
+
+    Private Sub ConfigTipoVeiculo()
+        With nswTipoVeiculo
+            .Titulo = "Tipo de veículo"
+            .CampoCodigoTabelaRetono = "CODIGO"
+            .CampoDescricaoTabelaRetono = "TIPO_VEICULO"
+            .ListaColunas = New List(Of RotuloPesquisaVO)
+            .ListaColunas.Add(New RotuloPesquisaVO("CODIGO", "Código"))
+            .ListaColunas.Add(New RotuloPesquisaVO("TIPO_VEICULO", "Tipo de veículo"))
+            .Tabela = "TB_TIPO_VEICULO"
+        End With
+    End Sub
+
 End Class
