@@ -24,6 +24,10 @@ Partial Class FrmListaAgendamentos
     Private Sub InitializeComponent()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.pnlFiltro = New System.Windows.Forms.Panel()
+        Me.nswTipoVeiculo = New WStock.NewSearchWindow()
+        Me.nswTipoCarga = New WStock.NewSearchWindow()
+        Me.nswTipoPallet = New WStock.NewSearchWindow()
+        Me.nswTipoAgendamento = New WStock.NewSearchWindow()
         Me.nswTransportador = New WStock.NewSearchWindow()
         Me.nswEmpresa = New WStock.NewSearchWindow()
         Me.btnNovo = New System.Windows.Forms.Button()
@@ -67,10 +71,6 @@ Partial Class FrmListaAgendamentos
         Me.QUANTIDADE_PALLET = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DATA_AGENDAMENTO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DATA_CANCELAMENTO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nswTipoAgendamento = New WStock.NewSearchWindow()
-        Me.nswTipoPallet = New WStock.NewSearchWindow()
-        Me.nswTipoCarga = New WStock.NewSearchWindow()
-        Me.nswTipoVeiculo = New WStock.NewSearchWindow()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -134,6 +134,62 @@ Partial Class FrmListaAgendamentos
         Me.pnlFiltro.Name = "pnlFiltro"
         Me.pnlFiltro.Size = New System.Drawing.Size(1112, 127)
         Me.pnlFiltro.TabIndex = 0
+        '
+        'nswTipoVeiculo
+        '
+        Me.nswTipoVeiculo.CampoCodigoTabelaRetono = Nothing
+        Me.nswTipoVeiculo.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoVeiculo.ListaColunas = Nothing
+        Me.nswTipoVeiculo.Location = New System.Drawing.Point(335, 85)
+        Me.nswTipoVeiculo.Name = "nswTipoVeiculo"
+        Me.nswTipoVeiculo.OrderBy = Nothing
+        Me.nswTipoVeiculo.Size = New System.Drawing.Size(332, 41)
+        Me.nswTipoVeiculo.Tabela = Nothing
+        Me.nswTipoVeiculo.TabIndex = 34
+        Me.nswTipoVeiculo.Titulo = "Tipo de veículo"
+        Me.nswTipoVeiculo.Where = Nothing
+        '
+        'nswTipoCarga
+        '
+        Me.nswTipoCarga.CampoCodigoTabelaRetono = Nothing
+        Me.nswTipoCarga.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoCarga.ListaColunas = Nothing
+        Me.nswTipoCarga.Location = New System.Drawing.Point(335, 44)
+        Me.nswTipoCarga.Name = "nswTipoCarga"
+        Me.nswTipoCarga.OrderBy = Nothing
+        Me.nswTipoCarga.Size = New System.Drawing.Size(332, 41)
+        Me.nswTipoCarga.Tabela = Nothing
+        Me.nswTipoCarga.TabIndex = 33
+        Me.nswTipoCarga.Titulo = "Tipo de carga"
+        Me.nswTipoCarga.Where = Nothing
+        '
+        'nswTipoPallet
+        '
+        Me.nswTipoPallet.CampoCodigoTabelaRetono = Nothing
+        Me.nswTipoPallet.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoPallet.ListaColunas = Nothing
+        Me.nswTipoPallet.Location = New System.Drawing.Point(335, 4)
+        Me.nswTipoPallet.Name = "nswTipoPallet"
+        Me.nswTipoPallet.OrderBy = Nothing
+        Me.nswTipoPallet.Size = New System.Drawing.Size(332, 41)
+        Me.nswTipoPallet.Tabela = Nothing
+        Me.nswTipoPallet.TabIndex = 32
+        Me.nswTipoPallet.Titulo = "Tipo de pallet"
+        Me.nswTipoPallet.Where = Nothing
+        '
+        'nswTipoAgendamento
+        '
+        Me.nswTipoAgendamento.CampoCodigoTabelaRetono = Nothing
+        Me.nswTipoAgendamento.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoAgendamento.ListaColunas = Nothing
+        Me.nswTipoAgendamento.Location = New System.Drawing.Point(3, 85)
+        Me.nswTipoAgendamento.Name = "nswTipoAgendamento"
+        Me.nswTipoAgendamento.OrderBy = Nothing
+        Me.nswTipoAgendamento.Size = New System.Drawing.Size(332, 41)
+        Me.nswTipoAgendamento.Tabela = Nothing
+        Me.nswTipoAgendamento.TabIndex = 31
+        Me.nswTipoAgendamento.Titulo = "Tipo de agendamento"
+        Me.nswTipoAgendamento.Where = Nothing
         '
         'nswTransportador
         '
@@ -324,7 +380,7 @@ Partial Class FrmListaAgendamentos
         '
         Me.btnPesquisar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnPesquisar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnPesquisar.Image = Global.WStock.My.Resources.Resources.search1
+        Me.btnPesquisar.Image = Global.WStock.My.Resources.Resources.search
         Me.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnPesquisar.Location = New System.Drawing.Point(1015, 103)
         Me.btnPesquisar.Name = "btnPesquisar"
@@ -356,14 +412,14 @@ Partial Class FrmListaAgendamentos
         'CODIGO
         '
         Me.CODIGO.DataPropertyName = "Codigo"
-        Me.CODIGO.HeaderText = "CODIGO"
+        Me.CODIGO.HeaderText = "Código"
         Me.CODIGO.Name = "CODIGO"
         Me.CODIGO.ReadOnly = True
         '
         'CODIGO_TRANSPORTADORA
         '
         Me.CODIGO_TRANSPORTADORA.DataPropertyName = "CodigoTransportadora"
-        Me.CODIGO_TRANSPORTADORA.HeaderText = "CODIGO_TRANSPORTADORA"
+        Me.CODIGO_TRANSPORTADORA.HeaderText = "CODIGO_TRANSPORTADOR"
         Me.CODIGO_TRANSPORTADORA.Name = "CODIGO_TRANSPORTADORA"
         Me.CODIGO_TRANSPORTADORA.ReadOnly = True
         Me.CODIGO_TRANSPORTADORA.Visible = False
@@ -371,7 +427,7 @@ Partial Class FrmListaAgendamentos
         'TRANSPORTADOR
         '
         Me.TRANSPORTADOR.DataPropertyName = "Transportadora"
-        Me.TRANSPORTADOR.HeaderText = "TRANSPORTADOR"
+        Me.TRANSPORTADOR.HeaderText = "Transportador"
         Me.TRANSPORTADOR.Name = "TRANSPORTADOR"
         Me.TRANSPORTADOR.ReadOnly = True
         '
@@ -386,7 +442,7 @@ Partial Class FrmListaAgendamentos
         'EMPRESA
         '
         Me.EMPRESA.DataPropertyName = "Empresa"
-        Me.EMPRESA.HeaderText = "EMPRESA"
+        Me.EMPRESA.HeaderText = "Empresa"
         Me.EMPRESA.Name = "EMPRESA"
         Me.EMPRESA.ReadOnly = True
         '
@@ -401,7 +457,7 @@ Partial Class FrmListaAgendamentos
         'TIPO_AGENDAMENTO
         '
         Me.TIPO_AGENDAMENTO.DataPropertyName = "TipoAgendamento"
-        Me.TIPO_AGENDAMENTO.HeaderText = "TIPO AGENDAMENTO"
+        Me.TIPO_AGENDAMENTO.HeaderText = "Tipo agendamento"
         Me.TIPO_AGENDAMENTO.Name = "TIPO_AGENDAMENTO"
         Me.TIPO_AGENDAMENTO.ReadOnly = True
         '
@@ -416,7 +472,7 @@ Partial Class FrmListaAgendamentos
         'TIPO_PALLET
         '
         Me.TIPO_PALLET.DataPropertyName = "TipoPallet"
-        Me.TIPO_PALLET.HeaderText = "TIPO PALLET"
+        Me.TIPO_PALLET.HeaderText = "Tipo de pallet"
         Me.TIPO_PALLET.Name = "TIPO_PALLET"
         Me.TIPO_PALLET.ReadOnly = True
         '
@@ -431,7 +487,7 @@ Partial Class FrmListaAgendamentos
         'TIPO_CARGA
         '
         Me.TIPO_CARGA.DataPropertyName = "TipoCarga"
-        Me.TIPO_CARGA.HeaderText = "TIPO CARGA"
+        Me.TIPO_CARGA.HeaderText = "Tipo de carga"
         Me.TIPO_CARGA.Name = "TIPO_CARGA"
         Me.TIPO_CARGA.ReadOnly = True
         '
@@ -446,121 +502,65 @@ Partial Class FrmListaAgendamentos
         'TIPO_VEICULO
         '
         Me.TIPO_VEICULO.DataPropertyName = "TipoVeiculo"
-        Me.TIPO_VEICULO.HeaderText = "TIPO VEICULO"
+        Me.TIPO_VEICULO.HeaderText = "Tipo de veículo"
         Me.TIPO_VEICULO.Name = "TIPO_VEICULO"
         Me.TIPO_VEICULO.ReadOnly = True
         '
         'NFE
         '
         Me.NFE.DataPropertyName = "NFE"
-        Me.NFE.HeaderText = "NFE"
+        Me.NFE.HeaderText = "NF-e"
         Me.NFE.Name = "NFE"
         Me.NFE.ReadOnly = True
         '
         'NOME_MOTORISTA
         '
         Me.NOME_MOTORISTA.DataPropertyName = "NomeMotorista"
-        Me.NOME_MOTORISTA.HeaderText = "NOME MOTORISTA"
+        Me.NOME_MOTORISTA.HeaderText = "Nome do motorista"
         Me.NOME_MOTORISTA.Name = "NOME_MOTORISTA"
         Me.NOME_MOTORISTA.ReadOnly = True
         '
         'OBSERVACAO
         '
         Me.OBSERVACAO.DataPropertyName = "Observacao"
-        Me.OBSERVACAO.HeaderText = "OBSERVAÇÃO"
+        Me.OBSERVACAO.HeaderText = "Observação"
         Me.OBSERVACAO.Name = "OBSERVACAO"
         Me.OBSERVACAO.ReadOnly = True
         '
         'ORIGEM
         '
         Me.ORIGEM.DataPropertyName = "Origem"
-        Me.ORIGEM.HeaderText = "ORIGEM"
+        Me.ORIGEM.HeaderText = "Origem"
         Me.ORIGEM.Name = "ORIGEM"
         Me.ORIGEM.ReadOnly = True
         '
         'DESTINO
         '
         Me.DESTINO.DataPropertyName = "Destino"
-        Me.DESTINO.HeaderText = "DESTINO"
+        Me.DESTINO.HeaderText = "Destino"
         Me.DESTINO.Name = "DESTINO"
         Me.DESTINO.ReadOnly = True
         '
         'QUANTIDADE_PALLET
         '
         Me.QUANTIDADE_PALLET.DataPropertyName = "QuantidadePallet"
-        Me.QUANTIDADE_PALLET.HeaderText = "QTD. PALLET"
+        Me.QUANTIDADE_PALLET.HeaderText = "Qtd. pallet"
         Me.QUANTIDADE_PALLET.Name = "QUANTIDADE_PALLET"
         Me.QUANTIDADE_PALLET.ReadOnly = True
         '
         'DATA_AGENDAMENTO
         '
         Me.DATA_AGENDAMENTO.DataPropertyName = "DataAgendamento"
-        Me.DATA_AGENDAMENTO.HeaderText = "DT. AGENDAMENTO"
+        Me.DATA_AGENDAMENTO.HeaderText = "Dt. agendamento"
         Me.DATA_AGENDAMENTO.Name = "DATA_AGENDAMENTO"
         Me.DATA_AGENDAMENTO.ReadOnly = True
         '
         'DATA_CANCELAMENTO
         '
         Me.DATA_CANCELAMENTO.DataPropertyName = "DataCancelamento"
-        Me.DATA_CANCELAMENTO.HeaderText = "DT. CANCELAMENTO"
+        Me.DATA_CANCELAMENTO.HeaderText = "Dt. cancelamento"
         Me.DATA_CANCELAMENTO.Name = "DATA_CANCELAMENTO"
         Me.DATA_CANCELAMENTO.ReadOnly = True
-        '
-        'nswTipoAgendamento
-        '
-        Me.nswTipoAgendamento.CampoCodigoTabelaRetono = Nothing
-        Me.nswTipoAgendamento.CampoDescricaoTabelaRetono = Nothing
-        Me.nswTipoAgendamento.ListaColunas = Nothing
-        Me.nswTipoAgendamento.Location = New System.Drawing.Point(3, 85)
-        Me.nswTipoAgendamento.Name = "nswTipoAgendamento"
-        Me.nswTipoAgendamento.OrderBy = Nothing
-        Me.nswTipoAgendamento.Size = New System.Drawing.Size(332, 41)
-        Me.nswTipoAgendamento.Tabela = Nothing
-        Me.nswTipoAgendamento.TabIndex = 31
-        Me.nswTipoAgendamento.Titulo = "Tipo de agendamento"
-        Me.nswTipoAgendamento.Where = Nothing
-        '
-        'nswTipoPallet
-        '
-        Me.nswTipoPallet.CampoCodigoTabelaRetono = Nothing
-        Me.nswTipoPallet.CampoDescricaoTabelaRetono = Nothing
-        Me.nswTipoPallet.ListaColunas = Nothing
-        Me.nswTipoPallet.Location = New System.Drawing.Point(335, 4)
-        Me.nswTipoPallet.Name = "nswTipoPallet"
-        Me.nswTipoPallet.OrderBy = Nothing
-        Me.nswTipoPallet.Size = New System.Drawing.Size(332, 41)
-        Me.nswTipoPallet.Tabela = Nothing
-        Me.nswTipoPallet.TabIndex = 32
-        Me.nswTipoPallet.Titulo = "Tipo de pallet"
-        Me.nswTipoPallet.Where = Nothing
-        '
-        'nswTipoCarga
-        '
-        Me.nswTipoCarga.CampoCodigoTabelaRetono = Nothing
-        Me.nswTipoCarga.CampoDescricaoTabelaRetono = Nothing
-        Me.nswTipoCarga.ListaColunas = Nothing
-        Me.nswTipoCarga.Location = New System.Drawing.Point(335, 44)
-        Me.nswTipoCarga.Name = "nswTipoCarga"
-        Me.nswTipoCarga.OrderBy = Nothing
-        Me.nswTipoCarga.Size = New System.Drawing.Size(332, 41)
-        Me.nswTipoCarga.Tabela = Nothing
-        Me.nswTipoCarga.TabIndex = 33
-        Me.nswTipoCarga.Titulo = "Tipo de carga"
-        Me.nswTipoCarga.Where = Nothing
-        '
-        'nswTipoVeiculo
-        '
-        Me.nswTipoVeiculo.CampoCodigoTabelaRetono = Nothing
-        Me.nswTipoVeiculo.CampoDescricaoTabelaRetono = Nothing
-        Me.nswTipoVeiculo.ListaColunas = Nothing
-        Me.nswTipoVeiculo.Location = New System.Drawing.Point(335, 85)
-        Me.nswTipoVeiculo.Name = "nswTipoVeiculo"
-        Me.nswTipoVeiculo.OrderBy = Nothing
-        Me.nswTipoVeiculo.Size = New System.Drawing.Size(332, 41)
-        Me.nswTipoVeiculo.Tabela = Nothing
-        Me.nswTipoVeiculo.TabIndex = 34
-        Me.nswTipoVeiculo.Titulo = "Tipo de veículo"
-        Me.nswTipoVeiculo.Where = Nothing
         '
         'FrmListaAgendamentos
         '
@@ -592,27 +592,6 @@ Partial Class FrmListaAgendamentos
     Friend WithEvents pnlFiltro As Panel
     Friend WithEvents btnPesquisar As Button
     Friend WithEvents dgvAgendamentos As DataGridView
-    Friend WithEvents CODIGO As DataGridViewTextBoxColumn
-    Friend WithEvents CODIGO_TRANSPORTADORA As DataGridViewTextBoxColumn
-    Friend WithEvents TRANSPORTADOR As DataGridViewTextBoxColumn
-    Friend WithEvents CODIGO_EMPRESA As DataGridViewTextBoxColumn
-    Friend WithEvents EMPRESA As DataGridViewTextBoxColumn
-    Friend WithEvents CODIGO_TIPO_AGENDAMENTO As DataGridViewTextBoxColumn
-    Friend WithEvents TIPO_AGENDAMENTO As DataGridViewTextBoxColumn
-    Friend WithEvents CODIGO_TIPO_PALLET As DataGridViewTextBoxColumn
-    Friend WithEvents TIPO_PALLET As DataGridViewTextBoxColumn
-    Friend WithEvents CODIGO_TIPO_CARGA As DataGridViewTextBoxColumn
-    Friend WithEvents TIPO_CARGA As DataGridViewTextBoxColumn
-    Friend WithEvents CODIGO_TIPO_VEICULO As DataGridViewTextBoxColumn
-    Friend WithEvents TIPO_VEICULO As DataGridViewTextBoxColumn
-    Friend WithEvents NFE As DataGridViewTextBoxColumn
-    Friend WithEvents NOME_MOTORISTA As DataGridViewTextBoxColumn
-    Friend WithEvents OBSERVACAO As DataGridViewTextBoxColumn
-    Friend WithEvents ORIGEM As DataGridViewTextBoxColumn
-    Friend WithEvents DESTINO As DataGridViewTextBoxColumn
-    Friend WithEvents QUANTIDADE_PALLET As DataGridViewTextBoxColumn
-    Friend WithEvents DATA_AGENDAMENTO As DataGridViewTextBoxColumn
-    Friend WithEvents DATA_CANCELAMENTO As DataGridViewTextBoxColumn
     Friend WithEvents txtNumNFe As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
@@ -637,4 +616,25 @@ Partial Class FrmListaAgendamentos
     Friend WithEvents nswTipoPallet As NewSearchWindow
     Friend WithEvents nswTipoCarga As NewSearchWindow
     Friend WithEvents nswTipoVeiculo As NewSearchWindow
+    Friend WithEvents CODIGO As DataGridViewTextBoxColumn
+    Friend WithEvents CODIGO_TRANSPORTADORA As DataGridViewTextBoxColumn
+    Friend WithEvents TRANSPORTADOR As DataGridViewTextBoxColumn
+    Friend WithEvents CODIGO_EMPRESA As DataGridViewTextBoxColumn
+    Friend WithEvents EMPRESA As DataGridViewTextBoxColumn
+    Friend WithEvents CODIGO_TIPO_AGENDAMENTO As DataGridViewTextBoxColumn
+    Friend WithEvents TIPO_AGENDAMENTO As DataGridViewTextBoxColumn
+    Friend WithEvents CODIGO_TIPO_PALLET As DataGridViewTextBoxColumn
+    Friend WithEvents TIPO_PALLET As DataGridViewTextBoxColumn
+    Friend WithEvents CODIGO_TIPO_CARGA As DataGridViewTextBoxColumn
+    Friend WithEvents TIPO_CARGA As DataGridViewTextBoxColumn
+    Friend WithEvents CODIGO_TIPO_VEICULO As DataGridViewTextBoxColumn
+    Friend WithEvents TIPO_VEICULO As DataGridViewTextBoxColumn
+    Friend WithEvents NFE As DataGridViewTextBoxColumn
+    Friend WithEvents NOME_MOTORISTA As DataGridViewTextBoxColumn
+    Friend WithEvents OBSERVACAO As DataGridViewTextBoxColumn
+    Friend WithEvents ORIGEM As DataGridViewTextBoxColumn
+    Friend WithEvents DESTINO As DataGridViewTextBoxColumn
+    Friend WithEvents QUANTIDADE_PALLET As DataGridViewTextBoxColumn
+    Friend WithEvents DATA_AGENDAMENTO As DataGridViewTextBoxColumn
+    Friend WithEvents DATA_CANCELAMENTO As DataGridViewTextBoxColumn
 End Class

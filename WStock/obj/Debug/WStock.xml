@@ -22,11 +22,6 @@ WStock
   pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
 </summary>
 </member>
-<member name="P:WStock.My.Resources.Resources._error">
-<summary>
-  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:WStock.My.Resources.Resources._new">
 <summary>
   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
@@ -37,37 +32,12 @@ WStock
   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:WStock.My.Resources.Resources.close_button">
-<summary>
-  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:WStock.My.Resources.Resources.delete">
 <summary>
   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:WStock.My.Resources.Resources.error_1_">
-<summary>
-  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:WStock.My.Resources.Resources.multiply">
-<summary>
-  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:WStock.My.Resources.Resources.search">
-<summary>
-  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:WStock.My.Resources.Resources.search1">
-<summary>
-  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-</summary>
-</member>
-<member name="P:WStock.My.Resources.Resources.trash">
 <summary>
   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
 </summary>

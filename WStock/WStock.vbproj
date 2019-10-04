@@ -48,7 +48,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resorces\oie_transparent_9Qp_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -106,46 +106,46 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="InterfaceObject\NewSearchWindow.Designer.vb">
+    <Compile Include="UserControls\NewSearchWindow.Designer.vb">
       <DependentUpon>NewSearchWindow.vb</DependentUpon>
     </Compile>
-    <Compile Include="InterfaceObject\NewSearchWindow.vb">
+    <Compile Include="UserControls\NewSearchWindow.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="WStock-N\FrmAgendamento.Designer.vb">
+    <Compile Include="Forms\FrmAgendamento.Designer.vb">
       <DependentUpon>FrmAgendamento.vb</DependentUpon>
     </Compile>
-    <Compile Include="WStock-N\FrmAgendamento.vb">
+    <Compile Include="Forms\FrmAgendamento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WStock\FrmCadastro.Designer.vb">
+    <Compile Include="Forms\Old\FrmCadastro.Designer.vb">
       <DependentUpon>FrmCadastro.vb</DependentUpon>
     </Compile>
-    <Compile Include="WStock\FrmCadastro.vb">
+    <Compile Include="Forms\Old\FrmCadastro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WStock-N\FrmLogin.Designer.vb">
+    <Compile Include="Forms\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="WStock-N\FrmLogin.vb">
+    <Compile Include="Forms\FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WStock-N\FrmPesquisa.Designer.vb">
+    <Compile Include="Forms\FrmPesquisa.Designer.vb">
       <DependentUpon>FrmPesquisa.vb</DependentUpon>
     </Compile>
-    <Compile Include="WStock-N\FrmPesquisa.vb">
+    <Compile Include="Forms\FrmPesquisa.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WStock\FrmSolicitacaoCompra.Designer.vb">
+    <Compile Include="Forms\Old\FrmSolicitacaoCompra.Designer.vb">
       <DependentUpon>FrmSolicitacaoCompra.vb</DependentUpon>
     </Compile>
-    <Compile Include="WStock\FrmSolicitacaoCompra.vb">
+    <Compile Include="Forms\Old\FrmSolicitacaoCompra.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WStock-N\FrmMenu.Designer.vb">
+    <Compile Include="Forms\FrmMenu.Designer.vb">
       <DependentUpon>FrmMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="WStock-N\FrmMenu.vb">
+    <Compile Include="Forms\FrmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -163,33 +163,33 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="WStock\FrmTerceiros.Designer.vb">
+    <Compile Include="Forms\Old\FrmTerceiros.Designer.vb">
       <DependentUpon>FrmTerceiros.vb</DependentUpon>
     </Compile>
-    <Compile Include="WStock\FrmTerceiros.vb">
+    <Compile Include="Forms\Old\FrmTerceiros.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WStock-N\FrmListaAgendamentos.Designer.vb">
+    <Compile Include="Forms\FrmListaAgendamentos.Designer.vb">
       <DependentUpon>FrmListaAgendamentos.vb</DependentUpon>
     </Compile>
-    <Compile Include="WStock-N\FrmListaAgendamentos.vb">
+    <Compile Include="Forms\FrmListaAgendamentos.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="InterfaceObject\NewSearchWindow.resx">
+    <EmbeddedResource Include="UserControls\NewSearchWindow.resx">
       <DependentUpon>NewSearchWindow.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WStock-N\FrmAgendamento.resx">
+    <EmbeddedResource Include="Forms\FrmAgendamento.resx">
       <DependentUpon>FrmAgendamento.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WStock\FrmCadastro.resx">
+    <EmbeddedResource Include="Forms\Old\FrmCadastro.resx">
       <DependentUpon>FrmCadastro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WStock-N\FrmLogin.resx">
+    <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WStock-N\FrmMenu.resx">
+    <EmbeddedResource Include="Forms\FrmMenu.resx">
       <DependentUpon>FrmMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -198,16 +198,16 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="WStock-N\FrmPesquisa.resx">
+    <EmbeddedResource Include="Forms\FrmPesquisa.resx">
       <DependentUpon>FrmPesquisa.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WStock\FrmSolicitacaoCompra.resx">
+    <EmbeddedResource Include="Forms\Old\FrmSolicitacaoCompra.resx">
       <DependentUpon>FrmSolicitacaoCompra.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WStock\FrmTerceiros.resx">
+    <EmbeddedResource Include="Forms\Old\FrmTerceiros.resx">
       <DependentUpon>FrmTerceiros.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WStock-N\FrmListaAgendamentos.resx">
+    <EmbeddedResource Include="Forms\FrmListaAgendamentos.resx">
       <DependentUpon>FrmListaAgendamentos.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -225,20 +225,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resorces\oie_transparent_9Qp_icon.ico" />
-    <Content Include="Resorces\analytics_xD1_icon.ico" />
-    <Content Include="Resorces\modelo_wmv_icon.ico" />
-    <Content Include="Resorces\oie_transparent-_1_.ico" />
-    <Content Include="Resorces\oie_transparent__2__Lu6_icon.ico" />
+    <Content Include="Resources\logo.ico" />
     <None Include="Resources\new.png" />
-    <None Include="Resources\search1.png" />
     <None Include="Resources\delete.png" />
-    <None Include="Resources\multiply.png" />
     <None Include="Resources\close.png" />
-    <None Include="Resources\error%281%29.png" />
-    <None Include="Resources\error.png" />
-    <None Include="Resources\trash.png" />
-    <None Include="Resources\close-button.png" />
     <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
@@ -257,8 +247,6 @@
       <Name>WStock.Infraestructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
