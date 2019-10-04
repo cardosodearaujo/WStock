@@ -31,8 +31,9 @@ Partial Class NewSearchWindow
         '
         'btnLimpar
         '
+        Me.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnLimpar.Image = Global.WStock.My.Resources.Resources.delete
-        Me.btnLimpar.Location = New System.Drawing.Point(280, 16)
+        Me.btnLimpar.Location = New System.Drawing.Point(278, 16)
         Me.btnLimpar.Name = "btnLimpar"
         Me.btnLimpar.Size = New System.Drawing.Size(25, 23)
         Me.btnLimpar.TabIndex = 11
@@ -40,16 +41,18 @@ Partial Class NewSearchWindow
         '
         'lblTitulo
         '
+        Me.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Location = New System.Drawing.Point(8, 2)
+        Me.lblTitulo.Location = New System.Drawing.Point(6, 2)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(0, 13)
         Me.lblTitulo.TabIndex = 10
         '
         'btnPesquisar
         '
+        Me.btnPesquisar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnPesquisar.Image = Global.WStock.My.Resources.Resources.search
-        Me.btnPesquisar.Location = New System.Drawing.Point(304, 16)
+        Me.btnPesquisar.Location = New System.Drawing.Point(302, 16)
         Me.btnPesquisar.Name = "btnPesquisar"
         Me.btnPesquisar.Size = New System.Drawing.Size(25, 23)
         Me.btnPesquisar.TabIndex = 7
@@ -57,8 +60,9 @@ Partial Class NewSearchWindow
         '
         'txtCodigo
         '
+        Me.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtCodigo.Enabled = False
-        Me.txtCodigo.Location = New System.Drawing.Point(5, 17)
+        Me.txtCodigo.Location = New System.Drawing.Point(3, 17)
         Me.txtCodigo.Multiline = True
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.ReadOnly = True
@@ -67,8 +71,9 @@ Partial Class NewSearchWindow
         '
         'txtDescricao
         '
+        Me.txtDescricao.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.txtDescricao.Enabled = False
-        Me.txtDescricao.Location = New System.Drawing.Point(70, 17)
+        Me.txtDescricao.Location = New System.Drawing.Point(68, 17)
         Me.txtDescricao.Multiline = True
         Me.txtDescricao.Name = "txtDescricao"
         Me.txtDescricao.ReadOnly = True
@@ -85,7 +90,7 @@ Partial Class NewSearchWindow
         Me.Controls.Add(Me.txtCodigo)
         Me.Controls.Add(Me.txtDescricao)
         Me.Name = "NewSearchWindow"
-        Me.Size = New System.Drawing.Size(332, 41)
+        Me.Size = New System.Drawing.Size(327, 41)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

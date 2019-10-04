@@ -3,20 +3,6 @@
 Public Class NewSearchWindow
     Inherits UserControl
 
-    Private _CodigoRetorno As String
-    Public ReadOnly Property CodigoRetorno() As String
-        Get
-            Return _CodigoRetorno
-        End Get
-    End Property
-
-    Private _DescricaoRetorno As String
-    Public ReadOnly Property DescricaoRetorno() As String
-        Get
-            Return _DescricaoRetorno
-        End Get
-    End Property
-
     Private _Titulo As String
     Public Property Titulo() As String
         Get
@@ -28,6 +14,8 @@ Public Class NewSearchWindow
         End Set
     End Property
 
+    Public Property CodigoRetorno As String
+    Public Property DescricaoRetorno As String
     Public Property CampoCodigoTabelaRetono As String
     Public Property CampoDescricaoTabelaRetono As String
     Public Property ListaColunas As List(Of RotuloPesquisaVO)

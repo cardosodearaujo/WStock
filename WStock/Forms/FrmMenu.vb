@@ -31,7 +31,6 @@
 
     Private Sub AgendaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgendaToolStripMenuItem.Click
         Dim Agendamento As New FrmListaAgendamentos
-        Agendamento.MdiParent = Me
-        Agendamento.Show()
+        Agendamento.ShowDialog()
     End Sub
 End Class
