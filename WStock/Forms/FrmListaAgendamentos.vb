@@ -10,7 +10,6 @@ Public Class FrmListaAgendamentos
             MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Sub BtnPesquisa_Click(sender As Object, e As EventArgs) Handles btnPesquisar.Click
         Try
             Filtrar()
@@ -18,7 +17,6 @@ Public Class FrmListaAgendamentos
             MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
         Try
             Dim FrmAgendamento As New FrmAgendamento
@@ -28,7 +26,6 @@ Public Class FrmListaAgendamentos
             MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Sub DgvAgendamentos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAgendamentos.CellDoubleClick
         Try
             If dgvAgendamentos.Rows.Count > 0 Then
@@ -50,13 +47,11 @@ Public Class FrmListaAgendamentos
             MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Function Listar() As List(Of Agendamento)
         Return DependencyInjectionFactory _
             .CreateInstance(Of IAgendamentoRepository) _
             .SelectAll()
     End Function
-
     Private Sub Carregar(lista As List(Of Agendamento))
 
         tspTotalRegistros.Text = "Total de registros: " & lista.Count
@@ -89,7 +84,6 @@ Public Class FrmListaAgendamentos
         .OrderBy(Function(F) F.DataAgendamento) _
         .ToList()
     End Sub
-
     Private Sub Filtrar()
         Dim lista = Listar()
 
@@ -155,7 +149,6 @@ Public Class FrmListaAgendamentos
 
         Carregar(lista)
     End Sub
-
     Private Sub Configurar()
         ConfigTransportador()
         ConfigEmpresa()
@@ -164,7 +157,6 @@ Public Class FrmListaAgendamentos
         ConfigTipoCarga()
         ConfigTipoVeiculo()
     End Sub
-
     Private Sub ConfigTransportador()
         With nswTransportador
             .Titulo = "Transportador"
@@ -176,7 +168,6 @@ Public Class FrmListaAgendamentos
             .Tabela = "TB_TRANSPORTADOR"
         End With
     End Sub
-
     Private Sub ConfigEmpresa()
         With nswEmpresa
             .Titulo = "Empresa"
@@ -188,7 +179,6 @@ Public Class FrmListaAgendamentos
             .Tabela = "TB_EMPRESA"
         End With
     End Sub
-
     Private Sub ConfigTipoAgendamento()
         With nswTipoAgendamento
             .Titulo = "Tipo de agendamento"
@@ -200,7 +190,6 @@ Public Class FrmListaAgendamentos
             .Tabela = "TB_TIPO_AGENDAMENTO"
         End With
     End Sub
-
     Private Sub ConfigTipoPallet()
         With nswTipoPallet
             .Titulo = "Tipo de pallet"
@@ -212,7 +201,6 @@ Public Class FrmListaAgendamentos
             .Tabela = "TB_TIPO_PALLET"
         End With
     End Sub
-
     Private Sub ConfigTipoCarga()
         With nswTipoCarga
             .Titulo = "Tipo de Carga"
@@ -224,7 +212,6 @@ Public Class FrmListaAgendamentos
             .Tabela = "TB_TIPO_CARGA"
         End With
     End Sub
-
     Private Sub ConfigTipoVeiculo()
         With nswTipoVeiculo
             .Titulo = "Tipo de veículo"

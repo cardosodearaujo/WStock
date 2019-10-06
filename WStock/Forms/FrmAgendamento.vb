@@ -4,7 +4,6 @@ Imports WStock.Framework.Extensions
 
 Public Class FrmAgendamento
     Public Overridable Property Codigo As Integer
-
     Private Sub FrmAgendamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Configurar()
@@ -13,7 +12,6 @@ Public Class FrmAgendamento
             MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles btnSalvar.Click
         Try
             Dim service = New AgendamentoService()
@@ -30,7 +28,6 @@ Public Class FrmAgendamento
             MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Try
             If MessageBox.Show("Você tem certeza que deseja cancelar este agendamento?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -52,7 +49,6 @@ Public Class FrmAgendamento
             MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Sub BtnEntrada_Click(sender As Object, e As EventArgs) Handles btnEntrada.Click
         Try
             If MessageBox.Show("Confirma a entrada?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -74,7 +70,6 @@ Public Class FrmAgendamento
             MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Sub BtnSaida_Click(sender As Object, e As EventArgs) Handles btnSaida.Click
         Try
             If MessageBox.Show("Confirma a saída?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -96,7 +91,6 @@ Public Class FrmAgendamento
             MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Function ObterDados() As Agendamento
         Dim Agendamento As New Agendamento
         With Agendamento
@@ -132,7 +126,6 @@ Public Class FrmAgendamento
         End With
         Return Agendamento
     End Function
-
     Private Sub LimparCampos()
         txtCodigo.Clear()
         dtpAgendamento.Value = Date.Now
@@ -153,7 +146,6 @@ Public Class FrmAgendamento
         btnSaida.Enabled = False
         btnCancelar.Enabled = False
     End Sub
-
     Private Sub Carregar()
         If Codigo > 0 Then
             Dim Agendamento = DependencyInjectionFactory.CreateInstance(Of IAgendamentoRepository).SelectById(Codigo)
@@ -202,30 +194,24 @@ Public Class FrmAgendamento
             LimparCampos()
         End If
     End Sub
-
     Private Sub Novo()
         btnSalvar.Enabled = True
         btnEntrada.Enabled = True
         btnSaida.Enabled = False
         btnCancelar.Enabled = True
     End Sub
-
     Private Sub EntradaExecutada()
         btnSalvar.Enabled = True
         btnEntrada.Enabled = False
         btnSaida.Enabled = True
         btnCancelar.Enabled = False
     End Sub
-
     Private Sub Bloqueado()
         btnCancelar.Enabled = False
         btnSaida.Enabled = False
         btnEntrada.Enabled = False
         btnSalvar.Enabled = False
     End Sub
-
-
-
     Private Sub Configurar()
         ConfigTransportador()
         ConfigEmpresa()
@@ -234,7 +220,6 @@ Public Class FrmAgendamento
         ConfigTipoCarga()
         ConfigTipoVeiculo()
     End Sub
-
     Private Sub ConfigTransportador()
         With nswTransportador
             .Titulo = "Transportador"
@@ -246,7 +231,6 @@ Public Class FrmAgendamento
             .Tabela = "TB_TRANSPORTADOR"
         End With
     End Sub
-
     Private Sub ConfigEmpresa()
         With nswEmpresa
             .Titulo = "Empresa"
@@ -258,7 +242,6 @@ Public Class FrmAgendamento
             .Tabela = "TB_EMPRESA"
         End With
     End Sub
-
     Private Sub ConfigTipoAgendamento()
         With nswTipoAgendamento
             .Titulo = "Tipo de agendamento"
@@ -270,7 +253,6 @@ Public Class FrmAgendamento
             .Tabela = "TB_TIPO_AGENDAMENTO"
         End With
     End Sub
-
     Private Sub ConfigTipoPallet()
         With nswTipoPallet
             .Titulo = "Tipo de pallet"
@@ -282,7 +264,6 @@ Public Class FrmAgendamento
             .Tabela = "TB_TIPO_PALLET"
         End With
     End Sub
-
     Private Sub ConfigTipoCarga()
         With nswTipoCarga
             .Titulo = "Tipo de Carga"
@@ -294,7 +275,6 @@ Public Class FrmAgendamento
             .Tabela = "TB_TIPO_CARGA"
         End With
     End Sub
-
     Private Sub ConfigTipoVeiculo()
         With nswTipoVeiculo
             .Titulo = "Tipo de veículo"
