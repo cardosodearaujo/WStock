@@ -13,7 +13,6 @@ Public Class FrmPesquisa
     Public Property Where As String
     Public Property OrderBy As String
     Public Property AbrirCarregado As Boolean = True
-
     Private Sub FrmPesquisa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             If ValidarParamentros() Then
@@ -27,7 +26,6 @@ Public Class FrmPesquisa
             MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles btnPesquisar.Click
         Try
             Consultar()
@@ -48,7 +46,6 @@ Public Class FrmPesquisa
             MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Sub FrmPesquisa_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         Try
             If e.Control = False And e.Shift = False And e.Alt = False And e.KeyCode = Keys.F10 Then
@@ -58,7 +55,6 @@ Public Class FrmPesquisa
             MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Function ValidarParamentros() As Boolean
         If String.IsNullOrEmpty(CampoCodigoTabelaRetono) Then
             Return False
@@ -71,20 +67,17 @@ Public Class FrmPesquisa
         End If
         Return True
     End Function
-
     Private Sub PreecherCombo()
         cboOpcoes.DataSource = ListaColunas
         cboOpcoes.ValueMember = "Coluna"
         cboOpcoes.DisplayMember = "Rotulo"
     End Sub
-
     Private Sub ConfigurarGrid()
         For Each item In ListaColunas
             dgvResultados.Columns.Add(item.Coluna, item.Rotulo)
             dgvResultados.Columns(item.Coluna).DataPropertyName = item.Coluna
         Next
     End Sub
-
     Private Sub Consultar()
         Dim SQL As New StringBuilder()
 

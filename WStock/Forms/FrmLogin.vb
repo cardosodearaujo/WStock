@@ -8,13 +8,54 @@ Public Class FrmLogin
     End Sub
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Try
-            If Not ValidaCampos() Then Exit Sub
             Logar()
         Catch ex As Exception
             MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    Private Sub FrmLogin_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        Try
+            If e.KeyCode = Keys.Enter Then
+                Logar()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub TxtloginUsuario_KeyDown(sender As Object, e As KeyEventArgs) Handles txtloginUsuario.KeyDown
+        Try
+            If e.KeyCode = Keys.Enter Then
+                Logar()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub TxtSenhaLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSenhaLogin.KeyDown
+        Try
+            If e.KeyCode = Keys.Enter Then
+                Logar()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub BtnLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles btnLogin.KeyDown
+        Try
+            If e.KeyCode = Keys.Enter Then
+                Logar()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
     Private Sub Logar()
+        If Not ValidaCampos() Then Exit Sub
+
         Dim Usuario = DependencyInjectionFactory _
             .CreateInstance(Of IUsuarioRepository) _
             .Login(txtloginUsuario.Text, txtSenhaLogin.Text)
@@ -32,11 +73,13 @@ Public Class FrmLogin
 
         If String.IsNullOrEmpty(txtloginUsuario.Text) Then
             MessageBox.Show("Preencha o campo de Login!")
+            txtloginUsuario.Focus()
             Return False
         End If
 
         If String.IsNullOrEmpty(txtSenhaLogin.Text) Then
             MessageBox.Show("Preencha o campo senha!")
+            txtSenhaLogin.Focus()
             Return False
         End If
 

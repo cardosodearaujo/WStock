@@ -12,23 +12,19 @@
         ctlMDI.BackColor = Color.White
         ctlMDI.BackgroundImage = Image.FromFile("..\..\WCONTROL_LOGO.png")
     End Sub
-
     Private Sub AvaliaçãoIndividualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AvaliaçãoIndividualToolStripMenuItem.Click
         Dim AvaliacaoIndividual As New FrmTerceiros
         AvaliacaoIndividual.MdiParent = Me
         AvaliacaoIndividual.Show()
     End Sub
-
     Private Sub CadastroDeUsuáriosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CadastroDeUsuáriosToolStripMenuItem.Click
         Dim CadastroUsuario As New FrmCadastro
         CadastroUsuario.MdiParent = Me
         CadastroUsuario.Show()
     End Sub
-
     Private Sub FrmMenu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Application.Exit()
     End Sub
-
     Private Sub AgendaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgendaToolStripMenuItem.Click
         Dim Agendamento As New FrmListaAgendamentos
         Agendamento.ShowDialog()
