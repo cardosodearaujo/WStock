@@ -16,6 +16,8 @@ Public Class Agendamento
     Public Overridable Property Destino As String
     Public Overridable Property QuantidadePallet As Decimal
     Public Overridable Property DataAgendamento As DateTime
+    Public Overridable Property DataEntrada As DateTime?
+    Public Overridable Property DataSaida As DateTime?
     Public Overridable Property DataCancelamento As DateTime?
 
     Public Overrides Function Equals(obj As Object) As Boolean

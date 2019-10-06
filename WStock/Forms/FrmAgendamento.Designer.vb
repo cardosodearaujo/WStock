@@ -50,11 +50,11 @@ Partial Class FrmAgendamento
         Me.nswTipoAgendamento = New WStock.NewSearchWindow()
         Me.nswEmpresa = New WStock.NewSearchWindow()
         Me.nswTransportador = New WStock.NewSearchWindow()
-        Me.dtpDataCancelamento = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.dtpCancelamento = New System.Windows.Forms.TextBox()
+        Me.dtpEntrada = New System.Windows.Forms.TextBox()
+        Me.lblDataEntrada = New System.Windows.Forms.Label()
+        Me.dtpSaida = New System.Windows.Forms.TextBox()
+        Me.lblDataSaida = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtNomeMotorista
@@ -184,7 +184,7 @@ Partial Class FrmAgendamento
         Me.lblDataCancelamento.AutoSize = True
         Me.lblDataCancelamento.Enabled = False
         Me.lblDataCancelamento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblDataCancelamento.Location = New System.Drawing.Point(214, 6)
+        Me.lblDataCancelamento.Location = New System.Drawing.Point(478, 6)
         Me.lblDataCancelamento.Name = "lblDataCancelamento"
         Me.lblDataCancelamento.Size = New System.Drawing.Size(100, 13)
         Me.lblDataCancelamento.TabIndex = 38
@@ -355,63 +355,63 @@ Partial Class FrmAgendamento
         '
         'dtpDataCancelamento
         '
-        Me.dtpDataCancelamento.Enabled = False
-        Me.dtpDataCancelamento.Location = New System.Drawing.Point(217, 22)
-        Me.dtpDataCancelamento.Name = "dtpDataCancelamento"
-        Me.dtpDataCancelamento.ReadOnly = True
-        Me.dtpDataCancelamento.Size = New System.Drawing.Size(126, 20)
-        Me.dtpDataCancelamento.TabIndex = 48
+        Me.dtpCancelamento.Enabled = False
+        Me.dtpCancelamento.Location = New System.Drawing.Point(475, 22)
+        Me.dtpCancelamento.Name = "dtpDataCancelamento"
+        Me.dtpCancelamento.ReadOnly = True
+        Me.dtpCancelamento.Size = New System.Drawing.Size(126, 20)
+        Me.dtpCancelamento.TabIndex = 48
         '
-        'TextBox1
+        'txtDataEntrada
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(350, 22)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(126, 20)
-        Me.TextBox1.TabIndex = 50
+        Me.dtpEntrada.Enabled = False
+        Me.dtpEntrada.Location = New System.Drawing.Point(211, 22)
+        Me.dtpEntrada.Name = "txtDataEntrada"
+        Me.dtpEntrada.ReadOnly = True
+        Me.dtpEntrada.Size = New System.Drawing.Size(126, 20)
+        Me.dtpEntrada.TabIndex = 50
         '
-        'Label1
+        'lblDataEntrada
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Enabled = False
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(347, 6)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 13)
-        Me.Label1.TabIndex = 49
-        Me.Label1.Text = "Data cancelamento"
+        Me.lblDataEntrada.AutoSize = True
+        Me.lblDataEntrada.Enabled = False
+        Me.lblDataEntrada.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblDataEntrada.Location = New System.Drawing.Point(215, 6)
+        Me.lblDataEntrada.Name = "lblDataEntrada"
+        Me.lblDataEntrada.Size = New System.Drawing.Size(69, 13)
+        Me.lblDataEntrada.TabIndex = 49
+        Me.lblDataEntrada.Text = "Data entrada"
         '
-        'TextBox2
+        'txtDataSaida
         '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(482, 22)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(126, 20)
-        Me.TextBox2.TabIndex = 52
+        Me.dtpSaida.Enabled = False
+        Me.dtpSaida.Location = New System.Drawing.Point(343, 22)
+        Me.dtpSaida.Name = "txtDataSaida"
+        Me.dtpSaida.ReadOnly = True
+        Me.dtpSaida.Size = New System.Drawing.Size(126, 20)
+        Me.dtpSaida.TabIndex = 52
         '
-        'Label2
+        'lblDataSaida
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Enabled = False
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(479, 6)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 13)
-        Me.Label2.TabIndex = 51
-        Me.Label2.Text = "Data cancelamento"
+        Me.lblDataSaida.AutoSize = True
+        Me.lblDataSaida.Enabled = False
+        Me.lblDataSaida.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblDataSaida.Location = New System.Drawing.Point(346, 6)
+        Me.lblDataSaida.Name = "lblDataSaida"
+        Me.lblDataSaida.Size = New System.Drawing.Size(58, 13)
+        Me.lblDataSaida.TabIndex = 51
+        Me.lblDataSaida.Text = "Data saida"
         '
         'FrmAgendamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(679, 292)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.dtpDataCancelamento)
+        Me.Controls.Add(Me.dtpSaida)
+        Me.Controls.Add(Me.lblDataSaida)
+        Me.Controls.Add(Me.dtpEntrada)
+        Me.Controls.Add(Me.lblDataEntrada)
+        Me.Controls.Add(Me.dtpCancelamento)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.nswTipoVeiculo)
         Me.Controls.Add(Me.nswTipoCarga)
@@ -476,9 +476,9 @@ Partial Class FrmAgendamento
     Friend WithEvents nswTipoCarga As NewSearchWindow
     Friend WithEvents nswTipoVeiculo As NewSearchWindow
     Friend WithEvents btnCancelar As Button
-    Friend WithEvents dtpDataCancelamento As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents dtpCancelamento As TextBox
+    Friend WithEvents dtpEntrada As TextBox
+    Friend WithEvents lblDataEntrada As Label
+    Friend WithEvents dtpSaida As TextBox
+    Friend WithEvents lblDataSaida As Label
 End Class

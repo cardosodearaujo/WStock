@@ -82,8 +82,12 @@ Public Class FrmListaAgendamentos
             .Destino = F.Destino,
             .QuantidadePallet = F.QuantidadePallet,
             .DataAgendamento = F.DataAgendamento,
-            .DataCancelamento = F.DataCancelamento
-        }).ToList()
+            .DataCancelamento = F.DataCancelamento,
+            .DataEntrada = F.DataEntrada,
+            .DataSaida = F.DataSaida
+        }) _
+        .OrderBy(Function(F) F.DataAgendamento) _
+        .ToList()
     End Sub
 
     Private Sub Filtrar()

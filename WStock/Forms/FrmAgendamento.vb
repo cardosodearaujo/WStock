@@ -38,7 +38,7 @@ Public Class FrmAgendamento
                 Dim entity = ObterDados()
 
                 entity.DataCancelamento = Date.Now
-                service.Cancel(entity)
+                service.Save(entity)
 
                 If service.Messages.HasErrors() Then
                     MessageBox.Show(service.Messages.ToString(),
@@ -55,7 +55,21 @@ Public Class FrmAgendamento
 
     Private Sub BtnEntrada_Click(sender As Object, e As EventArgs) Handles btnEntrada.Click
         Try
+            If MessageBox.Show("Confirma a entrada?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                Dim service = New AgendamentoService()
+                Dim entity = ObterDados()
 
+                entity.DataEntrada = Date.Now
+                service.Save(entity)
+
+                If service.Messages.HasErrors() Then
+                    MessageBox.Show(service.Messages.ToString(),
+                                    "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Else
+                    MessageBox.Show("Sucesso!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Me.Close()
+                End If
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -63,7 +77,21 @@ Public Class FrmAgendamento
 
     Private Sub BtnSaida_Click(sender As Object, e As EventArgs) Handles btnSaida.Click
         Try
+            If MessageBox.Show("Confirma a saída?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                Dim service = New AgendamentoService()
+                Dim entity = ObterDados()
 
+                entity.DataSaida = Date.Now
+                service.Save(entity)
+
+                If service.Messages.HasErrors() Then
+                    MessageBox.Show(service.Messages.ToString(),
+                                    "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Else
+                    MessageBox.Show("Sucesso!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Me.Close()
+                End If
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -74,7 +102,9 @@ Public Class FrmAgendamento
         With Agendamento
             If String.IsNullOrEmpty(txtCodigo.Text) Then .Codigo = Nothing Else .Codigo = txtCodigo.Text
             .DataAgendamento = dtpAgendamento.Value
-            .DataCancelamento = Nothing
+            If String.IsNullOrEmpty(dtpCancelamento.Text) Then .DataCancelamento = Nothing Else .DataCancelamento = dtpCancelamento.Text
+            If String.IsNullOrEmpty(dtpEntrada.Text) Then .DataEntrada = Nothing Else .DataEntrada = dtpEntrada.Text
+            If String.IsNullOrEmpty(dtpSaida.Text) Then .DataSaida = Nothing Else .DataSaida = dtpSaida.Text
             .Transportador = New Transportador()
             .Transportador.Codigo = nswTransportador.Codigo
             .Transportador.Transportador = nswTransportador.Descricao
@@ -131,7 +161,9 @@ Public Class FrmAgendamento
                 With Agendamento
                     txtCodigo.Text = .Codigo
                     dtpAgendamento.Value = .DataAgendamento
-                    dtpDataCancelamento.Text = IIf(IsNothing(.DataCancelamento), String.Empty, .DataCancelamento)
+                    dtpEntrada.Text = IIf(IsNothing(.DataEntrada), String.Empty, .DataEntrada)
+                    dtpSaida.Text = IIf(IsNothing(.DataSaida), String.Empty, .DataSaida)
+                    dtpCancelamento.Text = IIf(IsNothing(.DataCancelamento), String.Empty, .DataCancelamento)
                     nswTransportador.Codigo = .Transportador.Codigo
                     nswTransportador.Descricao = .Transportador.Transportador
                     nswEmpresa.Codigo = .Empresa.Codigo
@@ -150,10 +182,49 @@ Public Class FrmAgendamento
                     txtDestino.Text = .Destino
                     txtNomeMotorista.Text = .NomeMotorista
                     txtObservacao.Text = .Observacao
+
+                    dtpAgendamento.Enabled = False
+
+                    If IsNothing(.DataEntrada) And IsNothing(.DataSaida) And IsNothing(.DataCancelamento) Then
+                        Novo()
+                    ElseIf Not IsNothing(.DataEntrada) And IsNothing(.DataSaida) And IsNothing(.DataCancelamento) Then
+                        EntradaExecutada()
+                    ElseIf Not IsNothing(.DataEntrada) And Not IsNothing(.DataSaida) And IsNothing(.DataCancelamento) Then
+                        Bloqueado()
+                    ElseIf Not IsNothing(.DataCancelamento) Then
+                        Bloqueado()
+                    End If
                 End With
+            Else
+                LimparCampos()
             End If
+        Else
+            LimparCampos()
         End If
     End Sub
+
+    Private Sub Novo()
+        btnSalvar.Enabled = True
+        btnEntrada.Enabled = True
+        btnSaida.Enabled = False
+        btnCancelar.Enabled = True
+    End Sub
+
+    Private Sub EntradaExecutada()
+        btnSalvar.Enabled = True
+        btnEntrada.Enabled = False
+        btnSaida.Enabled = True
+        btnCancelar.Enabled = False
+    End Sub
+
+    Private Sub Bloqueado()
+        btnCancelar.Enabled = False
+        btnSaida.Enabled = False
+        btnEntrada.Enabled = False
+        btnSalvar.Enabled = False
+    End Sub
+
+
 
     Private Sub Configurar()
         ConfigTransportador()

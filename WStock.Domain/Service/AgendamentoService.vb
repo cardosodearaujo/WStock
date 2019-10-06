@@ -19,13 +19,4 @@ Public Class AgendamentoService
             Repository.Save(entity)
         End If
     End Sub
-
-    Public Sub Cancel(entity As Agendamento)
-        Dim validation = New AgendamentoSaveValidation()
-        validation.Validate(entity)
-        Messages = validation.Messages
-        If Not validation.Messages.HasErrors() Then
-            Repository.Update(entity)
-        End If
-    End Sub
 End Class

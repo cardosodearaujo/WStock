@@ -20,4 +20,6 @@
     Public Overridable Property QuantidadePallet As Decimal
     Public Overridable Property DataAgendamento As DateTime
     Public Overridable Property DataCancelamento As DateTime?
+    Public Overridable Property DataEntrada As DateTime?
+    Public Overridable Property DataSaida As DateTime?
 End Class

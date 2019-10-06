@@ -18,5 +18,7 @@
     <property name="QuantidadePallet" column="QUANTIDADE_PALLET" />
     <property name="DataAgendamento" column="DATA_AGENDAMENTO" />
     <property name="DataCancelamento" column="DATA_CANCELAMENTO" />
+    <property name="DataEntrada" column="DATA_ENTRADA" />
+    <property name="DataSaida" column="DATA_SAIDA" />
   </class>
 </hibernate-mapping>
