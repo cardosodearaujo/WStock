@@ -27,8 +27,9 @@ Partial Class FrmPesquisa
         Me.txtFiltro = New System.Windows.Forms.TextBox()
         Me.gbxPesquisa = New System.Windows.Forms.GroupBox()
         Me.btnPesquisar = New System.Windows.Forms.Button()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tspTotal = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tspExportar = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         CType(Me.dgvResultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxPesquisa.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -82,27 +83,36 @@ Partial Class FrmPesquisa
         '
         'btnPesquisar
         '
-        Me.btnPesquisar.Location = New System.Drawing.Point(516, 17)
+        Me.btnPesquisar.Location = New System.Drawing.Point(516, 19)
         Me.btnPesquisar.Name = "btnPesquisar"
-        Me.btnPesquisar.Size = New System.Drawing.Size(75, 29)
+        Me.btnPesquisar.Size = New System.Drawing.Size(75, 22)
         Me.btnPesquisar.TabIndex = 3
         Me.btnPesquisar.Text = "Pesquisar"
         Me.btnPesquisar.UseVisualStyleBackColor = True
         '
+        'tspTotal
+        '
+        Me.tspTotal.Name = "tspTotal"
+        Me.tspTotal.Size = New System.Drawing.Size(284, 17)
+        Me.tspTotal.Spring = True
+        Me.tspTotal.Text = "Total de registros: 0"
+        '
+        'tspExportar
+        '
+        Me.tspExportar.Name = "tspExportar"
+        Me.tspExportar.Size = New System.Drawing.Size(284, 17)
+        Me.tspExportar.Spring = True
+        Me.tspExportar.Text = "Exportar - [F10]"
+        '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tspTotal})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tspExportar})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 294)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(614, 22)
         Me.StatusStrip1.TabIndex = 4
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'tspTotal
-        '
-        Me.tspTotal.Name = "tspTotal"
-        Me.tspTotal.Size = New System.Drawing.Size(108, 17)
-        Me.tspTotal.Text = "Total de registros: 0"
         '
         'FrmPesquisa
         '
@@ -112,6 +122,7 @@ Partial Class FrmPesquisa
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxPesquisa)
         Me.Controls.Add(Me.dgvResultados)
+        Me.KeyPreview = True
         Me.MinimizeBox = False
         Me.Name = "FrmPesquisa"
         Me.ShowIcon = False
@@ -132,6 +143,7 @@ Partial Class FrmPesquisa
     Friend WithEvents txtFiltro As TextBox
     Friend WithEvents gbxPesquisa As GroupBox
     Friend WithEvents btnPesquisar As Button
-    Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents tspTotal As ToolStripStatusLabel
+    Friend WithEvents tspExportar As ToolStripStatusLabel
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class

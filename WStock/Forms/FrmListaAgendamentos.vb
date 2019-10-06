@@ -3,22 +3,52 @@ Imports WStock.Framework.DepedencyInjection
 
 Public Class FrmListaAgendamentos
     Private Sub FrmListaAgendamentos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Configurar()
-        Filtrar()
+        Try
+            Configurar()
+            Filtrar()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub BtnPesquisa_Click(sender As Object, e As EventArgs) Handles btnPesquisar.Click
-        Filtrar()
+        Try
+            Filtrar()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles btnNovo.Click
-        Dim FrmAgendamento As New FrmAgendamento
-        FrmAgendamento.ShowDialog()
+        Try
+            Dim FrmAgendamento As New FrmAgendamento
+            FrmAgendamento.ShowDialog()
+            Filtrar()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub DgvAgendamentos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAgendamentos.CellDoubleClick
-        Dim FrmAgendamento As New FrmAgendamento
-        FrmAgendamento.ShowDialog()
+        Try
+            If dgvAgendamentos.Rows.Count > 0 Then
+                Dim FrmAgendamento As New FrmAgendamento
+                FrmAgendamento.Codigo = dgvAgendamentos.Item("CODIGO", e.RowIndex).Value
+                FrmAgendamento.ShowDialog()
+                Filtrar()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub FrmListaAgendamentos_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        Try
+            If e.Control = False And e.Shift = False And e.Alt = False And e.KeyCode = Keys.F10 Then
+                ExportGridToExcel.ExportGridToExcel(dgvAgendamentos, xlsOption.xlsOpen, New FrmPesquisa, tspExportar)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Function Listar() As List(Of Agendamento)
@@ -28,6 +58,9 @@ Public Class FrmListaAgendamentos
     End Function
 
     Private Sub Carregar(lista As List(Of Agendamento))
+
+        tspTotalRegistros.Text = "Total de registros: " & lista.Count
+
         dgvAgendamentos.DataSource = lista.[Select](Function(F) New AgendamentoVO With {
             .Codigo = F.Codigo,
             .CodigoTransportadora = F.Transportador.Codigo,
@@ -56,28 +89,28 @@ Public Class FrmListaAgendamentos
     Private Sub Filtrar()
         Dim lista = Listar()
 
-        If Not String.IsNullOrEmpty(nswTransportador.CodigoRetorno) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.Transportador.Codigo = nswTransportador.CodigoRetorno).ToList()
+        If Not String.IsNullOrEmpty(nswTransportador.Codigo) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.Transportador.Codigo = nswTransportador.Codigo).ToList()
         End If
 
-        If Not String.IsNullOrEmpty(nswEmpresa.CodigoRetorno) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.Empresa.Codigo = nswEmpresa.CodigoRetorno).ToList()
+        If Not String.IsNullOrEmpty(nswEmpresa.Codigo) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.Empresa.Codigo = nswEmpresa.Codigo).ToList()
         End If
 
-        If Not String.IsNullOrEmpty(nswTipoAgendamento.CodigoRetorno) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.TipoAgendamento.Codigo = nswTipoAgendamento.CodigoRetorno).ToList()
+        If Not String.IsNullOrEmpty(nswTipoAgendamento.Codigo) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.TipoAgendamento.Codigo = nswTipoAgendamento.Codigo).ToList()
         End If
 
-        If Not String.IsNullOrEmpty(nswTipoPallet.CodigoRetorno) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.TipoPallet.Codigo = nswTipoPallet.CodigoRetorno).ToList()
+        If Not String.IsNullOrEmpty(nswTipoPallet.Codigo) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.TipoPallet.Codigo = nswTipoPallet.Codigo).ToList()
         End If
 
-        If Not String.IsNullOrEmpty(nswTipoCarga.CodigoRetorno) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.TipoCarga.Codigo = nswTipoCarga.CodigoRetorno).ToList()
+        If Not String.IsNullOrEmpty(nswTipoCarga.Codigo) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.TipoCarga.Codigo = nswTipoCarga.Codigo).ToList()
         End If
 
-        If Not String.IsNullOrEmpty(nswTipoVeiculo.CodigoRetorno) Then
-            lista = lista.AsEnumerable.Where(Function(F) F.TipoVeiculo.Codigo = nswTipoVeiculo.CodigoRetorno).ToList()
+        If Not String.IsNullOrEmpty(nswTipoVeiculo.Codigo) Then
+            lista = lista.AsEnumerable.Where(Function(F) F.TipoVeiculo.Codigo = nswTipoVeiculo.Codigo).ToList()
         End If
 
         If Not String.IsNullOrEmpty(txtNumNFe.Text) Then
@@ -113,7 +146,7 @@ Public Class FrmListaAgendamentos
         End If
 
         If chkOcultarCancelados.Checked Then
-            lista = lista.AsEnumerable.Where(Function(F) F.DataCancelamento = Date.MinValue).ToList()
+            lista = lista.AsEnumerable.Where(Function(F) IsNothing(F.DataCancelamento)).ToList()
         End If
 
         Carregar(lista)

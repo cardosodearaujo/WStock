@@ -22,6 +22,11 @@ WStock
   pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
 </summary>
 </member>
+<member name="P:WStock.My.Resources.Resources._error">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WStock.My.Resources.Resources._new">
 <summary>
   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
@@ -33,6 +38,11 @@ WStock
 </summary>
 </member>
 <member name="P:WStock.My.Resources.Resources.delete">
+<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WStock.My.Resources.Resources.floppy_disk">
 <summary>
   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
 </summary>

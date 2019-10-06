@@ -26,30 +26,35 @@ Partial Class FrmAgendamento
         Me.txtNomeMotorista = New System.Windows.Forms.TextBox()
         Me.lblNomeMotorista = New System.Windows.Forms.Label()
         Me.lblNotaFiscal = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.lblObservacaoAgenda = New System.Windows.Forms.Label()
-        Me.btnSalvar = New System.Windows.Forms.Button()
-        Me.btnSaida = New System.Windows.Forms.Button()
-        Me.btnLiberar = New System.Windows.Forms.Button()
+        Me.txtNFE = New System.Windows.Forms.TextBox()
+        Me.txtObservacao = New System.Windows.Forms.TextBox()
+        Me.lblObservacao = New System.Windows.Forms.Label()
         Me.dtpAgendamento = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.dtpCancelamento = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblDataAgendamento = New System.Windows.Forms.Label()
+        Me.txtOrigem = New System.Windows.Forms.TextBox()
+        Me.lblOrigem = New System.Windows.Forms.Label()
+        Me.txtQtdPallet = New System.Windows.Forms.TextBox()
+        Me.lblQtdPallet = New System.Windows.Forms.Label()
+        Me.lblDestino = New System.Windows.Forms.Label()
+        Me.txtDestino = New System.Windows.Forms.TextBox()
+        Me.lblDataCancelamento = New System.Windows.Forms.Label()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.lblCodigo = New System.Windows.Forms.Label()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnSaida = New System.Windows.Forms.Button()
+        Me.btnEntrada = New System.Windows.Forms.Button()
+        Me.btnSalvar = New System.Windows.Forms.Button()
         Me.nswTipoVeiculo = New WStock.NewSearchWindow()
         Me.nswTipoCarga = New WStock.NewSearchWindow()
         Me.nswTipoPallet = New WStock.NewSearchWindow()
         Me.nswTipoAgendamento = New WStock.NewSearchWindow()
         Me.nswEmpresa = New WStock.NewSearchWindow()
         Me.nswTransportador = New WStock.NewSearchWindow()
+        Me.dtpDataCancelamento = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtNomeMotorista
@@ -75,45 +80,146 @@ Partial Class FrmAgendamento
         Me.lblNotaFiscal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblNotaFiscal.Location = New System.Drawing.Point(17, 169)
         Me.lblNotaFiscal.Name = "lblNotaFiscal"
-        Me.lblNotaFiscal.Size = New System.Drawing.Size(27, 13)
+        Me.lblNotaFiscal.Size = New System.Drawing.Size(31, 13)
         Me.lblNotaFiscal.TabIndex = 4
-        Me.lblNotaFiscal.Text = "NFe"
+        Me.lblNotaFiscal.Text = "NFe*"
         '
-        'TextBox1
+        'txtNFE
         '
-        Me.TextBox1.Location = New System.Drawing.Point(14, 184)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(159, 20)
-        Me.TextBox1.TabIndex = 5
+        Me.txtNFE.Location = New System.Drawing.Point(14, 184)
+        Me.txtNFE.Name = "txtNFE"
+        Me.txtNFE.Size = New System.Drawing.Size(159, 20)
+        Me.txtNFE.TabIndex = 5
         '
-        'TextBox2
+        'txtObservacao
         '
-        Me.TextBox2.Location = New System.Drawing.Point(344, 225)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(323, 20)
-        Me.TextBox2.TabIndex = 9
+        Me.txtObservacao.Location = New System.Drawing.Point(344, 225)
+        Me.txtObservacao.Name = "txtObservacao"
+        Me.txtObservacao.Size = New System.Drawing.Size(323, 20)
+        Me.txtObservacao.TabIndex = 9
         '
-        'lblObservacaoAgenda
+        'lblObservacao
         '
-        Me.lblObservacaoAgenda.AutoSize = True
-        Me.lblObservacaoAgenda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblObservacaoAgenda.Location = New System.Drawing.Point(347, 209)
-        Me.lblObservacaoAgenda.Name = "lblObservacaoAgenda"
-        Me.lblObservacaoAgenda.Size = New System.Drawing.Size(65, 13)
-        Me.lblObservacaoAgenda.TabIndex = 8
-        Me.lblObservacaoAgenda.Text = "Observação"
+        Me.lblObservacao.AutoSize = True
+        Me.lblObservacao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblObservacao.Location = New System.Drawing.Point(347, 209)
+        Me.lblObservacao.Name = "lblObservacao"
+        Me.lblObservacao.Size = New System.Drawing.Size(65, 13)
+        Me.lblObservacao.TabIndex = 8
+        Me.lblObservacao.Text = "Observação"
         '
-        'btnSalvar
+        'dtpAgendamento
         '
-        Me.btnSalvar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnSalvar.Image = CType(resources.GetObject("btnSalvar.Image"), System.Drawing.Image)
-        Me.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSalvar.Location = New System.Drawing.Point(14, 256)
-        Me.btnSalvar.Name = "btnSalvar"
-        Me.btnSalvar.Size = New System.Drawing.Size(95, 29)
-        Me.btnSalvar.TabIndex = 12
-        Me.btnSalvar.Text = "Salvar"
-        Me.btnSalvar.UseVisualStyleBackColor = True
+        Me.dtpAgendamento.CalendarForeColor = System.Drawing.SystemColors.WindowText
+        Me.dtpAgendamento.CustomFormat = "dd/MM/yyyy hh:mm:ss"
+        Me.dtpAgendamento.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpAgendamento.Location = New System.Drawing.Point(81, 22)
+        Me.dtpAgendamento.Name = "dtpAgendamento"
+        Me.dtpAgendamento.Size = New System.Drawing.Size(126, 20)
+        Me.dtpAgendamento.TabIndex = 17
+        '
+        'lblDataAgendamento
+        '
+        Me.lblDataAgendamento.AutoSize = True
+        Me.lblDataAgendamento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblDataAgendamento.Location = New System.Drawing.Point(84, 6)
+        Me.lblDataAgendamento.Name = "lblDataAgendamento"
+        Me.lblDataAgendamento.Size = New System.Drawing.Size(102, 13)
+        Me.lblDataAgendamento.TabIndex = 18
+        Me.lblDataAgendamento.Text = "Data agendamento*"
+        '
+        'txtOrigem
+        '
+        Me.txtOrigem.Location = New System.Drawing.Point(344, 184)
+        Me.txtOrigem.Name = "txtOrigem"
+        Me.txtOrigem.Size = New System.Drawing.Size(159, 20)
+        Me.txtOrigem.TabIndex = 28
+        '
+        'lblOrigem
+        '
+        Me.lblOrigem.AutoSize = True
+        Me.lblOrigem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblOrigem.Location = New System.Drawing.Point(347, 168)
+        Me.lblOrigem.Name = "lblOrigem"
+        Me.lblOrigem.Size = New System.Drawing.Size(40, 13)
+        Me.lblOrigem.TabIndex = 27
+        Me.lblOrigem.Text = "Origem"
+        '
+        'txtQtdPallet
+        '
+        Me.txtQtdPallet.Location = New System.Drawing.Point(178, 184)
+        Me.txtQtdPallet.Name = "txtQtdPallet"
+        Me.txtQtdPallet.Size = New System.Drawing.Size(159, 20)
+        Me.txtQtdPallet.TabIndex = 32
+        '
+        'lblQtdPallet
+        '
+        Me.lblQtdPallet.AutoSize = True
+        Me.lblQtdPallet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblQtdPallet.Location = New System.Drawing.Point(181, 168)
+        Me.lblQtdPallet.Name = "lblQtdPallet"
+        Me.lblQtdPallet.Size = New System.Drawing.Size(94, 13)
+        Me.lblQtdPallet.TabIndex = 31
+        Me.lblQtdPallet.Text = "Quantidade pallet*"
+        '
+        'lblDestino
+        '
+        Me.lblDestino.AutoSize = True
+        Me.lblDestino.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblDestino.Location = New System.Drawing.Point(511, 168)
+        Me.lblDestino.Name = "lblDestino"
+        Me.lblDestino.Size = New System.Drawing.Size(43, 13)
+        Me.lblDestino.TabIndex = 34
+        Me.lblDestino.Text = "Destino"
+        '
+        'txtDestino
+        '
+        Me.txtDestino.Location = New System.Drawing.Point(508, 184)
+        Me.txtDestino.Name = "txtDestino"
+        Me.txtDestino.Size = New System.Drawing.Size(159, 20)
+        Me.txtDestino.TabIndex = 35
+        '
+        'lblDataCancelamento
+        '
+        Me.lblDataCancelamento.AutoSize = True
+        Me.lblDataCancelamento.Enabled = False
+        Me.lblDataCancelamento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblDataCancelamento.Location = New System.Drawing.Point(214, 6)
+        Me.lblDataCancelamento.Name = "lblDataCancelamento"
+        Me.lblDataCancelamento.Size = New System.Drawing.Size(100, 13)
+        Me.lblDataCancelamento.TabIndex = 38
+        Me.lblDataCancelamento.Text = "Data cancelamento"
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.Enabled = False
+        Me.txtCodigo.Location = New System.Drawing.Point(14, 22)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.ReadOnly = True
+        Me.txtCodigo.Size = New System.Drawing.Size(64, 20)
+        Me.txtCodigo.TabIndex = 39
+        '
+        'lblCodigo
+        '
+        Me.lblCodigo.AutoSize = True
+        Me.lblCodigo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblCodigo.Location = New System.Drawing.Point(17, 6)
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(40, 13)
+        Me.lblCodigo.TabIndex = 40
+        Me.lblCodigo.Text = "Código"
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnCancelar.Image = CType(resources.GetObject("btnCancelar.Image"), System.Drawing.Image)
+        Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCancelar.Location = New System.Drawing.Point(572, 256)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(95, 29)
+        Me.btnCancelar.TabIndex = 47
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnSaida
         '
@@ -127,133 +233,36 @@ Partial Class FrmAgendamento
         Me.btnSaida.Text = "Saída"
         Me.btnSaida.UseVisualStyleBackColor = True
         '
-        'btnLiberar
+        'btnEntrada
         '
-        Me.btnLiberar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnLiberar.Image = CType(resources.GetObject("btnLiberar.Image"), System.Drawing.Image)
-        Me.btnLiberar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLiberar.Location = New System.Drawing.Point(115, 256)
-        Me.btnLiberar.Name = "btnLiberar"
-        Me.btnLiberar.Size = New System.Drawing.Size(95, 29)
-        Me.btnLiberar.TabIndex = 14
-        Me.btnLiberar.Text = "Entrada"
-        Me.btnLiberar.UseVisualStyleBackColor = True
+        Me.btnEntrada.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnEntrada.Image = CType(resources.GetObject("btnEntrada.Image"), System.Drawing.Image)
+        Me.btnEntrada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnEntrada.Location = New System.Drawing.Point(115, 256)
+        Me.btnEntrada.Name = "btnEntrada"
+        Me.btnEntrada.Size = New System.Drawing.Size(95, 29)
+        Me.btnEntrada.TabIndex = 14
+        Me.btnEntrada.Text = "Entrada"
+        Me.btnEntrada.UseVisualStyleBackColor = True
         '
-        'dtpAgendamento
+        'btnSalvar
         '
-        Me.dtpAgendamento.CalendarForeColor = System.Drawing.SystemColors.WindowText
-        Me.dtpAgendamento.CustomFormat = "dd/MM/yyyy hh:mm:ss"
-        Me.dtpAgendamento.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpAgendamento.Location = New System.Drawing.Point(81, 22)
-        Me.dtpAgendamento.Name = "dtpAgendamento"
-        Me.dtpAgendamento.Size = New System.Drawing.Size(126, 20)
-        Me.dtpAgendamento.TabIndex = 17
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(84, 6)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(98, 13)
-        Me.Label1.TabIndex = 18
-        Me.Label1.Text = "Data agendamento"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(344, 184)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(159, 20)
-        Me.TextBox4.TabIndex = 28
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label6.Location = New System.Drawing.Point(347, 168)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(40, 13)
-        Me.Label6.TabIndex = 27
-        Me.Label6.Text = "Origem"
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(178, 184)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(159, 20)
-        Me.TextBox6.TabIndex = 32
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label8.Location = New System.Drawing.Point(181, 168)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(90, 13)
-        Me.Label8.TabIndex = 31
-        Me.Label8.Text = "Quantidade pallet"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label9.Location = New System.Drawing.Point(506, 168)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(43, 13)
-        Me.Label9.TabIndex = 34
-        Me.Label9.Text = "Destino"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(508, 184)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(159, 20)
-        Me.TextBox5.TabIndex = 35
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Enabled = False
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(214, 6)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 13)
-        Me.Label2.TabIndex = 38
-        Me.Label2.Text = "Data cancelamento"
-        '
-        'dtpCancelamento
-        '
-        Me.dtpCancelamento.CalendarForeColor = System.Drawing.SystemColors.WindowText
-        Me.dtpCancelamento.CustomFormat = "dd/MM/yyyy hh:mm:ss"
-        Me.dtpCancelamento.Enabled = False
-        Me.dtpCancelamento.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpCancelamento.Location = New System.Drawing.Point(211, 22)
-        Me.dtpCancelamento.Name = "dtpCancelamento"
-        Me.dtpCancelamento.Size = New System.Drawing.Size(126, 20)
-        Me.dtpCancelamento.TabIndex = 37
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(14, 22)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(64, 20)
-        Me.TextBox3.TabIndex = 39
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(17, 6)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
-        Me.Label4.TabIndex = 40
-        Me.Label4.Text = "Código"
+        Me.btnSalvar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnSalvar.Image = Global.WStock.My.Resources.Resources.floppy_disk
+        Me.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSalvar.Location = New System.Drawing.Point(14, 256)
+        Me.btnSalvar.Name = "btnSalvar"
+        Me.btnSalvar.Size = New System.Drawing.Size(95, 29)
+        Me.btnSalvar.TabIndex = 12
+        Me.btnSalvar.Text = "Salvar"
+        Me.btnSalvar.UseVisualStyleBackColor = True
         '
         'nswTipoVeiculo
         '
         Me.nswTipoVeiculo.CampoCodigoTabelaRetono = Nothing
         Me.nswTipoVeiculo.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoVeiculo.Codigo = Nothing
+        Me.nswTipoVeiculo.Descricao = Nothing
         Me.nswTipoVeiculo.ListaColunas = Nothing
         Me.nswTipoVeiculo.Location = New System.Drawing.Point(339, 124)
         Me.nswTipoVeiculo.Name = "nswTipoVeiculo"
@@ -261,13 +270,15 @@ Partial Class FrmAgendamento
         Me.nswTipoVeiculo.Size = New System.Drawing.Size(332, 41)
         Me.nswTipoVeiculo.Tabela = Nothing
         Me.nswTipoVeiculo.TabIndex = 46
-        Me.nswTipoVeiculo.Titulo = "Tipo de veículo"
+        Me.nswTipoVeiculo.Titulo = "Tipo de veículo*"
         Me.nswTipoVeiculo.Where = Nothing
         '
         'nswTipoCarga
         '
         Me.nswTipoCarga.CampoCodigoTabelaRetono = Nothing
         Me.nswTipoCarga.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoCarga.Codigo = Nothing
+        Me.nswTipoCarga.Descricao = Nothing
         Me.nswTipoCarga.ListaColunas = Nothing
         Me.nswTipoCarga.Location = New System.Drawing.Point(339, 83)
         Me.nswTipoCarga.Name = "nswTipoCarga"
@@ -275,13 +286,15 @@ Partial Class FrmAgendamento
         Me.nswTipoCarga.Size = New System.Drawing.Size(332, 41)
         Me.nswTipoCarga.Tabela = Nothing
         Me.nswTipoCarga.TabIndex = 45
-        Me.nswTipoCarga.Titulo = "Tipo de carga"
+        Me.nswTipoCarga.Titulo = "Tipo de carga*"
         Me.nswTipoCarga.Where = Nothing
         '
         'nswTipoPallet
         '
         Me.nswTipoPallet.CampoCodigoTabelaRetono = Nothing
         Me.nswTipoPallet.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoPallet.Codigo = Nothing
+        Me.nswTipoPallet.Descricao = Nothing
         Me.nswTipoPallet.ListaColunas = Nothing
         Me.nswTipoPallet.Location = New System.Drawing.Point(339, 43)
         Me.nswTipoPallet.Name = "nswTipoPallet"
@@ -289,13 +302,15 @@ Partial Class FrmAgendamento
         Me.nswTipoPallet.Size = New System.Drawing.Size(332, 41)
         Me.nswTipoPallet.Tabela = Nothing
         Me.nswTipoPallet.TabIndex = 44
-        Me.nswTipoPallet.Titulo = "Tipo de pallet"
+        Me.nswTipoPallet.Titulo = "Tipo de pallet*"
         Me.nswTipoPallet.Where = Nothing
         '
         'nswTipoAgendamento
         '
         Me.nswTipoAgendamento.CampoCodigoTabelaRetono = Nothing
         Me.nswTipoAgendamento.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoAgendamento.Codigo = Nothing
+        Me.nswTipoAgendamento.Descricao = Nothing
         Me.nswTipoAgendamento.ListaColunas = Nothing
         Me.nswTipoAgendamento.Location = New System.Drawing.Point(9, 124)
         Me.nswTipoAgendamento.Name = "nswTipoAgendamento"
@@ -303,13 +318,15 @@ Partial Class FrmAgendamento
         Me.nswTipoAgendamento.Size = New System.Drawing.Size(328, 41)
         Me.nswTipoAgendamento.Tabela = Nothing
         Me.nswTipoAgendamento.TabIndex = 43
-        Me.nswTipoAgendamento.Titulo = "Tipo de agendamento"
+        Me.nswTipoAgendamento.Titulo = "Tipo de agendamento*"
         Me.nswTipoAgendamento.Where = Nothing
         '
         'nswEmpresa
         '
         Me.nswEmpresa.CampoCodigoTabelaRetono = ""
         Me.nswEmpresa.CampoDescricaoTabelaRetono = ""
+        Me.nswEmpresa.Codigo = Nothing
+        Me.nswEmpresa.Descricao = Nothing
         Me.nswEmpresa.ListaColunas = Nothing
         Me.nswEmpresa.Location = New System.Drawing.Point(9, 83)
         Me.nswEmpresa.Name = "nswEmpresa"
@@ -317,13 +334,15 @@ Partial Class FrmAgendamento
         Me.nswEmpresa.Size = New System.Drawing.Size(328, 41)
         Me.nswEmpresa.Tabela = ""
         Me.nswEmpresa.TabIndex = 42
-        Me.nswEmpresa.Titulo = "Empresa"
+        Me.nswEmpresa.Titulo = "Empresa*"
         Me.nswEmpresa.Where = Nothing
         '
         'nswTransportador
         '
         Me.nswTransportador.CampoCodigoTabelaRetono = Nothing
         Me.nswTransportador.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTransportador.Codigo = Nothing
+        Me.nswTransportador.Descricao = Nothing
         Me.nswTransportador.ListaColunas = Nothing
         Me.nswTransportador.Location = New System.Drawing.Point(9, 43)
         Me.nswTransportador.Name = "nswTransportador"
@@ -331,38 +350,92 @@ Partial Class FrmAgendamento
         Me.nswTransportador.Size = New System.Drawing.Size(328, 41)
         Me.nswTransportador.Tabela = Nothing
         Me.nswTransportador.TabIndex = 41
-        Me.nswTransportador.Titulo = "Transportador"
+        Me.nswTransportador.Titulo = "Transportador*"
         Me.nswTransportador.Where = Nothing
+        '
+        'dtpDataCancelamento
+        '
+        Me.dtpDataCancelamento.Enabled = False
+        Me.dtpDataCancelamento.Location = New System.Drawing.Point(217, 22)
+        Me.dtpDataCancelamento.Name = "dtpDataCancelamento"
+        Me.dtpDataCancelamento.ReadOnly = True
+        Me.dtpDataCancelamento.Size = New System.Drawing.Size(126, 20)
+        Me.dtpDataCancelamento.TabIndex = 48
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(350, 22)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(126, 20)
+        Me.TextBox1.TabIndex = 50
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Enabled = False
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.Location = New System.Drawing.Point(347, 6)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(100, 13)
+        Me.Label1.TabIndex = 49
+        Me.Label1.Text = "Data cancelamento"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(482, 22)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(126, 20)
+        Me.TextBox2.TabIndex = 52
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Enabled = False
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label2.Location = New System.Drawing.Point(479, 6)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(100, 13)
+        Me.Label2.TabIndex = 51
+        Me.Label2.Text = "Data cancelamento"
         '
         'FrmAgendamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(679, 292)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.dtpDataCancelamento)
+        Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.nswTipoVeiculo)
         Me.Controls.Add(Me.nswTipoCarga)
         Me.Controls.Add(Me.nswTipoPallet)
         Me.Controls.Add(Me.nswTipoAgendamento)
         Me.Controls.Add(Me.nswEmpresa)
         Me.Controls.Add(Me.nswTransportador)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.dtpCancelamento)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblCodigo)
+        Me.Controls.Add(Me.txtCodigo)
+        Me.Controls.Add(Me.lblDataCancelamento)
+        Me.Controls.Add(Me.txtDestino)
+        Me.Controls.Add(Me.lblDestino)
+        Me.Controls.Add(Me.txtQtdPallet)
+        Me.Controls.Add(Me.lblQtdPallet)
+        Me.Controls.Add(Me.txtOrigem)
+        Me.Controls.Add(Me.lblOrigem)
+        Me.Controls.Add(Me.lblDataAgendamento)
         Me.Controls.Add(Me.dtpAgendamento)
         Me.Controls.Add(Me.btnSaida)
-        Me.Controls.Add(Me.btnLiberar)
+        Me.Controls.Add(Me.btnEntrada)
         Me.Controls.Add(Me.btnSalvar)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.lblObservacaoAgenda)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtObservacao)
+        Me.Controls.Add(Me.lblObservacao)
+        Me.Controls.Add(Me.txtNFE)
         Me.Controls.Add(Me.lblNotaFiscal)
         Me.Controls.Add(Me.lblNomeMotorista)
         Me.Controls.Add(Me.txtNomeMotorista)
@@ -379,28 +452,33 @@ Partial Class FrmAgendamento
     Friend WithEvents txtNomeMotorista As TextBox
     Friend WithEvents lblNomeMotorista As Label
     Friend WithEvents lblNotaFiscal As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents lblObservacaoAgenda As Label
+    Friend WithEvents txtNFE As TextBox
+    Friend WithEvents txtObservacao As TextBox
+    Friend WithEvents lblObservacao As Label
     Friend WithEvents btnSalvar As Button
     Friend WithEvents btnSaida As Button
-    Friend WithEvents btnLiberar As Button
+    Friend WithEvents btnEntrada As Button
     Friend WithEvents dtpAgendamento As DateTimePicker
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents dtpCancelamento As DateTimePicker
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblDataAgendamento As Label
+    Friend WithEvents txtOrigem As TextBox
+    Friend WithEvents lblOrigem As Label
+    Friend WithEvents txtQtdPallet As TextBox
+    Friend WithEvents lblQtdPallet As Label
+    Friend WithEvents lblDestino As Label
+    Friend WithEvents txtDestino As TextBox
+    Friend WithEvents lblDataCancelamento As Label
+    Friend WithEvents txtCodigo As TextBox
+    Friend WithEvents lblCodigo As Label
     Friend WithEvents nswTransportador As NewSearchWindow
     Friend WithEvents nswEmpresa As NewSearchWindow
     Friend WithEvents nswTipoAgendamento As NewSearchWindow
     Friend WithEvents nswTipoPallet As NewSearchWindow
     Friend WithEvents nswTipoCarga As NewSearchWindow
     Friend WithEvents nswTipoVeiculo As NewSearchWindow
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents dtpDataCancelamento As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label2 As Label
 End Class

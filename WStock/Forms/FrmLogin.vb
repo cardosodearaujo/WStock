@@ -6,24 +6,13 @@ Public Class FrmLogin
     Public Sub New()
         InitializeComponent()
     End Sub
-
-    Public Function ValidaCampos() As Boolean
-
-        If String.IsNullOrEmpty(txtloginUsuario.Text) Then
-            MessageBox.Show("Preencha o campo de Login!")
-            Return False
-        End If
-
-        If String.IsNullOrEmpty(txtSenhaLogin.Text) Then
-            MessageBox.Show("Preencha o campo senha!")
-            Return False
-        End If
-
-        Return True
-    End Function
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        If Not ValidaCampos() Then Exit Sub
-        Logar()
+        Try
+            If Not ValidaCampos() Then Exit Sub
+            Logar()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
     Private Sub Logar()
         Dim Usuario = DependencyInjectionFactory _
@@ -39,4 +28,18 @@ Public Class FrmLogin
             Me.DialogResult = DialogResult.OK
         End If
     End Sub
+    Public Function ValidaCampos() As Boolean
+
+        If String.IsNullOrEmpty(txtloginUsuario.Text) Then
+            MessageBox.Show("Preencha o campo de Login!")
+            Return False
+        End If
+
+        If String.IsNullOrEmpty(txtSenhaLogin.Text) Then
+            MessageBox.Show("Preencha o campo senha!")
+            Return False
+        End If
+
+        Return True
+    End Function
 End Class

@@ -2,7 +2,7 @@
 
 Public Class Agendamento
     Inherits BaseModel
-    Public Overridable Property Codigo As Integer
+    Public Overridable Property Codigo As Integer?
     Public Overridable Property Transportador As Transportador
     Public Overridable Property Empresa As Empresa
     Public Overridable Property TipoAgendamento As TipoAgendamento
@@ -16,7 +16,7 @@ Public Class Agendamento
     Public Overridable Property Destino As String
     Public Overridable Property QuantidadePallet As Decimal
     Public Overridable Property DataAgendamento As DateTime
-    Public Overridable Property DataCancelamento As DateTime
+    Public Overridable Property DataCancelamento As DateTime?
 
     Public Overrides Function Equals(obj As Object) As Boolean
         If (obj Is Nothing) Then Return False

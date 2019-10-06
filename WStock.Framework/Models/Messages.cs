@@ -37,9 +37,11 @@ namespace WStock.Framework.Models
             foreach(var item in ListMessages)
             {
                 if (ListMessages.First().Equals(item))
-                    fullMessage += item.Title + " \n" + item.Description;
+                    fullMessage += item.Title + ": \n=>" + item.Description + "\n=>";
+                else if (ListMessages.Last().Equals(item))
+                    fullMessage += item.Description;
                 else
-                    fullMessage += item.Description + "\n";
+                    fullMessage += item.Description + "\n=>";
             }
             return fullMessage;
         }

@@ -19,5 +19,5 @@
     Public Overridable Property Destino As String
     Public Overridable Property QuantidadePallet As Decimal
     Public Overridable Property DataAgendamento As DateTime
-    Public Overridable Property DataCancelamento As DateTime
+    Public Overridable Property DataCancelamento As DateTime?
 End Class

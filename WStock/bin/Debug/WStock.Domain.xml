@@ -22,5 +22,61 @@ WStock.Domain
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:WStock.Domain.My.Resources.AgendamentoResource">
+<summary>
+  Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.AgendamentoResource.ResourceManager">
+<summary>
+  Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.AgendamentoResource.Culture">
+<summary>
+  Substitui a propriedade CurrentUICulture do thread atual para todas as
+  pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.AgendamentoResource.VALIDA_EMPRESA">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe a empresa..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.AgendamentoResource.VALIDA_NFE">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe a NFe..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.AgendamentoResource.VALIDA_QTD_PALLET">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe a quantidade do pallet..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.AgendamentoResource.VALIDA_TIPO_AGENDAMENTO">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe o tipo de agendamento..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.AgendamentoResource.VALIDA_TIPO_CARGA">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe o tipo de carga..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.AgendamentoResource.VALIDA_TIPO_PALLET">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe o tipo de pallet..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.AgendamentoResource.VALIDA_TIPO_VEICULO">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe o tipo de veículo..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.AgendamentoResource.VALIDA_TRANSPORTADOR">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe o transportador..
+</summary>
+</member>
 </members>
 </doc>

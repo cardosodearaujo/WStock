@@ -98,6 +98,14 @@
     <Compile Include="Repository\ITipoVeiculoRepository.vb" />
     <Compile Include="Repository\ITransportadorRepository.vb" />
     <Compile Include="Repository\IUsuarioRepository.vb" />
+    <Compile Include="Resource\AgendamentoResource.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgendamentoResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\AgendamentoService.vb" />
+    <Compile Include="Validations\AgendamentoDeleteValidation.vb" />
+    <Compile Include="Validations\AgendamentoSaveValidation.vb" />
     <Compile Include="ValueObject\AgendamentoVO.vb" />
     <Compile Include="ValueObject\RotuloPesquisaVO.vb" />
   </ItemGroup>
@@ -107,6 +115,11 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\AgendamentoResource.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AgendamentoResource.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -123,7 +136,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Service\" />
+    <Folder Include="Specification\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WStock.Framework\WStock.Framework.csproj">

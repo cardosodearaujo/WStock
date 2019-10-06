@@ -14,8 +14,27 @@ Public Class NewSearchWindow
         End Set
     End Property
 
-    Public Property CodigoRetorno As String
-    Public Property DescricaoRetorno As String
+    Private _Codigo As String
+    Public Property Codigo() As String
+        Get
+            Return _Codigo
+        End Get
+        Set(ByVal value As String)
+            _Codigo = value
+            txtCodigo.Text = Codigo
+        End Set
+    End Property
+
+    Private _Descricao As String
+    Public Property Descricao() As String
+        Get
+            Return _Descricao
+        End Get
+        Set(ByVal value As String)
+            _Descricao = value
+            txtDescricao.Text = _Descricao
+        End Set
+    End Property
     Public Property CampoCodigoTabelaRetono As String
     Public Property CampoDescricaoTabelaRetono As String
     Public Property ListaColunas As List(Of RotuloPesquisaVO)
@@ -38,16 +57,20 @@ Public Class NewSearchWindow
             If Not IsNothing(.CodigoRetorno) Then
                 txtCodigo.Text = .CodigoRetorno.ToString()
                 txtDescricao.Text = .DescricaoRetorno.ToString()
-                _CodigoRetorno = .CodigoRetorno.ToString()
-                _DescricaoRetorno = .DescricaoRetorno.ToString()
+                _Codigo = .CodigoRetorno.ToString()
+                _Descricao = .DescricaoRetorno.ToString()
             End If
         End With
     End Sub
 
     Private Sub BtnLimpar_Click(sender As Object, e As EventArgs) Handles btnLimpar.Click
+        Clear()
+    End Sub
+
+    Public Sub Clear()
         txtCodigo.Text = String.Empty
         txtDescricao.Text = String.Empty
-        _CodigoRetorno = String.Empty
-        _DescricaoRetorno = String.Empty
+        _Codigo = String.Empty
+        _Descricao = String.Empty
     End Sub
 End Class

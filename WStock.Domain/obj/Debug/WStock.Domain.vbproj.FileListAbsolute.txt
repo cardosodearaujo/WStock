@@ -25,6 +25,7 @@ C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\Iesi.Collections
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.vbprojAssemblyReference.cache
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.Resources.resources
+C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.AgendamentoResource.resources
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.vbproj.GenerateResource.cache
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.vbproj.CoreCompileInputs.cache
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.vbproj.CopyComplete

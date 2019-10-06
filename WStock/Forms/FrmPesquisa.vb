@@ -12,18 +12,28 @@ Public Class FrmPesquisa
     Public Property Tabela As String
     Public Property Where As String
     Public Property OrderBy As String
+    Public Property AbrirCarregado As Boolean = True
 
     Private Sub FrmPesquisa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If ValidarParamentros() Then
-            PreecherCombo()
-            ConfigurarGrid()
-        Else
-            Me.Close()
-        End If
+        Try
+            If ValidarParamentros() Then
+                PreecherCombo()
+                ConfigurarGrid()
+                If AbrirCarregado Then Consultar()
+            Else
+                Me.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles btnPesquisar.Click
-        Consultar()
+        Try
+            Consultar()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
     Private Sub DgvResultados_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvResultados.CellDoubleClick
         Try
@@ -34,7 +44,18 @@ Public Class FrmPesquisa
                 End If
                 Me.Close()
             End If
-        Catch
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub FrmPesquisa_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        Try
+            If e.Control = False And e.Shift = False And e.Alt = False And e.KeyCode = Keys.F10 Then
+                ExportGridToExcel.ExportGridToExcel(dgvResultados, xlsOption.xlsOpen, New FrmPesquisa, tspExportar)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -65,49 +86,45 @@ Public Class FrmPesquisa
     End Sub
 
     Private Sub Consultar()
-        Try
-            Dim SQL As New StringBuilder()
+        Dim SQL As New StringBuilder()
 
-            SQL.AppendLine("Select ")
+        SQL.AppendLine("Select ")
 
-            For Each item In ListaColunas
-                If item.Coluna = ListaColunas.Last.Coluna Then
-                    SQL.AppendLine(item.Coluna)
-                Else
-                    SQL.AppendLine(item.Coluna + ",")
-                End If
-            Next
-
-            SQL.AppendLine("From " + Tabela)
-
-            SQL.AppendLine("Where 1=1 ")
-
-            If Not String.IsNullOrEmpty(Where) Then
-                SQL.AppendLine(Where)
+        For Each item In ListaColunas
+            If item.Coluna = ListaColunas.Last.Coluna Then
+                SQL.AppendLine(item.Coluna)
+            Else
+                SQL.AppendLine(item.Coluna + ",")
             End If
+        Next
 
-            If Not String.IsNullOrEmpty(txtFiltro.Text) Then
-                SQL.AppendLine(" And " + cboOpcoes.SelectedValue + " LIKE '%" + txtFiltro.Text.Replace("'", "''") + "%'")
-            End If
+        SQL.AppendLine("From " + Tabela)
 
-            If Not String.IsNullOrEmpty(OrderBy) Then
-                SQL.AppendLine("OrderBy " + OrderBy)
-            End If
+        SQL.AppendLine("Where 1=1 ")
 
-            Dim Conexao As New MySqlConnection
-            Conexao.ConnectionString = NHibernateConfigurationData.Connection.getConnectionMySql()
-            Conexao.Open()
+        If Not String.IsNullOrEmpty(Where) Then
+            SQL.AppendLine(Where)
+        End If
 
-            Dim Adaptador As New MySqlDataAdapter(SQL.ToString(), Conexao)
-            Dim DataSet As New DataSet()
-            Adaptador.Fill(DataSet, Tabela)
+        If Not String.IsNullOrEmpty(txtFiltro.Text) Then
+            SQL.AppendLine(" And " + cboOpcoes.SelectedValue + " LIKE '%" + txtFiltro.Text.Replace("'", "''") + "%'")
+        End If
 
-            dgvResultados.DataSource = DataSet
-            dgvResultados.DataMember = Tabela
+        If Not String.IsNullOrEmpty(OrderBy) Then
+            SQL.AppendLine("OrderBy " + OrderBy)
+        End If
 
-            tspTotal.Text = "Total de registros: " & DataSet.Tables(Tabela).Rows.Count
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        Dim Conexao As New MySqlConnection
+        Conexao.ConnectionString = NHibernateConfigurationData.Connection.getConnectionMySql()
+        Conexao.Open()
+
+        Dim Adaptador As New MySqlDataAdapter(SQL.ToString(), Conexao)
+        Dim DataSet As New DataSet()
+        Adaptador.Fill(DataSet, Tabela)
+
+        dgvResultados.DataSource = DataSet
+        dgvResultados.DataMember = Tabela
+
+        tspTotal.Text = "Total de registros: " & DataSet.Tables(Tabela).Rows.Count
     End Sub
 End Class

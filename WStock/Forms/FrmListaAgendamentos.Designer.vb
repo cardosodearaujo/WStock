@@ -49,6 +49,9 @@ Partial Class FrmListaAgendamentos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNumNFe = New System.Windows.Forms.TextBox()
         Me.btnPesquisar = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.tspTotalRegistros = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tspExportar = New System.Windows.Forms.ToolStripStatusLabel()
         Me.dgvAgendamentos = New System.Windows.Forms.DataGridView()
         Me.CODIGO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CODIGO_TRANSPORTADORA = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -76,6 +79,7 @@ Partial Class FrmListaAgendamentos
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.pnlFiltro.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         CType(Me.dgvAgendamentos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -94,6 +98,7 @@ Partial Class FrmListaAgendamentos
         '
         'SplitContainer1.Panel2
         '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.StatusStrip1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.dgvAgendamentos)
         Me.SplitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -139,6 +144,8 @@ Partial Class FrmListaAgendamentos
         '
         Me.nswTipoVeiculo.CampoCodigoTabelaRetono = Nothing
         Me.nswTipoVeiculo.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoVeiculo.Codigo = Nothing
+        Me.nswTipoVeiculo.Descricao = Nothing
         Me.nswTipoVeiculo.ListaColunas = Nothing
         Me.nswTipoVeiculo.Location = New System.Drawing.Point(335, 85)
         Me.nswTipoVeiculo.Name = "nswTipoVeiculo"
@@ -153,6 +160,8 @@ Partial Class FrmListaAgendamentos
         '
         Me.nswTipoCarga.CampoCodigoTabelaRetono = Nothing
         Me.nswTipoCarga.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoCarga.Codigo = Nothing
+        Me.nswTipoCarga.Descricao = Nothing
         Me.nswTipoCarga.ListaColunas = Nothing
         Me.nswTipoCarga.Location = New System.Drawing.Point(335, 44)
         Me.nswTipoCarga.Name = "nswTipoCarga"
@@ -167,6 +176,8 @@ Partial Class FrmListaAgendamentos
         '
         Me.nswTipoPallet.CampoCodigoTabelaRetono = Nothing
         Me.nswTipoPallet.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoPallet.Codigo = Nothing
+        Me.nswTipoPallet.Descricao = Nothing
         Me.nswTipoPallet.ListaColunas = Nothing
         Me.nswTipoPallet.Location = New System.Drawing.Point(335, 4)
         Me.nswTipoPallet.Name = "nswTipoPallet"
@@ -181,6 +192,8 @@ Partial Class FrmListaAgendamentos
         '
         Me.nswTipoAgendamento.CampoCodigoTabelaRetono = Nothing
         Me.nswTipoAgendamento.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTipoAgendamento.Codigo = Nothing
+        Me.nswTipoAgendamento.Descricao = Nothing
         Me.nswTipoAgendamento.ListaColunas = Nothing
         Me.nswTipoAgendamento.Location = New System.Drawing.Point(3, 85)
         Me.nswTipoAgendamento.Name = "nswTipoAgendamento"
@@ -195,6 +208,8 @@ Partial Class FrmListaAgendamentos
         '
         Me.nswTransportador.CampoCodigoTabelaRetono = Nothing
         Me.nswTransportador.CampoDescricaoTabelaRetono = Nothing
+        Me.nswTransportador.Codigo = Nothing
+        Me.nswTransportador.Descricao = Nothing
         Me.nswTransportador.ListaColunas = Nothing
         Me.nswTransportador.Location = New System.Drawing.Point(3, 4)
         Me.nswTransportador.Name = "nswTransportador"
@@ -209,6 +224,8 @@ Partial Class FrmListaAgendamentos
         '
         Me.nswEmpresa.CampoCodigoTabelaRetono = ""
         Me.nswEmpresa.CampoDescricaoTabelaRetono = ""
+        Me.nswEmpresa.Codigo = Nothing
+        Me.nswEmpresa.Descricao = Nothing
         Me.nswEmpresa.ListaColunas = Nothing
         Me.nswEmpresa.Location = New System.Drawing.Point(3, 44)
         Me.nswEmpresa.Name = "nswEmpresa"
@@ -389,6 +406,29 @@ Partial Class FrmListaAgendamentos
         Me.btnPesquisar.Text = "Pesquisar"
         Me.btnPesquisar.UseVisualStyleBackColor = False
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tspTotalRegistros, Me.tspExportar})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 372)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(1112, 22)
+        Me.StatusStrip1.TabIndex = 26
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'tspTotalRegistros
+        '
+        Me.tspTotalRegistros.Name = "tspTotalRegistros"
+        Me.tspTotalRegistros.Size = New System.Drawing.Size(533, 17)
+        Me.tspTotalRegistros.Spring = True
+        Me.tspTotalRegistros.Text = "Total de registros: 0"
+        '
+        'tspExportar
+        '
+        Me.tspExportar.Name = "tspExportar"
+        Me.tspExportar.Size = New System.Drawing.Size(533, 17)
+        Me.tspExportar.Spring = True
+        Me.tspExportar.Text = "Exportar para excel - [F10]"
+        '
         'dgvAgendamentos
         '
         Me.dgvAgendamentos.AllowUserToAddRows = False
@@ -399,14 +439,13 @@ Partial Class FrmListaAgendamentos
         Me.dgvAgendamentos.BackgroundColor = System.Drawing.SystemColors.Window
         Me.dgvAgendamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvAgendamentos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CODIGO, Me.CODIGO_TRANSPORTADORA, Me.TRANSPORTADOR, Me.CODIGO_EMPRESA, Me.EMPRESA, Me.CODIGO_TIPO_AGENDAMENTO, Me.TIPO_AGENDAMENTO, Me.CODIGO_TIPO_PALLET, Me.TIPO_PALLET, Me.CODIGO_TIPO_CARGA, Me.TIPO_CARGA, Me.CODIGO_TIPO_VEICULO, Me.TIPO_VEICULO, Me.NFE, Me.NOME_MOTORISTA, Me.OBSERVACAO, Me.ORIGEM, Me.DESTINO, Me.QUANTIDADE_PALLET, Me.DATA_AGENDAMENTO, Me.DATA_CANCELAMENTO})
-        Me.dgvAgendamentos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvAgendamentos.Location = New System.Drawing.Point(0, 0)
         Me.dgvAgendamentos.MultiSelect = False
         Me.dgvAgendamentos.Name = "dgvAgendamentos"
         Me.dgvAgendamentos.ReadOnly = True
         Me.dgvAgendamentos.RowHeadersVisible = False
         Me.dgvAgendamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvAgendamentos.Size = New System.Drawing.Size(1112, 394)
+        Me.dgvAgendamentos.Size = New System.Drawing.Size(1112, 369)
         Me.dgvAgendamentos.TabIndex = 25
         '
         'CODIGO
@@ -579,10 +618,13 @@ Partial Class FrmListaAgendamentos
         Me.Text = "Lista de agendamentos"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
+        Me.SplitContainer1.Panel2.PerformLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         Me.pnlFiltro.ResumeLayout(False)
         Me.pnlFiltro.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         CType(Me.dgvAgendamentos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -637,4 +679,7 @@ Partial Class FrmListaAgendamentos
     Friend WithEvents QUANTIDADE_PALLET As DataGridViewTextBoxColumn
     Friend WithEvents DATA_AGENDAMENTO As DataGridViewTextBoxColumn
     Friend WithEvents DATA_CANCELAMENTO As DataGridViewTextBoxColumn
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents tspTotalRegistros As ToolStripStatusLabel
+    Friend WithEvents tspExportar As ToolStripStatusLabel
 End Class
