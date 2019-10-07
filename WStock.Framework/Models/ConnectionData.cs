@@ -19,7 +19,7 @@ namespace WStock.Framework.Models
 
         public string getConnectionMySql()
         {
-            return "Database=" + Database + ";Data Source=" + Server + ";User Id=" + User + ";Password=" + Password;
+            return "Database=" + Database + ";Data Source=" + Server + ";Port=" + Port + ";User Id=" + User + ";Password=" + Password;
         }
 
     }

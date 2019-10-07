@@ -31,3 +31,4 @@ C:\Users\everaldo.araujo\Desktop\WStock\WStock.Framework\obj\Debug\WStock.Framew
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Framework\obj\Debug\WStock.Framework.csproj.CopyComplete
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Framework\obj\Debug\WStock.Framework.dll
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Framework\obj\Debug\WStock.Framework.pdb
+C:\Users\everaldo.araujo\Desktop\WStock\WStock.Framework\obj\Debug\WStock.Framework.csprojAssemblyReference.cache

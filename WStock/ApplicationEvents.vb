@@ -9,23 +9,15 @@ Namespace My
             ConfigureConnection()
             ConfigureDependencyInjection()
         End Sub
-
         Public Sub Exception(sender As Object, e As ApplicationServices.UnhandledExceptionEventArgs) Handles Me.UnhandledException
             MessageBox.Show("Ocorreu um erro sem tratamento! Consulte o suporte." + vbCrLf + e.Exception.Message)
         End Sub
-
         Public Sub ConfigureConnection()
             NHibernateConfigurationData.Dialect = "NHibernate.Dialect.MySQLDialect"
             NHibernateConfigurationData.Driver = "NHibernate.Driver.MySqlDataDriver"
             NHibernateConfigurationData.Provider = "NHibernate.Connection.DriverConnectionProvider"
-            NHibernateConfigurationData.Connection = New Framework.Models.ConnectionData()
-            NHibernateConfigurationData.Connection.Database = "bd_wstock"
-            NHibernateConfigurationData.Connection.Server = "localhost"
-            NHibernateConfigurationData.Connection.User = "cardoso"
-            NHibernateConfigurationData.Connection.Password = "M1n3Rv@7"
             NHibernateConfigurationData.Assembly = "WStock.Infraestructure"
         End Sub
-
         Public Sub ConfigureDependencyInjection()
             DependencyInjectionFactory.AddDependencyInjection(GetType(IUsuarioRepository), GetType(UsuarioRepository))
             DependencyInjectionFactory.AddDependencyInjection(GetType(IAgendamentoRepository), GetType(AgendamentoRepository))

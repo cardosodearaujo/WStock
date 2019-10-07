@@ -79,3 +79,4 @@ C:\Users\everaldo.araujo\Desktop\WStock\WStock\obj\Debug\WStock.vbproj.CopyCompl
 C:\Users\everaldo.araujo\Desktop\WStock\WStock\obj\Debug\WStock.exe
 C:\Users\everaldo.araujo\Desktop\WStock\WStock\obj\Debug\WStock.xml
 C:\Users\everaldo.araujo\Desktop\WStock\WStock\obj\Debug\WStock.pdb
+C:\Users\everaldo.araujo\Desktop\WStock\WStock\obj\Debug\WStock.FrmDatabase.resources
