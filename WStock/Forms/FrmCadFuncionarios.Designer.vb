@@ -22,7 +22,6 @@ Partial Class FrmCadFuncionarios
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnSalvar = New System.Windows.Forms.Button()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.txtNome = New System.Windows.Forms.TextBox()
         Me.lblNome = New System.Windows.Forms.Label()
@@ -34,25 +33,18 @@ Partial Class FrmCadFuncionarios
         Me.dtpTerminoContrato = New System.Windows.Forms.DateTimePicker()
         Me.lblTerminoContrato = New System.Windows.Forms.Label()
         Me.nswEmpresa = New WStock.NewSearchWindow()
-        Me.btnProcurar = New System.Windows.Forms.Button()
         Me.nswTurno = New WStock.NewSearchWindow()
         Me.nswSituacao = New WStock.NewSearchWindow()
         Me.nswArea = New WStock.NewSearchWindow()
+        Me.btnSalvar = New System.Windows.Forms.Button()
+        Me.btnProcurar = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.SuspendLayout()
-        '
-        'btnSalvar
-        '
-        Me.btnSalvar.Location = New System.Drawing.Point(12, 296)
-        Me.btnSalvar.Name = "btnSalvar"
-        Me.btnSalvar.Size = New System.Drawing.Size(75, 23)
-        Me.btnSalvar.TabIndex = 0
-        Me.btnSalvar.Text = "Salvar"
-        Me.btnSalvar.UseVisualStyleBackColor = True
         '
         'lblCodigo
         '
         Me.lblCodigo.AutoSize = True
-        Me.lblCodigo.Location = New System.Drawing.Point(15, 14)
+        Me.lblCodigo.Location = New System.Drawing.Point(20, 14)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(40, 13)
         Me.lblCodigo.TabIndex = 2
@@ -60,7 +52,7 @@ Partial Class FrmCadFuncionarios
         '
         'txtNome
         '
-        Me.txtNome.Location = New System.Drawing.Point(77, 30)
+        Me.txtNome.Location = New System.Drawing.Point(82, 30)
         Me.txtNome.Name = "txtNome"
         Me.txtNome.Size = New System.Drawing.Size(261, 20)
         Me.txtNome.TabIndex = 31
@@ -68,7 +60,7 @@ Partial Class FrmCadFuncionarios
         'lblNome
         '
         Me.lblNome.AutoSize = True
-        Me.lblNome.Location = New System.Drawing.Point(80, 14)
+        Me.lblNome.Location = New System.Drawing.Point(85, 14)
         Me.lblNome.Name = "lblNome"
         Me.lblNome.Size = New System.Drawing.Size(35, 13)
         Me.lblNome.TabIndex = 32
@@ -77,7 +69,7 @@ Partial Class FrmCadFuncionarios
         'txtCodigo
         '
         Me.txtCodigo.Enabled = False
-        Me.txtCodigo.Location = New System.Drawing.Point(12, 30)
+        Me.txtCodigo.Location = New System.Drawing.Point(17, 30)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(64, 20)
@@ -86,7 +78,7 @@ Partial Class FrmCadFuncionarios
         'lblTelefone
         '
         Me.lblTelefone.AutoSize = True
-        Me.lblTelefone.Location = New System.Drawing.Point(127, 60)
+        Me.lblTelefone.Location = New System.Drawing.Point(132, 60)
         Me.lblTelefone.Name = "lblTelefone"
         Me.lblTelefone.Size = New System.Drawing.Size(49, 13)
         Me.lblTelefone.TabIndex = 37
@@ -94,7 +86,7 @@ Partial Class FrmCadFuncionarios
         '
         'txtTelefone
         '
-        Me.txtTelefone.Location = New System.Drawing.Point(124, 76)
+        Me.txtTelefone.Location = New System.Drawing.Point(129, 76)
         Me.txtTelefone.Mask = "(00)00000-0000"
         Me.txtTelefone.Name = "txtTelefone"
         Me.txtTelefone.Size = New System.Drawing.Size(94, 20)
@@ -102,7 +94,7 @@ Partial Class FrmCadFuncionarios
         '
         'txtBancoHoras
         '
-        Me.txtBancoHoras.Location = New System.Drawing.Point(224, 76)
+        Me.txtBancoHoras.Location = New System.Drawing.Point(229, 76)
         Me.txtBancoHoras.Name = "txtBancoHoras"
         Me.txtBancoHoras.Size = New System.Drawing.Size(114, 20)
         Me.txtBancoHoras.TabIndex = 39
@@ -110,7 +102,7 @@ Partial Class FrmCadFuncionarios
         'lblBancoHoras
         '
         Me.lblBancoHoras.AutoSize = True
-        Me.lblBancoHoras.Location = New System.Drawing.Point(224, 60)
+        Me.lblBancoHoras.Location = New System.Drawing.Point(229, 60)
         Me.lblBancoHoras.Name = "lblBancoHoras"
         Me.lblBancoHoras.Size = New System.Drawing.Size(82, 13)
         Me.lblBancoHoras.TabIndex = 40
@@ -120,7 +112,7 @@ Partial Class FrmCadFuncionarios
         '
         Me.dtpTerminoContrato.CustomFormat = "dd/MM/yyyy"
         Me.dtpTerminoContrato.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpTerminoContrato.Location = New System.Drawing.Point(12, 76)
+        Me.dtpTerminoContrato.Location = New System.Drawing.Point(17, 76)
         Me.dtpTerminoContrato.Name = "dtpTerminoContrato"
         Me.dtpTerminoContrato.Size = New System.Drawing.Size(106, 20)
         Me.dtpTerminoContrato.TabIndex = 41
@@ -128,7 +120,7 @@ Partial Class FrmCadFuncionarios
         'lblTerminoContrato
         '
         Me.lblTerminoContrato.AutoSize = True
-        Me.lblTerminoContrato.Location = New System.Drawing.Point(15, 60)
+        Me.lblTerminoContrato.Location = New System.Drawing.Point(20, 60)
         Me.lblTerminoContrato.Name = "lblTerminoContrato"
         Me.lblTerminoContrato.Size = New System.Drawing.Size(102, 13)
         Me.lblTerminoContrato.TabIndex = 42
@@ -141,7 +133,7 @@ Partial Class FrmCadFuncionarios
         Me.nswEmpresa.Codigo = Nothing
         Me.nswEmpresa.Descricao = Nothing
         Me.nswEmpresa.ListaColunas = Nothing
-        Me.nswEmpresa.Location = New System.Drawing.Point(6, 102)
+        Me.nswEmpresa.Location = New System.Drawing.Point(11, 102)
         Me.nswEmpresa.Name = "nswEmpresa"
         Me.nswEmpresa.OrderBy = Nothing
         Me.nswEmpresa.Size = New System.Drawing.Size(332, 41)
@@ -150,15 +142,6 @@ Partial Class FrmCadFuncionarios
         Me.nswEmpresa.Titulo = "Empresa"
         Me.nswEmpresa.Where = Nothing
         '
-        'btnProcurar
-        '
-        Me.btnProcurar.Location = New System.Drawing.Point(93, 296)
-        Me.btnProcurar.Name = "btnProcurar"
-        Me.btnProcurar.Size = New System.Drawing.Size(75, 23)
-        Me.btnProcurar.TabIndex = 51
-        Me.btnProcurar.Text = "Procurar"
-        Me.btnProcurar.UseVisualStyleBackColor = True
-        '
         'nswTurno
         '
         Me.nswTurno.CampoCodigoTabelaRetono = ""
@@ -166,7 +149,7 @@ Partial Class FrmCadFuncionarios
         Me.nswTurno.Codigo = Nothing
         Me.nswTurno.Descricao = Nothing
         Me.nswTurno.ListaColunas = Nothing
-        Me.nswTurno.Location = New System.Drawing.Point(6, 149)
+        Me.nswTurno.Location = New System.Drawing.Point(11, 149)
         Me.nswTurno.Name = "nswTurno"
         Me.nswTurno.OrderBy = Nothing
         Me.nswTurno.Size = New System.Drawing.Size(332, 41)
@@ -182,7 +165,7 @@ Partial Class FrmCadFuncionarios
         Me.nswSituacao.Codigo = Nothing
         Me.nswSituacao.Descricao = Nothing
         Me.nswSituacao.ListaColunas = Nothing
-        Me.nswSituacao.Location = New System.Drawing.Point(6, 196)
+        Me.nswSituacao.Location = New System.Drawing.Point(11, 196)
         Me.nswSituacao.Name = "nswSituacao"
         Me.nswSituacao.OrderBy = Nothing
         Me.nswSituacao.Size = New System.Drawing.Size(332, 41)
@@ -198,7 +181,7 @@ Partial Class FrmCadFuncionarios
         Me.nswArea.Codigo = Nothing
         Me.nswArea.Descricao = Nothing
         Me.nswArea.ListaColunas = Nothing
-        Me.nswArea.Location = New System.Drawing.Point(6, 241)
+        Me.nswArea.Location = New System.Drawing.Point(11, 241)
         Me.nswArea.Name = "nswArea"
         Me.nswArea.OrderBy = Nothing
         Me.nswArea.Size = New System.Drawing.Size(332, 41)
@@ -207,11 +190,43 @@ Partial Class FrmCadFuncionarios
         Me.nswArea.Titulo = "Área"
         Me.nswArea.Where = Nothing
         '
+        'btnSalvar
+        '
+        Me.btnSalvar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnSalvar.Image = Global.WStock.My.Resources.Resources.floppy_disk
+        Me.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSalvar.Location = New System.Drawing.Point(17, 293)
+        Me.btnSalvar.Name = "btnSalvar"
+        Me.btnSalvar.Size = New System.Drawing.Size(95, 29)
+        Me.btnSalvar.TabIndex = 55
+        Me.btnSalvar.Text = "Salvar"
+        Me.btnSalvar.UseVisualStyleBackColor = True
+        '
+        'btnProcurar
+        '
+        Me.btnProcurar.Image = Global.WStock.My.Resources.Resources.search
+        Me.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnProcurar.Location = New System.Drawing.Point(118, 293)
+        Me.btnProcurar.Name = "btnProcurar"
+        Me.btnProcurar.Size = New System.Drawing.Size(95, 29)
+        Me.btnProcurar.TabIndex = 51
+        Me.btnProcurar.Text = "Procurar"
+        Me.btnProcurar.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 6)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(348, 281)
+        Me.GroupBox1.TabIndex = 56
+        Me.GroupBox1.TabStop = False
+        '
         'FrmCadFuncionarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(348, 327)
+        Me.ClientSize = New System.Drawing.Size(361, 327)
+        Me.Controls.Add(Me.btnSalvar)
         Me.Controls.Add(Me.nswArea)
         Me.Controls.Add(Me.nswSituacao)
         Me.Controls.Add(Me.nswTurno)
@@ -227,7 +242,7 @@ Partial Class FrmCadFuncionarios
         Me.Controls.Add(Me.lblNome)
         Me.Controls.Add(Me.txtNome)
         Me.Controls.Add(Me.lblCodigo)
-        Me.Controls.Add(Me.btnSalvar)
+        Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmCadFuncionarios"
@@ -238,8 +253,6 @@ Partial Class FrmCadFuncionarios
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents btnSalvar As Button
     Friend WithEvents lblCodigo As Label
     Friend WithEvents txtNome As TextBox
     Friend WithEvents lblNome As Label
@@ -251,8 +264,10 @@ Partial Class FrmCadFuncionarios
     Friend WithEvents lblBancoHoras As Label
     Friend WithEvents dtpTerminoContrato As DateTimePicker
     Friend WithEvents lblTerminoContrato As Label
-    Friend WithEvents btnProcurar As Button
     Friend WithEvents nswTurno As NewSearchWindow
     Friend WithEvents nswSituacao As NewSearchWindow
     Friend WithEvents nswArea As NewSearchWindow
+    Friend WithEvents btnSalvar As Button
+    Friend WithEvents btnProcurar As Button
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

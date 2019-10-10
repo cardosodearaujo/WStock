@@ -53,11 +53,15 @@ Partial Class FrmMenu
         Me.CadastroDeUsuáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastroDeFornecedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastroDeProdutosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CadastroDeFuncionariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControleTerceirizadasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AvaliaçãoIndividualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarAvaliaçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CadastroDeFuncionariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.tspVersao = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tspConexao = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -65,7 +69,7 @@ Partial Class FrmMenu
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AnáliseDeConsumoToolStripMenuItem, Me.EstoqueToolStripMenuItem, Me.PerdasEDescartesToolStripMenuItem, Me.RecebimentoToolStripMenuItem, Me.BaseScriptToolStripMenuItem, Me.SolicitaçãoDeCompraToolStripMenuItem, Me.CadastrosToolStripMenuItem, Me.ControleTerceirizadasToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1070, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(960, 24)
         Me.MenuStrip1.TabIndex = 19
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -179,13 +183,13 @@ Partial Class FrmMenu
         'AgendaToolStripMenuItem
         '
         Me.AgendaToolStripMenuItem.Name = "AgendaToolStripMenuItem"
-        Me.AgendaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgendaToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.AgendaToolStripMenuItem.Text = "Agendamento"
         '
         'ControleDePaletesToolStripMenuItem
         '
         Me.ControleDePaletesToolStripMenuItem.Name = "ControleDePaletesToolStripMenuItem"
-        Me.ControleDePaletesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ControleDePaletesToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.ControleDePaletesToolStripMenuItem.Text = "Controle de paletes"
         Me.ControleDePaletesToolStripMenuItem.Visible = False
         '
@@ -266,6 +270,12 @@ Partial Class FrmMenu
         Me.CadastroDeProdutosToolStripMenuItem.Text = "Cadastro de Produtos"
         Me.CadastroDeProdutosToolStripMenuItem.Visible = False
         '
+        'CadastroDeFuncionariosToolStripMenuItem
+        '
+        Me.CadastroDeFuncionariosToolStripMenuItem.Name = "CadastroDeFuncionariosToolStripMenuItem"
+        Me.CadastroDeFuncionariosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.CadastroDeFuncionariosToolStripMenuItem.Text = "Cadastro de funcionarios"
+        '
         'ControleTerceirizadasToolStripMenuItem
         '
         Me.ControleTerceirizadasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AvaliaçãoIndividualToolStripMenuItem, Me.ConsultarAvaliaçõesToolStripMenuItem})
@@ -273,7 +283,6 @@ Partial Class FrmMenu
         Me.ControleTerceirizadasToolStripMenuItem.Name = "ControleTerceirizadasToolStripMenuItem"
         Me.ControleTerceirizadasToolStripMenuItem.Size = New System.Drawing.Size(150, 20)
         Me.ControleTerceirizadasToolStripMenuItem.Text = "Controle Terceirizadas"
-        Me.ControleTerceirizadasToolStripMenuItem.Visible = False
         '
         'AvaliaçãoIndividualToolStripMenuItem
         '
@@ -286,30 +295,51 @@ Partial Class FrmMenu
         Me.ConsultarAvaliaçõesToolStripMenuItem.Name = "ConsultarAvaliaçõesToolStripMenuItem"
         Me.ConsultarAvaliaçõesToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.ConsultarAvaliaçõesToolStripMenuItem.Text = "Consultar avaliações"
+        Me.ConsultarAvaliaçõesToolStripMenuItem.Visible = False
         '
-        'CadastroDeFuncionariosToolStripMenuItem
+        'StatusStrip1
         '
-        Me.CadastroDeFuncionariosToolStripMenuItem.Name = "CadastroDeFuncionariosToolStripMenuItem"
-        Me.CadastroDeFuncionariosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
-        Me.CadastroDeFuncionariosToolStripMenuItem.Text = "Cadastro de funcionarios"
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tspVersao, Me.tspConexao})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 500)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(960, 22)
+        Me.StatusStrip1.TabIndex = 21
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'tspVersao
+        '
+        Me.tspVersao.Name = "tspVersao"
+        Me.tspVersao.Size = New System.Drawing.Size(472, 17)
+        Me.tspVersao.Spring = True
+        Me.tspVersao.Text = "WStock/Wine - v1.0"
+        '
+        'tspConexao
+        '
+        Me.tspConexao.Name = "tspConexao"
+        Me.tspConexao.Size = New System.Drawing.Size(472, 17)
+        Me.tspConexao.Spring = True
+        Me.tspConexao.Text = "Dados da conexão:"
         '
         'FrmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(1070, 524)
+        Me.ClientSize = New System.Drawing.Size(960, 522)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.ForeColor = System.Drawing.SystemColors.ActiveBorder
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
         Me.Name = "FrmMenu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "WStock"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.Text = "WStock - Funções satélites"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -349,4 +379,7 @@ Partial Class FrmMenu
     Friend WithEvents ControleDePaletesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AgendaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CadastroDeFuncionariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents tspVersao As ToolStripStatusLabel
+    Friend WithEvents tspConexao As ToolStripStatusLabel
 End Class
