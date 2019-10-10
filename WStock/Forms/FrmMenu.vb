@@ -29,4 +29,9 @@
         Dim Agendamento As New FrmListaAgendamentos
         Agendamento.ShowDialog()
     End Sub
+
+    Private Sub CadastroDeFuncionariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CadastroDeFuncionariosToolStripMenuItem.Click
+        Dim Funcionarios As New FrmCadFuncionarios
+        Funcionarios.ShowDialog()
+    End Sub
 End Class

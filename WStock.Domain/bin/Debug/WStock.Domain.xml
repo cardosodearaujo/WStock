@@ -78,5 +78,56 @@ WStock.Domain
   Consulta uma cadeia de caracteres localizada semelhante a Informe o transportador..
 </summary>
 </member>
+<member name="T:WStock.Domain.My.Resources.FuncionarioResource">
+<summary>
+  Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.FuncionarioResource.ResourceManager">
+<summary>
+  Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.FuncionarioResource.Culture">
+<summary>
+  Substitui a propriedade CurrentUICulture do thread atual para todas as
+  pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.FuncionarioResource.VALIDA_AREA">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe a área..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.FuncionarioResource.VALIDA_EMPRESA">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe a empresa..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.FuncionarioResource.VALIDA_NOME">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe o nome do funcionário..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.FuncionarioResource.VALIDA_SITUACAO">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe a situação..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.FuncionarioResource.VALIDA_TELEFONE">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe o telefone..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.FuncionarioResource.VALIDA_TERMINO_CONTRATO">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe a data de término do contrato..
+</summary>
+</member>
+<member name="P:WStock.Domain.My.Resources.FuncionarioResource.VALIDA_TURNO">
+<summary>
+  Consulta uma cadeia de caracteres localizada semelhante a Informe o turno..
+</summary>
+</member>
 </members>
 </doc>

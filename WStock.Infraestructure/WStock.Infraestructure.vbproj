@@ -102,7 +102,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Repository\AgendamentoRepository.vb" />
+    <Compile Include="Repository\SituacaoRepository.vb" />
+    <Compile Include="Repository\TurnoRepository.vb" />
+    <Compile Include="Repository\AreaRepository.vb" />
     <Compile Include="Repository\EmpresaRepository.vb" />
+    <Compile Include="Repository\FuncionarioRepository.vb" />
     <Compile Include="Repository\TipoAgendamentoRepository.vb" />
     <Compile Include="Repository\TipoCargaRepository.vb" />
     <Compile Include="Repository\TipoPalletRepository.vb" />
@@ -164,6 +168,18 @@
       <Project>{4F56BFF1-4B3E-4A10-BA42-C89DE7C3D1BC}</Project>
       <Name>WStock.Framework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Funcionario.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Turno.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Area.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Situacao.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

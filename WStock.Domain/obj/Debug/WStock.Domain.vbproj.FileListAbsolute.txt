@@ -32,3 +32,4 @@ C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.vb
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.dll
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.xml
 C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.pdb
+C:\Users\everaldo.araujo\Desktop\WStock\WStock.Domain\obj\Debug\WStock.Domain.FuncionarioResource.resources

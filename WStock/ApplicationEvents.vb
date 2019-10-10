@@ -27,6 +27,10 @@ Namespace My
             DependencyInjectionFactory.AddDependencyInjection(GetType(ITipoPalletRepository), GetType(TipoPalletRepository))
             DependencyInjectionFactory.AddDependencyInjection(GetType(ITipoVeiculoRepository), GetType(TipoVeiculoRepository))
             DependencyInjectionFactory.AddDependencyInjection(GetType(ITransportadorRepository), GetType(TransportadorRepository))
+            DependencyInjectionFactory.AddDependencyInjection(GetType(IFuncionarioRepository), GetType(FuncionarioRepository))
+            DependencyInjectionFactory.AddDependencyInjection(GetType(IAreaRepository), GetType(AreaRepository))
+            DependencyInjectionFactory.AddDependencyInjection(GetType(ISituacaoRepository), GetType(SituacaoRepository))
+            DependencyInjectionFactory.AddDependencyInjection(GetType(ITurnoRepository), GetType(TurnoRepository))
         End Sub
     End Class
 End Namespace

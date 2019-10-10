@@ -103,9 +103,9 @@ Partial Class FrmDatabase
         '
         'btnSalvar
         '
-        Me.btnSalvar.Location = New System.Drawing.Point(151, 127)
+        Me.btnSalvar.Location = New System.Drawing.Point(90, 127)
         Me.btnSalvar.Name = "btnSalvar"
-        Me.btnSalvar.Size = New System.Drawing.Size(75, 23)
+        Me.btnSalvar.Size = New System.Drawing.Size(97, 23)
         Me.btnSalvar.TabIndex = 9
         Me.btnSalvar.Text = "Salvar"
         Me.btnSalvar.UseVisualStyleBackColor = True
@@ -128,7 +128,7 @@ Partial Class FrmDatabase
         '
         'btnTestar
         '
-        Me.btnTestar.Location = New System.Drawing.Point(12, 127)
+        Me.btnTestar.Location = New System.Drawing.Point(191, 127)
         Me.btnTestar.Name = "btnTestar"
         Me.btnTestar.Size = New System.Drawing.Size(97, 23)
         Me.btnTestar.TabIndex = 12

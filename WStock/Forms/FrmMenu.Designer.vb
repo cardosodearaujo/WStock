@@ -56,6 +56,7 @@ Partial Class FrmMenu
         Me.ControleTerceirizadasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AvaliaçãoIndividualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarAvaliaçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CadastroDeFuncionariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -238,30 +239,32 @@ Partial Class FrmMenu
         '
         'CadastrosToolStripMenuItem
         '
-        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastroDeUsuáriosToolStripMenuItem, Me.CadastroDeFornecedorToolStripMenuItem, Me.CadastroDeProdutosToolStripMenuItem})
+        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastroDeUsuáriosToolStripMenuItem, Me.CadastroDeFornecedorToolStripMenuItem, Me.CadastroDeProdutosToolStripMenuItem, Me.CadastroDeFuncionariosToolStripMenuItem})
         Me.CadastrosToolStripMenuItem.Image = CType(resources.GetObject("CadastrosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
         Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
         Me.CadastrosToolStripMenuItem.Text = "Cadastros"
-        Me.CadastrosToolStripMenuItem.Visible = False
         '
         'CadastroDeUsuáriosToolStripMenuItem
         '
         Me.CadastroDeUsuáriosToolStripMenuItem.Name = "CadastroDeUsuáriosToolStripMenuItem"
-        Me.CadastroDeUsuáriosToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.CadastroDeUsuáriosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.CadastroDeUsuáriosToolStripMenuItem.Text = "Cadastro de Usuários"
+        Me.CadastroDeUsuáriosToolStripMenuItem.Visible = False
         '
         'CadastroDeFornecedorToolStripMenuItem
         '
         Me.CadastroDeFornecedorToolStripMenuItem.Name = "CadastroDeFornecedorToolStripMenuItem"
-        Me.CadastroDeFornecedorToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.CadastroDeFornecedorToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.CadastroDeFornecedorToolStripMenuItem.Text = "Cadastro de Fornecedor"
+        Me.CadastroDeFornecedorToolStripMenuItem.Visible = False
         '
         'CadastroDeProdutosToolStripMenuItem
         '
         Me.CadastroDeProdutosToolStripMenuItem.Name = "CadastroDeProdutosToolStripMenuItem"
-        Me.CadastroDeProdutosToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.CadastroDeProdutosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.CadastroDeProdutosToolStripMenuItem.Text = "Cadastro de Produtos"
+        Me.CadastroDeProdutosToolStripMenuItem.Visible = False
         '
         'ControleTerceirizadasToolStripMenuItem
         '
@@ -283,6 +286,12 @@ Partial Class FrmMenu
         Me.ConsultarAvaliaçõesToolStripMenuItem.Name = "ConsultarAvaliaçõesToolStripMenuItem"
         Me.ConsultarAvaliaçõesToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.ConsultarAvaliaçõesToolStripMenuItem.Text = "Consultar avaliações"
+        '
+        'CadastroDeFuncionariosToolStripMenuItem
+        '
+        Me.CadastroDeFuncionariosToolStripMenuItem.Name = "CadastroDeFuncionariosToolStripMenuItem"
+        Me.CadastroDeFuncionariosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.CadastroDeFuncionariosToolStripMenuItem.Text = "Cadastro de funcionarios"
         '
         'FrmMenu
         '
@@ -339,4 +348,5 @@ Partial Class FrmMenu
     Friend WithEvents ConsultarAvaliaçõesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ControleDePaletesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AgendaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CadastroDeFuncionariosToolStripMenuItem As ToolStripMenuItem
 End Class

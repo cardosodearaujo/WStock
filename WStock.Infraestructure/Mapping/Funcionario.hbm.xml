@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="WStock.Domain.Funcionario,WStock.Domain" table="TB_FUNCIONARIO" lazy="true">
+    <id name="Codigo" column="CODIGO" unsaved-value="0">
+      <generator class="identity"/>
+    </id>
+    <many-to-one name="Empresa" class="WStock.Domain.Empresa" column="CODIGO_EMPRESA" />
+    <many-to-one name="Turno" class="WStock.Domain.Turno" column="CODIGO_TURNO" />
+    <many-to-one name="Area" class="WStock.Domain.Area" column="CODIGO_AREA" />
+    <many-to-one name="Situacao" class="WStock.Domain.Situacao" column="CODIGO_SITUACAO" />
+    <property name="NomeFuncionario" column="NOME_FUNCIONARIO" />
+    <property name="Telefone" column="TELEFONE" />
+    <property name="BancoHoras" column="BANCO_HORAS" />
+    <property name="TerminoContrato" column="TERMINO_CONTRATO" />
+  </class>
+</hibernate-mapping>

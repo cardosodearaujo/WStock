@@ -104,7 +104,7 @@ Public Class FrmPesquisa
         End If
 
         If Not String.IsNullOrEmpty(OrderBy) Then
-            SQL.AppendLine("OrderBy " + OrderBy)
+            SQL.AppendLine("Order By " + OrderBy)
         End If
 
         Dim Conexao As New MySqlConnection

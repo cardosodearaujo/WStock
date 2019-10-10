@@ -68,12 +68,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Agendamento.vb" />
+    <Compile Include="Entity\Area.vb" />
     <Compile Include="Entity\Empresa.vb" />
+    <Compile Include="Entity\Funcionario.vb" />
+    <Compile Include="Entity\Situacao.vb" />
     <Compile Include="Entity\TipoAgendamento.vb" />
     <Compile Include="Entity\TipoCarga.vb" />
     <Compile Include="Entity\TipoPallet.vb" />
     <Compile Include="Entity\TipoVeiculo.vb" />
     <Compile Include="Entity\Transportador.vb" />
+    <Compile Include="Entity\Turno.vb" />
     <Compile Include="Entity\Usuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -92,20 +96,30 @@
     </Compile>
     <Compile Include="Repository\IAgendamentoRepository.vb" />
     <Compile Include="Repository\IEmpresaRepository.vb" />
+    <Compile Include="Repository\IFuncionarioRepository.vb" />
     <Compile Include="Repository\ITipoAgendamentoRepository.vb" />
     <Compile Include="Repository\ITipoCargaRepository.vb" />
     <Compile Include="Repository\ITipoPalletRepository.vb" />
     <Compile Include="Repository\ITipoVeiculoRepository.vb" />
     <Compile Include="Repository\ITransportadorRepository.vb" />
+    <Compile Include="Repository\IAreaRepository.vb" />
+    <Compile Include="Repository\ISituacaoRepository.vb" />
+    <Compile Include="Repository\ITurnoRepository.vb" />
     <Compile Include="Repository\IUsuarioRepository.vb" />
     <Compile Include="Resource\AgendamentoResource.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AgendamentoResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resource\FuncionarioResource.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FuncionarioResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Service\AgendamentoService.vb" />
-    <Compile Include="Validations\AgendamentoDeleteValidation.vb" />
+    <Compile Include="Service\FuncionarioService.vb" />
     <Compile Include="Validations\AgendamentoSaveValidation.vb" />
+    <Compile Include="Validations\FuncionarioSaveValidation.vb" />
     <Compile Include="ValueObject\AgendamentoVO.vb" />
     <Compile Include="ValueObject\RotuloPesquisaVO.vb" />
   </ItemGroup>
@@ -120,6 +134,11 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AgendamentoResource.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\FuncionarioResource.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FuncionarioResource.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -35,7 +35,6 @@ Public Class FrmDatabase
             MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Sub BtnTestar_Click(sender As Object, e As EventArgs) Handles btnTestar.Click
         Try
             Dim Conexao As New MySqlConnection()
