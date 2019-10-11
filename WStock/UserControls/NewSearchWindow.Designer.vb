@@ -22,22 +22,12 @@ Partial Class NewSearchWindow
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnLimpar = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.btnPesquisar = New System.Windows.Forms.Button()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.txtDescricao = New System.Windows.Forms.TextBox()
+        Me.btnLimpar = New System.Windows.Forms.Button()
+        Me.btnPesquisar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'btnLimpar
-        '
-        Me.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnLimpar.Image = Global.WStock.My.Resources.Resources.delete
-        Me.btnLimpar.Location = New System.Drawing.Point(278, 16)
-        Me.btnLimpar.Name = "btnLimpar"
-        Me.btnLimpar.Size = New System.Drawing.Size(25, 23)
-        Me.btnLimpar.TabIndex = 11
-        Me.btnLimpar.UseVisualStyleBackColor = True
         '
         'lblTitulo
         '
@@ -47,16 +37,6 @@ Partial Class NewSearchWindow
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(0, 13)
         Me.lblTitulo.TabIndex = 10
-        '
-        'btnPesquisar
-        '
-        Me.btnPesquisar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnPesquisar.Image = Global.WStock.My.Resources.Resources.search
-        Me.btnPesquisar.Location = New System.Drawing.Point(302, 16)
-        Me.btnPesquisar.Name = "btnPesquisar"
-        Me.btnPesquisar.Size = New System.Drawing.Size(25, 23)
-        Me.btnPesquisar.TabIndex = 7
-        Me.btnPesquisar.UseVisualStyleBackColor = True
         '
         'txtCodigo
         '
@@ -79,6 +59,26 @@ Partial Class NewSearchWindow
         Me.txtDescricao.ReadOnly = True
         Me.txtDescricao.Size = New System.Drawing.Size(210, 22)
         Me.txtDescricao.TabIndex = 9
+        '
+        'btnLimpar
+        '
+        Me.btnLimpar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnLimpar.Image = Global.WStock.My.Resources.Resources.delete
+        Me.btnLimpar.Location = New System.Drawing.Point(278, 16)
+        Me.btnLimpar.Name = "btnLimpar"
+        Me.btnLimpar.Size = New System.Drawing.Size(25, 23)
+        Me.btnLimpar.TabIndex = 11
+        Me.btnLimpar.UseVisualStyleBackColor = True
+        '
+        'btnPesquisar
+        '
+        Me.btnPesquisar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnPesquisar.Image = Global.WStock.My.Resources.Resources.search_1_
+        Me.btnPesquisar.Location = New System.Drawing.Point(302, 16)
+        Me.btnPesquisar.Name = "btnPesquisar"
+        Me.btnPesquisar.Size = New System.Drawing.Size(25, 23)
+        Me.btnPesquisar.TabIndex = 7
+        Me.btnPesquisar.UseVisualStyleBackColor = True
         '
         'NewSearchWindow
         '

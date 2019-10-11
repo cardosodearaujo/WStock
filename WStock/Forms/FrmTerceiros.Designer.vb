@@ -27,34 +27,34 @@ Partial Class FrmTerceiros
         Me.txtPontosFortes = New System.Windows.Forms.TextBox()
         Me.lblPontosFracos = New System.Windows.Forms.Label()
         Me.txtPontosFracos = New System.Windows.Forms.TextBox()
-        Me.lblNota = New System.Windows.Forms.Label()
-        Me.dtpDataAvaliacao = New System.Windows.Forms.DateTimePicker()
+        Me.lblAvalidacao = New System.Windows.Forms.Label()
+        Me.dtpAvaliacao = New System.Windows.Forms.DateTimePicker()
         Me.lblDataAvaliacao = New System.Windows.Forms.Label()
-        Me.dtpDataInicial = New System.Windows.Forms.DateTimePicker()
-        Me.dtpDataFinal = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dtpPeriodoInicial = New System.Windows.Forms.DateTimePicker()
+        Me.dtpPeriodoFinal = New System.Windows.Forms.DateTimePicker()
+        Me.lblPeriodoInicial = New System.Windows.Forms.Label()
         Me.btnSalvar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboAvaliacao = New System.Windows.Forms.ComboBox()
         Me.txtAcao = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnProcurar = New System.Windows.Forms.Button()
+        Me.lblAvaliacaoGeral = New System.Windows.Forms.Label()
+        Me.txtAvaliacaoGeral = New System.Windows.Forms.TextBox()
+        Me.dgvAvaliacoes = New System.Windows.Forms.DataGridView()
         Me.AVALIADOR = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PONTOS_FORTES = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PONTOS_FRACOS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DATA_AVALIACAO = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AVALIACAO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.NewSearchWindow3 = New WStock.NewSearchWindow()
-        Me.NewSearchWindow2 = New WStock.NewSearchWindow()
-        Me.NewSearchWindow1 = New WStock.NewSearchWindow()
+        Me.btnProcurar = New System.Windows.Forms.Button()
+        Me.nswAvaliador = New WStock.NewSearchWindow()
+        Me.nswLiderDireto = New WStock.NewSearchWindow()
+        Me.nswFuncionario = New WStock.NewSearchWindow()
         Me.nswTurno = New WStock.NewSearchWindow()
         Me.nswArea = New WStock.NewSearchWindow()
         Me.nswEmpresa = New WStock.NewSearchWindow()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvAvaliacoes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblpontosFortes
@@ -93,23 +93,23 @@ Partial Class FrmTerceiros
         Me.txtPontosFracos.Size = New System.Drawing.Size(325, 61)
         Me.txtPontosFracos.TabIndex = 15
         '
-        'lblNota
+        'lblAvalidacao
         '
-        Me.lblNota.AutoSize = True
-        Me.lblNota.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblNota.Location = New System.Drawing.Point(343, 225)
-        Me.lblNota.Name = "lblNota"
-        Me.lblNota.Size = New System.Drawing.Size(54, 13)
-        Me.lblNota.TabIndex = 16
-        Me.lblNota.Text = "Avaliação"
+        Me.lblAvalidacao.AutoSize = True
+        Me.lblAvalidacao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblAvalidacao.Location = New System.Drawing.Point(343, 225)
+        Me.lblAvalidacao.Name = "lblAvalidacao"
+        Me.lblAvalidacao.Size = New System.Drawing.Size(54, 13)
+        Me.lblAvalidacao.TabIndex = 16
+        Me.lblAvalidacao.Text = "Avaliação"
         '
-        'dtpDataAvaliacao
+        'dtpAvaliacao
         '
-        Me.dtpDataAvaliacao.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDataAvaliacao.Location = New System.Drawing.Point(235, 242)
-        Me.dtpDataAvaliacao.Name = "dtpDataAvaliacao"
-        Me.dtpDataAvaliacao.Size = New System.Drawing.Size(99, 20)
-        Me.dtpDataAvaliacao.TabIndex = 23
+        Me.dtpAvaliacao.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpAvaliacao.Location = New System.Drawing.Point(235, 242)
+        Me.dtpAvaliacao.Name = "dtpAvaliacao"
+        Me.dtpAvaliacao.Size = New System.Drawing.Size(99, 20)
+        Me.dtpAvaliacao.TabIndex = 23
         '
         'lblDataAvaliacao
         '
@@ -121,31 +121,31 @@ Partial Class FrmTerceiros
         Me.lblDataAvaliacao.TabIndex = 24
         Me.lblDataAvaliacao.Text = "Data avaliação"
         '
-        'dtpDataInicial
+        'dtpPeriodoInicial
         '
-        Me.dtpDataInicial.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDataInicial.Location = New System.Drawing.Point(9, 242)
-        Me.dtpDataInicial.Name = "dtpDataInicial"
-        Me.dtpDataInicial.Size = New System.Drawing.Size(99, 20)
-        Me.dtpDataInicial.TabIndex = 28
+        Me.dtpPeriodoInicial.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpPeriodoInicial.Location = New System.Drawing.Point(9, 242)
+        Me.dtpPeriodoInicial.Name = "dtpPeriodoInicial"
+        Me.dtpPeriodoInicial.Size = New System.Drawing.Size(99, 20)
+        Me.dtpPeriodoInicial.TabIndex = 28
         '
-        'dtpDataFinal
+        'dtpPeriodoFinal
         '
-        Me.dtpDataFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDataFinal.Location = New System.Drawing.Point(132, 242)
-        Me.dtpDataFinal.Name = "dtpDataFinal"
-        Me.dtpDataFinal.Size = New System.Drawing.Size(99, 20)
-        Me.dtpDataFinal.TabIndex = 29
+        Me.dtpPeriodoFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpPeriodoFinal.Location = New System.Drawing.Point(132, 242)
+        Me.dtpPeriodoFinal.Name = "dtpPeriodoFinal"
+        Me.dtpPeriodoFinal.Size = New System.Drawing.Size(99, 20)
+        Me.dtpPeriodoFinal.TabIndex = 29
         '
-        'Label1
+        'lblPeriodoInicial
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(12, 226)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(94, 13)
-        Me.Label1.TabIndex = 30
-        Me.Label1.Text = "Período avaliação"
+        Me.lblPeriodoInicial.AutoSize = True
+        Me.lblPeriodoInicial.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblPeriodoInicial.Location = New System.Drawing.Point(12, 226)
+        Me.lblPeriodoInicial.Name = "lblPeriodoInicial"
+        Me.lblPeriodoInicial.Size = New System.Drawing.Size(94, 13)
+        Me.lblPeriodoInicial.TabIndex = 30
+        Me.lblPeriodoInicial.Text = "Período avaliação"
         '
         'btnSalvar
         '
@@ -169,14 +169,14 @@ Partial Class FrmTerceiros
         Me.Label2.TabIndex = 60
         Me.Label2.Text = "até"
         '
-        'ComboBox1
+        'cboAvaliacao
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Ruim", "Regular", "Bom", "Ótimo"})
-        Me.ComboBox1.Location = New System.Drawing.Point(340, 241)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(158, 21)
-        Me.ComboBox1.TabIndex = 61
+        Me.cboAvaliacao.FormattingEnabled = True
+        Me.cboAvaliacao.Items.AddRange(New Object() {"Ruim", "Regular", "Bom", "Ótimo"})
+        Me.cboAvaliacao.Location = New System.Drawing.Point(340, 241)
+        Me.cboAvaliacao.Name = "cboAvaliacao"
+        Me.cboAvaliacao.Size = New System.Drawing.Size(158, 21)
+        Me.cboAvaliacao.TabIndex = 61
         '
         'txtAcao
         '
@@ -194,49 +194,57 @@ Partial Class FrmTerceiros
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.lblAvaliacaoGeral)
+        Me.GroupBox1.Controls.Add(Me.txtAvaliacaoGeral)
         Me.GroupBox1.Controls.Add(Me.txtAcao)
         Me.GroupBox1.Controls.Add(Me.txtPontosFracos)
         Me.GroupBox1.Controls.Add(Me.lblPontosFracos)
-        Me.GroupBox1.Controls.Add(Me.dtpDataInicial)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Controls.Add(Me.dtpDataFinal)
+        Me.GroupBox1.Controls.Add(Me.dtpPeriodoInicial)
+        Me.GroupBox1.Controls.Add(Me.cboAvaliacao)
+        Me.GroupBox1.Controls.Add(Me.dtpPeriodoFinal)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.dtpDataAvaliacao)
+        Me.GroupBox1.Controls.Add(Me.lblPeriodoInicial)
+        Me.GroupBox1.Controls.Add(Me.dtpAvaliacao)
         Me.GroupBox1.Controls.Add(Me.lblDataAvaliacao)
-        Me.GroupBox1.Controls.Add(Me.lblNota)
+        Me.GroupBox1.Controls.Add(Me.lblAvalidacao)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 0)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(680, 299)
         Me.GroupBox1.TabIndex = 63
         Me.GroupBox1.TabStop = False
         '
-        'DataGridView1
+        'lblAvaliacaoGeral
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.AVALIADOR, Me.PONTOS_FORTES, Me.PONTOS_FRACOS, Me.DATA_AVALIACAO, Me.AVALIACAO})
-        Me.DataGridView1.GridColor = System.Drawing.SystemColors.Control
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 303)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(680, 176)
-        Me.DataGridView1.TabIndex = 64
+        Me.lblAvaliacaoGeral.AutoSize = True
+        Me.lblAvaliacaoGeral.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblAvaliacaoGeral.Location = New System.Drawing.Point(507, 225)
+        Me.lblAvaliacaoGeral.Name = "lblAvaliacaoGeral"
+        Me.lblAvaliacaoGeral.Size = New System.Drawing.Size(80, 13)
+        Me.lblAvaliacaoGeral.TabIndex = 63
+        Me.lblAvaliacaoGeral.Text = "Avaliação geral"
         '
-        'btnProcurar
+        'txtAvaliacaoGeral
         '
-        Me.btnProcurar.Image = Global.WStock.My.Resources.Resources.search
-        Me.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnProcurar.Location = New System.Drawing.Point(106, 485)
-        Me.btnProcurar.Name = "btnProcurar"
-        Me.btnProcurar.Size = New System.Drawing.Size(95, 29)
-        Me.btnProcurar.TabIndex = 65
-        Me.btnProcurar.Text = "Procurar"
-        Me.btnProcurar.UseVisualStyleBackColor = True
+        Me.txtAvaliacaoGeral.Location = New System.Drawing.Point(504, 241)
+        Me.txtAvaliacaoGeral.Multiline = True
+        Me.txtAvaliacaoGeral.Name = "txtAvaliacaoGeral"
+        Me.txtAvaliacaoGeral.ReadOnly = True
+        Me.txtAvaliacaoGeral.Size = New System.Drawing.Size(163, 21)
+        Me.txtAvaliacaoGeral.TabIndex = 62
+        '
+        'dgvAvaliacoes
+        '
+        Me.dgvAvaliacoes.AllowUserToAddRows = False
+        Me.dgvAvaliacoes.AllowUserToDeleteRows = False
+        Me.dgvAvaliacoes.BackgroundColor = System.Drawing.Color.White
+        Me.dgvAvaliacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAvaliacoes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.AVALIADOR, Me.PONTOS_FORTES, Me.PONTOS_FRACOS, Me.DATA_AVALIACAO, Me.AVALIACAO})
+        Me.dgvAvaliacoes.GridColor = System.Drawing.SystemColors.Control
+        Me.dgvAvaliacoes.Location = New System.Drawing.Point(6, 303)
+        Me.dgvAvaliacoes.Name = "dgvAvaliacoes"
+        Me.dgvAvaliacoes.ReadOnly = True
+        Me.dgvAvaliacoes.Size = New System.Drawing.Size(680, 176)
+        Me.dgvAvaliacoes.TabIndex = 64
         '
         'AVALIADOR
         '
@@ -270,73 +278,65 @@ Partial Class FrmTerceiros
         Me.AVALIACAO.Name = "AVALIACAO"
         Me.AVALIACAO.ReadOnly = True
         '
-        'TextBox1
+        'btnProcurar
         '
-        Me.TextBox1.Location = New System.Drawing.Point(504, 241)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(163, 21)
-        Me.TextBox1.TabIndex = 62
+        Me.btnProcurar.Image = Global.WStock.My.Resources.Resources.search
+        Me.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnProcurar.Location = New System.Drawing.Point(106, 485)
+        Me.btnProcurar.Name = "btnProcurar"
+        Me.btnProcurar.Size = New System.Drawing.Size(95, 29)
+        Me.btnProcurar.TabIndex = 65
+        Me.btnProcurar.Text = "Procurar"
+        Me.btnProcurar.UseVisualStyleBackColor = True
         '
-        'Label3
+        'nswAvaliador
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(507, 225)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(80, 13)
-        Me.Label3.TabIndex = 63
-        Me.Label3.Text = "Avaliação geral"
+        Me.nswAvaliador.CampoCodigoTabelaRetono = ""
+        Me.nswAvaliador.CampoDescricaoTabelaRetono = ""
+        Me.nswAvaliador.Codigo = Nothing
+        Me.nswAvaliador.Descricao = Nothing
+        Me.nswAvaliador.ListaColunas = Nothing
+        Me.nswAvaliador.Location = New System.Drawing.Point(343, 100)
+        Me.nswAvaliador.Name = "nswAvaliador"
+        Me.nswAvaliador.OrderBy = Nothing
+        Me.nswAvaliador.Size = New System.Drawing.Size(328, 41)
+        Me.nswAvaliador.Tabela = ""
+        Me.nswAvaliador.TabIndex = 59
+        Me.nswAvaliador.Titulo = "Avaliador*"
+        Me.nswAvaliador.Where = Nothing
         '
-        'NewSearchWindow3
+        'nswLiderDireto
         '
-        Me.NewSearchWindow3.CampoCodigoTabelaRetono = ""
-        Me.NewSearchWindow3.CampoDescricaoTabelaRetono = ""
-        Me.NewSearchWindow3.Codigo = Nothing
-        Me.NewSearchWindow3.Descricao = Nothing
-        Me.NewSearchWindow3.ListaColunas = Nothing
-        Me.NewSearchWindow3.Location = New System.Drawing.Point(343, 100)
-        Me.NewSearchWindow3.Name = "NewSearchWindow3"
-        Me.NewSearchWindow3.OrderBy = Nothing
-        Me.NewSearchWindow3.Size = New System.Drawing.Size(328, 41)
-        Me.NewSearchWindow3.Tabela = ""
-        Me.NewSearchWindow3.TabIndex = 59
-        Me.NewSearchWindow3.Titulo = "Avaliador*"
-        Me.NewSearchWindow3.Where = Nothing
+        Me.nswLiderDireto.CampoCodigoTabelaRetono = ""
+        Me.nswLiderDireto.CampoDescricaoTabelaRetono = ""
+        Me.nswLiderDireto.Codigo = Nothing
+        Me.nswLiderDireto.Descricao = Nothing
+        Me.nswLiderDireto.Enabled = False
+        Me.nswLiderDireto.ListaColunas = Nothing
+        Me.nswLiderDireto.Location = New System.Drawing.Point(12, 100)
+        Me.nswLiderDireto.Name = "nswLiderDireto"
+        Me.nswLiderDireto.OrderBy = Nothing
+        Me.nswLiderDireto.Size = New System.Drawing.Size(328, 41)
+        Me.nswLiderDireto.Tabela = ""
+        Me.nswLiderDireto.TabIndex = 58
+        Me.nswLiderDireto.Titulo = "Lider direto"
+        Me.nswLiderDireto.Where = Nothing
         '
-        'NewSearchWindow2
+        'nswFuncionario
         '
-        Me.NewSearchWindow2.CampoCodigoTabelaRetono = ""
-        Me.NewSearchWindow2.CampoDescricaoTabelaRetono = ""
-        Me.NewSearchWindow2.Codigo = Nothing
-        Me.NewSearchWindow2.Descricao = Nothing
-        Me.NewSearchWindow2.Enabled = False
-        Me.NewSearchWindow2.ListaColunas = Nothing
-        Me.NewSearchWindow2.Location = New System.Drawing.Point(12, 100)
-        Me.NewSearchWindow2.Name = "NewSearchWindow2"
-        Me.NewSearchWindow2.OrderBy = Nothing
-        Me.NewSearchWindow2.Size = New System.Drawing.Size(328, 41)
-        Me.NewSearchWindow2.Tabela = ""
-        Me.NewSearchWindow2.TabIndex = 58
-        Me.NewSearchWindow2.Titulo = "Lider direto"
-        Me.NewSearchWindow2.Where = Nothing
-        '
-        'NewSearchWindow1
-        '
-        Me.NewSearchWindow1.CampoCodigoTabelaRetono = ""
-        Me.NewSearchWindow1.CampoDescricaoTabelaRetono = ""
-        Me.NewSearchWindow1.Codigo = Nothing
-        Me.NewSearchWindow1.Descricao = Nothing
-        Me.NewSearchWindow1.ListaColunas = Nothing
-        Me.NewSearchWindow1.Location = New System.Drawing.Point(12, 12)
-        Me.NewSearchWindow1.Name = "NewSearchWindow1"
-        Me.NewSearchWindow1.OrderBy = Nothing
-        Me.NewSearchWindow1.Size = New System.Drawing.Size(328, 41)
-        Me.NewSearchWindow1.Tabela = ""
-        Me.NewSearchWindow1.TabIndex = 57
-        Me.NewSearchWindow1.Titulo = "Funcionário*"
-        Me.NewSearchWindow1.Where = Nothing
+        Me.nswFuncionario.CampoCodigoTabelaRetono = ""
+        Me.nswFuncionario.CampoDescricaoTabelaRetono = ""
+        Me.nswFuncionario.Codigo = Nothing
+        Me.nswFuncionario.Descricao = Nothing
+        Me.nswFuncionario.ListaColunas = Nothing
+        Me.nswFuncionario.Location = New System.Drawing.Point(12, 12)
+        Me.nswFuncionario.Name = "nswFuncionario"
+        Me.nswFuncionario.OrderBy = Nothing
+        Me.nswFuncionario.Size = New System.Drawing.Size(328, 41)
+        Me.nswFuncionario.Tabela = ""
+        Me.nswFuncionario.TabIndex = 57
+        Me.nswFuncionario.Titulo = "Funcionário*"
+        Me.nswFuncionario.Where = Nothing
         '
         'nswTurno
         '
@@ -395,10 +395,10 @@ Partial Class FrmTerceiros
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(694, 519)
         Me.Controls.Add(Me.btnProcurar)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.NewSearchWindow3)
-        Me.Controls.Add(Me.NewSearchWindow2)
-        Me.Controls.Add(Me.NewSearchWindow1)
+        Me.Controls.Add(Me.dgvAvaliacoes)
+        Me.Controls.Add(Me.nswAvaliador)
+        Me.Controls.Add(Me.nswLiderDireto)
+        Me.Controls.Add(Me.nswFuncionario)
         Me.Controls.Add(Me.nswTurno)
         Me.Controls.Add(Me.nswArea)
         Me.Controls.Add(Me.nswEmpresa)
@@ -416,7 +416,7 @@ Partial Class FrmTerceiros
         Me.Text = "Avaliação terceirizados"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvAvaliacoes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -425,30 +425,30 @@ Partial Class FrmTerceiros
     Friend WithEvents txtPontosFortes As TextBox
     Friend WithEvents lblPontosFracos As Label
     Friend WithEvents txtPontosFracos As TextBox
-    Friend WithEvents lblNota As Label
-    Friend WithEvents dtpDataAvaliacao As DateTimePicker
+    Friend WithEvents lblAvalidacao As Label
+    Friend WithEvents dtpAvaliacao As DateTimePicker
     Friend WithEvents lblDataAvaliacao As Label
-    Friend WithEvents dtpDataInicial As DateTimePicker
-    Friend WithEvents dtpDataFinal As DateTimePicker
-    Friend WithEvents Label1 As Label
+    Friend WithEvents dtpPeriodoInicial As DateTimePicker
+    Friend WithEvents dtpPeriodoFinal As DateTimePicker
+    Friend WithEvents lblPeriodoInicial As Label
     Friend WithEvents btnSalvar As Button
     Friend WithEvents nswEmpresa As NewSearchWindow
     Friend WithEvents nswArea As NewSearchWindow
     Friend WithEvents nswTurno As NewSearchWindow
-    Friend WithEvents NewSearchWindow1 As NewSearchWindow
-    Friend WithEvents NewSearchWindow2 As NewSearchWindow
-    Friend WithEvents NewSearchWindow3 As NewSearchWindow
+    Friend WithEvents nswFuncionario As NewSearchWindow
+    Friend WithEvents nswLiderDireto As NewSearchWindow
+    Friend WithEvents nswAvaliador As NewSearchWindow
     Friend WithEvents Label2 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboAvaliacao As ComboBox
     Friend WithEvents txtAcao As TextBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvAvaliacoes As DataGridView
     Friend WithEvents btnProcurar As Button
     Friend WithEvents AVALIADOR As DataGridViewTextBoxColumn
     Friend WithEvents PONTOS_FORTES As DataGridViewTextBoxColumn
     Friend WithEvents PONTOS_FRACOS As DataGridViewTextBoxColumn
     Friend WithEvents DATA_AVALIACAO As DataGridViewTextBoxColumn
     Friend WithEvents AVALIACAO As DataGridViewTextBoxColumn
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents lblAvaliacaoGeral As Label
+    Friend WithEvents txtAvaliacaoGeral As TextBox
 End Class

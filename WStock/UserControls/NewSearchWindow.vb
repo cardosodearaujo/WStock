@@ -50,7 +50,6 @@ Public Class NewSearchWindow
             .ListaColunas = ListaColunas
             .Tabela = Tabela
             If Not String.IsNullOrEmpty(Where) Then .Where = Where
-            If Not String.IsNullOrEmpty(OrderBy) Then .OrderBy = OrderBy
 
             .ShowDialog()
 

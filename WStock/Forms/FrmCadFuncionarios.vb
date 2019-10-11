@@ -87,7 +87,6 @@ Public Class FrmCadFuncionarios
             .ListaColunas.Add(New RotuloPesquisaVO("TERMINO_CONTRATO", "Dt. terminio contrato"))
             .ListaColunas.Add(New RotuloPesquisaVO("BANCO_HORAS", "Banco de horas"))
             .Tabela = "TB_FUNCIONARIO"
-            .OrderBy = "NOME_FUNCIONARIO"
             .ShowDialog()
             Carregar(.CodigoRetorno)
         End With

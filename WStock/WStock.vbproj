@@ -249,6 +249,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\search%282%29.png" />
+    <None Include="Resources\search%281%29.png" />
+    <None Include="Resources\search-interface-symbol.png" />
+    <None Include="Resources\magnifying-glass-search.png" />
     <None Include="Resources\error.png" />
     <None Include="Resources\floppy-disk.png" />
     <Content Include="Resources\logo.ico" />

@@ -11,12 +11,13 @@ Public Class FrmPesquisa
     Public Property ListaColunas As List(Of RotuloPesquisaVO)
     Public Property Tabela As String
     Public Property Where As String
-    Public Property OrderBy As String
     Public Property AbrirCarregado As Boolean = True
     Private Sub FrmPesquisa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             If ValidarParamentros() Then
-                PreecherCombo()
+                PreecherComboOpcoes()
+                PreecherComboOrdem()
+                ConfigComboTipoOrdenacao()
                 ConfigurarGrid()
                 If AbrirCarregado Then Consultar()
             Else
@@ -67,11 +68,21 @@ Public Class FrmPesquisa
         End If
         Return True
     End Function
-    Private Sub PreecherCombo()
-        cboOpcoes.DataSource = ListaColunas
+    Private Sub PreecherComboOpcoes()
+        cboOpcoes.DataSource = ListaColunas.Select(Function(F) F.Clone).ToList()
         cboOpcoes.ValueMember = "Coluna"
         cboOpcoes.DisplayMember = "Rotulo"
     End Sub
+    Private Sub PreecherComboOrdem()
+        cboOrdem.DataSource = ListaColunas.Select(Function(F) F.Clone).ToList()
+        cboOrdem.ValueMember = "Coluna"
+        cboOrdem.DisplayMember = "Rotulo"
+    End Sub
+
+    Private Sub ConfigComboTipoOrdenacao()
+        cboTipoOrdenacao.SelectedIndex = 0
+    End Sub
+
     Private Sub ConfigurarGrid()
         For Each item In ListaColunas
             dgvResultados.Columns.Add(item.Coluna, item.Rotulo)
@@ -103,9 +114,7 @@ Public Class FrmPesquisa
             SQL.AppendLine(" And " + cboOpcoes.SelectedValue + " LIKE '%" + txtFiltro.Text.Replace("'", "''") + "%'")
         End If
 
-        If Not String.IsNullOrEmpty(OrderBy) Then
-            SQL.AppendLine("Order By " + OrderBy)
-        End If
+        SQL.AppendLine("Order By " + cboOrdem.SelectedValue + IIf(cboTipoOrdenacao.SelectedIndex = 0, " Asc", " Desc"))
 
         Dim Conexao As New MySqlConnection
         Conexao.ConnectionString = NHibernateConfigurationData.Connection.getConnectionMySql()
